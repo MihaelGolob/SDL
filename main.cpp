@@ -1,56 +1,107 @@
 #include <iostream>
+#include <string>
 #include <SDL2/SDL.h>
 
-const int WINDOW_WIDTH = 640;
-const int WINDOW_HEIGHT = 480;
+const int WIDTH = 640;
+const int HEIGHT = 480;
 
 using namespace std;
+
+SDL_Window* InitWindow();
+SDL_Renderer* InitRenderer(SDL_Window *window);
+SDL_Surface* LoadImage(string path);
+SDL_Texture *loadTexture(string path, SDL_Renderer *ren);
+void renderTexture(SDL_Texture *tex, SDL_Renderer *ren, int x, int y);
+void Close(SDL_Window *window);
 
 int main(int argc, char *argv[]) {
-    SDL_Window *window = nullptr;
-    SDL_Surface *surface = nullptr;
+    SDL_Window *window = InitWindow();
+    SDL_Renderer *ren = InitRenderer(window);
+    SDL_Event event;
+    bool quit = false;
 
-    if(SDL_Init(SDL_INIT_VIDEO) < 0)
-        cout << "SDL could not be initialized!" << endl;
-    else{
-        //create window
-        window = SDL_CreateWindow("SDL Window", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_SHOWN);
-        if(window == nullptr)
-            cout << "SDL window could not be created!" << endl;
-        else{
-            //get window surface
-            surface = SDL_GetWindowSurface(window);
-            //fill the surface
-            SDL_FillRect(surface, nullptr, SDL_MapRGB(surface->format, 0xFF, 0xFF, 0xFF));
-            //update the surface
-            SDL_UpdateWindowSurface(window);
-            //delay
-            SDL_Delay(2000);
+    //load media
+    SDL_Texture *texture = loadTexture("cat.bmp", ren);
+
+    while(!quit){
+        // poll events:
+        while(SDL_PollEvent(&event)){
+            if(event.type == SDL_QUIT)
+                quit = true;
         }
+
+        // loop functions:
+        //SDL_BlitSurface(image, nullptr, surface, nullptr);
+        SDL_RenderClear(ren);
+        renderTexture(texture, ren, 0, 0);
+        SDL_RenderPresent(ren);
     }
 
-    SDL_DestroyWindow(window);
-    SDL_Quit();
+    Close(window);
+
     return 0;
 }
-/*
- * #include <iostream>
-#include <SDL2/SDL.h>
 
-using namespace std;
-
-int SDL_main(int argc, char *argv[]) {
-    SDL_Init(SDL_INIT_EVERYTHING);
-    SDL_Window *window = SDL_CreateWindow("first Window", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, SDL_WINDOW_SHOWN);
-    SDL_Renderer *renderer = SDL_CreateRenderer(window, -1, 0);
-
-    SDL_SetRenderDrawColor(renderer, 0, 100, 150, 255);
-    SDL_RenderClear(renderer);
-    SDL_RenderPresent(renderer);
-
-    SDL_Delay(1000);
-    cout << "hello" << endl;
-
-    return EXIT_SUCCESS;
+SDL_Window* InitWindow(){
+    // INITIALIZE SDL AND CREATE WINDOW
+    if(SDL_Init(SDL_INIT_VIDEO) < 0){
+        cout << "ERROR: SDL COULD NOT BE INITIALIZED!" << endl;
+    }
+    else{
+        SDL_Window *window = nullptr;
+        window = SDL_CreateWindow("SDL window", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WIDTH, HEIGHT, SDL_WINDOW_SHOWN);
+        if (window == nullptr) {
+            cout << "ERROR: WINDOW COULD NOT BE CREATED!" << endl;
+        } else
+            return window;
+    }
 }
- */
+
+SDL_Renderer* InitRenderer(SDL_Window *window){
+    // INITIALIZE RENDERER
+    SDL_Renderer *ren = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+    if (ren == nullptr) {
+        cout << "ERROR: RENDERER FAILED TO INITIALIZE! ... " << SDL_GetError() << endl;
+        Close(window);
+        return nullptr;
+    }
+    else
+        return ren;
+}
+
+SDL_Texture *loadTexture(string path, SDL_Renderer *ren){
+    SDL_Texture *tex = nullptr;
+    SDL_Surface *image = SDL_LoadBMP(path.c_str());
+    if(image == nullptr){
+        cout << "ERROR: IMAGE COULD NOT BE LOADED! ... " << SDL_GetError() << endl;
+        return nullptr;
+    }
+
+    tex = SDL_CreateTextureFromSurface(ren, image);
+    SDL_FreeSurface(image);
+    return tex;
+}
+
+void renderTexture(SDL_Texture *tex, SDL_Renderer *ren, int x, int y){
+    // setup destination rectangle
+    SDL_Rect dest;
+    dest.x = x;
+    dest.y = y;
+    // query the texture to get its width and height to use
+    SDL_QueryTexture(tex, nullptr, nullptr, &dest.w, &dest.h);
+    // render
+    SDL_RenderCopy(ren, tex, nullptr, &dest);
+}
+
+SDL_Surface* LoadImage(string path){
+    // LOAD IMAGE
+    SDL_Surface *image = SDL_LoadBMP(path.c_str());
+    if(image == nullptr)
+        cout << "ERROR: IMAGE COULD NOT BE LOADED! ... " << SDL_GetError() << endl;
+}
+
+void Close(SDL_Window *window){
+    // CLOSE WINDOW AND EXIT
+    SDL_DestroyWindow(window);
+    SDL_Quit();
+}
