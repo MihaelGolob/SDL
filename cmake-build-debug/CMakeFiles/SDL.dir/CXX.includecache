@@ -610,6 +610,14 @@ close_code.h
 
 ../x86_64-w64-mingw32/include/SDL2/close_code.h
 
+D:/Documents/SDL/Window.h
+iostream
+-
+string
+-
+SDL2/SDL.h
+-
+
 D:/Documents/SDL/main.cpp
 iostream
 -
@@ -617,4 +625,6 @@ string
 -
 SDL2/SDL.h
 -
+Window.h
+D:/Documents/SDL/Window.h
 
