@@ -5,18 +5,12 @@
 
 using namespace std;
 
-SDL_Texture *loadTexture(string path, SDL_Renderer *ren);
-void renderTexture(SDL_Texture *tex, SDL_Renderer *ren, int x, int y);
-
 int main(int argc, char *argv[]) {
     Window window;
     window.InitWindow("SDL", 1000, 600);
     window.InitRenderer();
     SDL_Event event;
     bool quit = false;
-
-    //load media
-    SDL_Texture *texture = loadTexture("cat.bmp", window.Renderer);
 
     while(!quit){
         // poll events:
@@ -50,28 +44,4 @@ int main(int argc, char *argv[]) {
     window.Close();
 
     return 0;
-}
-
-SDL_Texture *loadTexture(string path, SDL_Renderer *ren){
-    SDL_Texture *tex = nullptr;
-    SDL_Surface *image = SDL_LoadBMP(path.c_str());
-    if(image == nullptr){
-        cout << "ERROR: IMAGE COULD NOT BE LOADED! ... " << SDL_GetError() << endl;
-        return nullptr;
-    }
-
-    tex = SDL_CreateTextureFromSurface(ren, image);
-    SDL_FreeSurface(image);
-    return tex;
-}
-
-void renderTexture(SDL_Texture *tex, SDL_Renderer *ren, int x, int y){
-    // setup destination rectangle
-    SDL_Rect dest;
-    dest.x = x;
-    dest.y = y;
-    // query the texture to get its width and height to use
-    SDL_QueryTexture(tex, nullptr, nullptr, &dest.w, &dest.h);
-    // render
-    SDL_RenderCopy(ren, tex, nullptr, &dest);
 }
