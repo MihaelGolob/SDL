@@ -1,2 +1,2 @@
-# SDLvaja
-obvezna solska naloga za med pocitnicami
+# SDL PROJETKI
+## Tukaj najdeš vse SDL projekte na katerih si delal :)
