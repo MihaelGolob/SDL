@@ -149,6 +149,7 @@ void drawGrid(Window window, int rows, int columns){
 
 void napolniSeznam();
 void izpisSeznama();
+bool najdi(int n, int m);
 
 void drawGrid(Window window, int rows, int columns);
 
@@ -159,18 +160,19 @@ int main(int argc, char *argv[]) {
         napolniSeznam();
     izpisSeznama();
 
-    struct El *tmp = start, *tmpOld = nullptr;
+    struct El *tmp = start;
     unsigned int time, oldTime=0;
-    short delay = 500;
+    int m = 0, n = 0;
+    short delay = 50;
 
     Window window;
     window.InitWindow("SDL window!", 800, 800);
     window.InitRenderer();
     SDL_Event event;
-    bool quit = false, moving = false;
+    bool quit = false, reset = false;
     SDL_Rect rect;
-    rect.x = (tmp->y-1) * (window.width / 20);
-    rect.y = (tmp->x-1) * (window.height / 20);
+    rect.x = 0;
+    rect.y = 0;
     rect.w = window.width/20;
     rect.h = window.height/20;
 
@@ -186,25 +188,37 @@ int main(int argc, char *argv[]) {
         //clear surface
         SDL_RenderClear(window.Renderer);
 
+        //other stuff
+
         //draw
         time = SDL_GetTicks();
-        if (!moving && time > oldTime + delay) {
-            if(tmp->next != nullptr) {
-                tmp = tmp -> next;
+        if (time > oldTime + delay) {
+            if(reset){
+                delay = 50;
+                reset = false;
+            }
+            if(najdi(n,m)){
+                delay = 1000;
+                reset = true;
             }
             oldTime = time;
-            rect.x = (tmp->y-1) * (window.width / 20);
-            rect.y = (tmp->x-1) * (window.height / 20);
+
+            rect.x = m * (window.width / 20);
+            rect.y = n * (window.height / 20);
             rect.w = window.width/20;
             rect.h = window.height/20;
 
+            m++;
+            if(m > 20-1){
+                m = 0;
+                if(n < 20-1)
+                    n++;
+            }
         }
-
 
         SDL_SetRenderDrawColor(window.Renderer, 255, 255, 255, 255);
         drawGrid(window, 20,20);
         SDL_RenderFillRect(window.Renderer, &rect);
-
 
         //update frame
         SDL_SetRenderDrawColor(window.Renderer, 13, 95, 110, 255);
@@ -214,6 +228,18 @@ int main(int argc, char *argv[]) {
     window.Close();
 
     return 0;
+}
+
+bool najdi(int n, int m){
+    struct El *tmp = start;
+    while(tmp != nullptr){
+        if(tmp->y-1 == m && tmp->x-1 == n){
+            cout << "found it! " << m << "," << n << "   " << tmp->y-1 << "," << tmp->x-1 << endl;
+            return true;
+        }
+        tmp = tmp->next;
+    }
+    return false;
 }
 
 void napolniSeznam(){
