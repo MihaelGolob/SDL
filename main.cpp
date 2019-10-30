@@ -20,27 +20,27 @@ int main(int argc, char *argv[]) {
         }
 
         // loop functions:
-        //clear surface
-        SDL_RenderClear(window.Renderer);
+        SDL_RenderClear(window.Renderer); // clear surface
 
         //draw
 
-        SDL_Rect rect; //rectangle
+        SDL_Rect rect; // new rectangle
+        // rect coordinates and size
         rect.x = 250;
         rect.y = 150;
         rect.w = 200;
         rect.h = 200;
-        SDL_SetRenderDrawColor(window.Renderer, 255, 255, 255, 255);
-        SDL_RenderDrawRect(window.Renderer, &rect);
+        SDL_SetRenderDrawColor(window.Renderer, 255, 255, 255, 255); // set color for SDL Draw
+        SDL_RenderDrawRect(window.Renderer, &rect); // draw rectangle
 
-        SDL_RenderDrawLine(window.Renderer, 50, 0, 50, window.height); //line
+        SDL_RenderDrawLine(window.Renderer, 50, 0, 50, window.height); // draw line
 
         //update frame
-        SDL_SetRenderDrawColor(window.Renderer, 0, 0, 0, 255);
-        SDL_RenderPresent(window.Renderer);
+        SDL_SetRenderDrawColor(window.Renderer, 0, 0, 0, 255); // set color for background
+        SDL_RenderPresent(window.Renderer); // update frame
     }
 
-    window.Close();
+    window.Close(); // close window
 
     return 0;
 }

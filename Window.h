@@ -12,8 +12,8 @@ using namespace std;
 
 class Window {
 public:
-    SDL_Window* InitWindow(string title, int width, int height);
-    SDL_Renderer* InitRenderer();
+    void InitWindow(string title, int width, int height);
+    void InitRenderer();
     void Close();
     SDL_Window *Window = nullptr;
 
