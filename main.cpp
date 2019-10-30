@@ -6,16 +6,16 @@
 using namespace std;
 
 int main(int argc, char *argv[]) {
-    Window window;
-    window.InitWindow("SDL", 1000, 600);
-    window.InitRenderer();
-    SDL_Event event;
+    Window window; // initialize new Window class
+    window.InitWindow("SDL", 1000, 600); // create new Window (more details in Window.cpp)
+    window.InitRenderer(); // initialize renderer (more details in Window.cpp)
+    SDL_Event event; // new event
     bool quit = false;
 
     while(!quit){
         // poll events:
-        while(SDL_PollEvent(&event)){
-            if(event.type == SDL_QUIT)
+        while(SDL_PollEvent(&event)){ // go through all events
+            if(event.type == SDL_QUIT)  // if the X button is pressed - quit
                 quit = true;
         }
 
@@ -24,7 +24,6 @@ int main(int argc, char *argv[]) {
         SDL_RenderClear(window.Renderer);
 
         //draw
-        //renderTexture(texture, ren, 0, 0); //image
 
         SDL_Rect rect; //rectangle
         rect.x = 250;
