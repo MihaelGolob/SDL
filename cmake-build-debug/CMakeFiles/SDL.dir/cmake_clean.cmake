@@ -1,9 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/SDL.dir/main.cpp.obj"
   "CMakeFiles/SDL.dir/Window.cpp.obj"
-  "SDL.pdb"
+  "CMakeFiles/SDL.dir/main.cpp.obj"
   "SDL.exe"
   "SDL.exe.manifest"
+  "SDL.pdb"
   "libSDL.dll.a"
 )
 

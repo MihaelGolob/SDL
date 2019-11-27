@@ -627,6 +627,8 @@ cstdlib
 -
 ctime
 -
+math.h
+-
 SDL2/SDL.h
 -
 Window.h
