@@ -2,6 +2,7 @@
 #include <string>
 #include <cstdlib>
 #include <ctime>
+#include <math.h>
 
 #include <SDL2/SDL.h>
 #include "Window.h"
@@ -149,9 +150,15 @@ void drawGrid(Window window, int rows, int columns){
 
 void napolniSeznam();
 void izpisSeznama();
+void move(SDL_Rect &,Window);
+void checkPosition(SDL_Rect &, Window);
 bool najdi(int n, int m);
 
 void drawGrid(Window window, int rows, int columns);
+
+const int SPEED = 10;
+int DELAY = 0;
+int oldX = 1000;
 
 int main(int argc, char *argv[]) {
     srand(time(0));
@@ -192,28 +199,15 @@ int main(int argc, char *argv[]) {
 
         //draw
         time = SDL_GetTicks();
-        if (time > oldTime + delay) {
-            if(reset){
-                delay = 50;
-                reset = false;
+        if(time > oldTime + DELAY){
+            if(DELAY == 1000){
+                DELAY = 0;
             }
-            if(najdi(n,m)){
-                delay = 1000;
-                reset = true;
-            }
+
+            move(rect, window);
+            checkPosition(rect,window);
+
             oldTime = time;
-
-            rect.x = m * (window.width / 20);
-            rect.y = n * (window.height / 20);
-            rect.w = window.width/20;
-            rect.h = window.height/20;
-
-            m++;
-            if(m > 20-1){
-                m = 0;
-                if(n < 20-1)
-                    n++;
-            }
         }
 
         SDL_SetRenderDrawColor(window.Renderer, 255, 255, 255, 255);
@@ -228,6 +222,25 @@ int main(int argc, char *argv[]) {
     window.Close();
 
     return 0;
+}
+
+void move(SDL_Rect &rect, Window window){
+    rect.y += SPEED;
+    if(rect.y >= window.width){
+        rect.y = 0;
+        rect.x += window.height/20;
+    }
+}
+
+void checkPosition(SDL_Rect &rect, Window window){
+    int x = floor(rect.y / (window.width / 20));
+    int y = floor(rect.x / (window.height / 20));
+    if(x != oldX && najdi(x,y)){
+        rect.y = x*(window.width / 20);
+        rect.x = y*(window.width / 20);
+        DELAY = 1000;
+        oldX = x;
+    }
 }
 
 bool najdi(int n, int m){
@@ -248,7 +261,7 @@ void napolniSeznam(){
     tmp -> y = rand()%20 + 1;
 
     struct El *p = start;
-    while(p != nullptr && p->x < tmp->x)
+    while(p != nullptr && p->y < tmp->y)
         p = p -> next;
 
     if(start == nullptr){
