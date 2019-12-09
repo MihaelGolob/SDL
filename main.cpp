@@ -2,6 +2,7 @@
 #include <string>
 #include <SDL2/SDL.h>
 #include "Window.h"
+#include "Player/Player.h"
 
 using namespace std;
 
@@ -12,28 +13,22 @@ int main(int argc, char *argv[]) {
     SDL_Event event; // new event
     bool quit = false;
 
+    Player player(0,0,200,200,window);
+
     while(!quit){
         // poll events:
         while(SDL_PollEvent(&event)){ // go through all events
             if(event.type == SDL_QUIT)  // if the X button is pressed - quit
                 quit = true;
-        }
 
+            player.input(event);
+        }
         // loop functions:
         SDL_RenderClear(window.Renderer); // clear surface
 
         //draw
 
-        SDL_Rect rect; // new rectangle
-        // rect coordinates and size
-        rect.x = 250;
-        rect.y = 150;
-        rect.w = 200;
-        rect.h = 200;
-        SDL_SetRenderDrawColor(window.Renderer, 255, 255, 255, 255); // set color for SDL Draw
-        SDL_RenderDrawRect(window.Renderer, &rect); // draw rectangle
-
-        SDL_RenderDrawLine(window.Renderer, 50, 0, 50, window.height); // draw line
+        player.draw();
 
         //update frame
         SDL_SetRenderDrawColor(window.Renderer, 0, 0, 0, 255); // set color for background

@@ -1,0 +1,3 @@
+D:/Documents/SDL/build/CMakeFiles/SDL.dir
+D:/Documents/SDL/build/CMakeFiles/edit_cache.dir
+D:/Documents/SDL/build/CMakeFiles/rebuild_cache.dir
