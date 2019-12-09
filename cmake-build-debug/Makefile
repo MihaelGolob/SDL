@@ -122,6 +122,33 @@ SDL/fast:
 	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/build
 .PHONY : SDL/fast
 
+Player/Player.obj: Player/Player.cpp.obj
+
+.PHONY : Player/Player.obj
+
+# target to build an object file
+Player/Player.cpp.obj:
+	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Player/Player.cpp.obj
+.PHONY : Player/Player.cpp.obj
+
+Player/Player.i: Player/Player.cpp.i
+
+.PHONY : Player/Player.i
+
+# target to preprocess a source file
+Player/Player.cpp.i:
+	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Player/Player.cpp.i
+.PHONY : Player/Player.cpp.i
+
+Player/Player.s: Player/Player.cpp.s
+
+.PHONY : Player/Player.s
+
+# target to generate assembly for a file
+Player/Player.cpp.s:
+	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Player/Player.cpp.s
+.PHONY : Player/Player.cpp.s
+
 Window.obj: Window.cpp.obj
 
 .PHONY : Window.obj
@@ -185,6 +212,9 @@ help:
 	@echo ... SDL
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... Player/Player.obj
+	@echo ... Player/Player.i
+	@echo ... Player/Player.s
 	@echo ... Window.obj
 	@echo ... Window.i
 	@echo ... Window.s
