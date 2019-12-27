@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/SDL.dir/Enemy/Enemy.cpp.obj"
   "CMakeFiles/SDL.dir/Player/Player.cpp.obj"
+  "CMakeFiles/SDL.dir/Tree/Tree.cpp.obj"
   "CMakeFiles/SDL.dir/Window.cpp.obj"
   "CMakeFiles/SDL.dir/main.cpp.obj"
   "SDL.exe"

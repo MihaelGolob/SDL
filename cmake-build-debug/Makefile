@@ -122,6 +122,33 @@ SDL/fast:
 	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/build
 .PHONY : SDL/fast
 
+Enemy/Enemy.obj: Enemy/Enemy.cpp.obj
+
+.PHONY : Enemy/Enemy.obj
+
+# target to build an object file
+Enemy/Enemy.cpp.obj:
+	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Enemy/Enemy.cpp.obj
+.PHONY : Enemy/Enemy.cpp.obj
+
+Enemy/Enemy.i: Enemy/Enemy.cpp.i
+
+.PHONY : Enemy/Enemy.i
+
+# target to preprocess a source file
+Enemy/Enemy.cpp.i:
+	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Enemy/Enemy.cpp.i
+.PHONY : Enemy/Enemy.cpp.i
+
+Enemy/Enemy.s: Enemy/Enemy.cpp.s
+
+.PHONY : Enemy/Enemy.s
+
+# target to generate assembly for a file
+Enemy/Enemy.cpp.s:
+	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Enemy/Enemy.cpp.s
+.PHONY : Enemy/Enemy.cpp.s
+
 Player/Player.obj: Player/Player.cpp.obj
 
 .PHONY : Player/Player.obj
@@ -148,6 +175,33 @@ Player/Player.s: Player/Player.cpp.s
 Player/Player.cpp.s:
 	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Player/Player.cpp.s
 .PHONY : Player/Player.cpp.s
+
+Tree/Tree.obj: Tree/Tree.cpp.obj
+
+.PHONY : Tree/Tree.obj
+
+# target to build an object file
+Tree/Tree.cpp.obj:
+	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Tree/Tree.cpp.obj
+.PHONY : Tree/Tree.cpp.obj
+
+Tree/Tree.i: Tree/Tree.cpp.i
+
+.PHONY : Tree/Tree.i
+
+# target to preprocess a source file
+Tree/Tree.cpp.i:
+	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Tree/Tree.cpp.i
+.PHONY : Tree/Tree.cpp.i
+
+Tree/Tree.s: Tree/Tree.cpp.s
+
+.PHONY : Tree/Tree.s
+
+# target to generate assembly for a file
+Tree/Tree.cpp.s:
+	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Tree/Tree.cpp.s
+.PHONY : Tree/Tree.cpp.s
 
 Window.obj: Window.cpp.obj
 
@@ -212,9 +266,15 @@ help:
 	@echo ... SDL
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... Enemy/Enemy.obj
+	@echo ... Enemy/Enemy.i
+	@echo ... Enemy/Enemy.s
 	@echo ... Player/Player.obj
 	@echo ... Player/Player.i
 	@echo ... Player/Player.s
+	@echo ... Tree/Tree.obj
+	@echo ... Tree/Tree.i
+	@echo ... Tree/Tree.s
 	@echo ... Window.obj
 	@echo ... Window.i
 	@echo ... Window.s

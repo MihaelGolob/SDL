@@ -8,13 +8,17 @@
 #include <iostream>
 #include <string>
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
+
 using namespace std;
 
 class Window {
 public:
     void InitWindow(string title, int width, int height);
     void InitRenderer();
+    void InitImage();
     void Close();
+    void logError(string msg);
     SDL_Window *Window = nullptr;
 
     SDL_Renderer *Renderer = nullptr;
