@@ -11,8 +11,8 @@
 
 class Player {
 public:
-    Player(int x, int y, int width, int height, string texture, Window window);
-    Player(int x, int y, float scale, string texture, Window window);
+    Player(int x, int y, int width, int height, string texture, Window &window);
+    Player(int x, int y, float scale, string texture, Window &window);
     void movement();
     void input(SDL_Event event);
     void draw();

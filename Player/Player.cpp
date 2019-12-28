@@ -4,7 +4,7 @@
 
 #include "Player.h"
 
-Player::Player(int x, int y, int width, int height, string texture, Window window) {
+Player::Player(int x, int y, int width, int height, string texture, Window &window) {
     this->x = x;
     this->y = y;
     this->w = width;
@@ -18,7 +18,7 @@ Player::Player(int x, int y, int width, int height, string texture, Window windo
     speed = 5;
 }
 
-Player::Player(int x, int y, float scale, string texture, Window window) {
+Player::Player(int x, int y, float scale, string texture, Window &window) {
     this->x = x;
     this->y = y;
     this->w = 0;

@@ -1,12 +1,16 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <cstdlib>
+#include <ctime>
+
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 
 #include "Window.h"
 #include "Player/Player.h"
 #include "Tree/Tree.h"
+#include "Enemy/Enemy.h"
 
 const int HEIGHT = 600;
 const int WIDTH = 1000;
@@ -17,6 +21,8 @@ void drawBackground(Window);
 void createTrees(Window &, vector<Tree> &, string);
 
 int main(int argc, char *argv[]) {
+    srand(time(0)); // set seed for random
+
     Window window; // initialize new Window class
     window.InitWindow("SDL", WIDTH, HEIGHT); // create new Window (more details in Window.cpp)
     window.InitRenderer(); // initialize renderer (more details in Window.cpp)
@@ -25,6 +31,7 @@ int main(int argc, char *argv[]) {
     bool quit = false;
 
     Player player(WIDTH/2,HEIGHT/2,2,"../Assets/hero/idle/",window); // create player
+    Enemy enemy(10, 10, 2, 5, 5000, "../Assets/enemy/idle/", window);
 
     vector<Tree> allTrees;
     createTrees(window, allTrees, "../Assets/environment/tree.png");
@@ -51,7 +58,9 @@ int main(int argc, char *argv[]) {
         for(auto i : allTrees) {
             i.draw();
         }
-        player.draw();
+        enemy.draw();
+
+        player.draw(); // drawn at the end so the player is always on top
 
         //update frame
         SDL_SetRenderDrawColor(window.Renderer, 0, 0, 0, 255); // set color for background

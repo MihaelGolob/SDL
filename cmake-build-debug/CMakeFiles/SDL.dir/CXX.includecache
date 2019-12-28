@@ -620,15 +620,11 @@ close_code.h
 
 ../SDL2/include/SDL2/close_code.h
 
-D:/Documents/SDL/Player/Player.h
-SDL2/SDL.h
--
-SDL2/SDL_image.h
--
-../Window.h
-D:/Documents/SDL/Window.h
+D:/Documents/SDL/Enemy/Enemy.cpp
+Enemy.h
+D:/Documents/SDL/Enemy/Enemy.h
 
-D:/Documents/SDL/Tree/Tree.h
+D:/Documents/SDL/Enemy/Enemy.h
 iostream
 -
 string
@@ -639,6 +635,8 @@ SDL2/SDL_image.h
 -
 ../Window.h
 D:/Documents/SDL/Window.h
+cstdlib
+-
 
 D:/Documents/SDL/Window.h
 iostream
@@ -649,22 +647,4 @@ SDL2/SDL.h
 -
 SDL2/SDL_image.h
 -
-
-D:/Documents/SDL/main.cpp
-iostream
--
-string
--
-vector
--
-SDL2/SDL.h
--
-SDL2/SDL_image.h
--
-Window.h
-D:/Documents/SDL/Window.h
-Player/Player.h
-D:/Documents/SDL/Player/Player.h
-Tree/Tree.h
-D:/Documents/SDL/Tree/Tree.h
 
