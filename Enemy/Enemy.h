@@ -9,12 +9,17 @@
 #include <string>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
-#include "../Window.h"
 #include <cstdlib>
+#include <vector>
+
+#include "../Window.h"
+#include "../Tree/Tree.h"
+#include "../global.h"
 
 class Enemy {
 public:
     Enemy(int x, int y, float scale, int speed, int moveDelay, string textureSource, Window &window);
+    bool collision(Tree);
     void draw();
 private:
     void loadTexture(string side);
@@ -22,6 +27,7 @@ private:
     void renderTexture();
     void movement();
     void move();
+    void startFire();
 
     int x, y, w, h;
     float scale;
@@ -31,7 +37,7 @@ private:
     int speed;
     SDL_RendererFlip flip = SDL_FLIP_NONE;
 
-    int destX, destY;
+    int destX = 0, destY = 0;
     bool readyToMove = false;
 
     unsigned int lastTime;

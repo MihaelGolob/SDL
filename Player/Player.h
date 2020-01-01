@@ -7,7 +7,10 @@
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
+
+#include "../Tree/Tree.h"
 #include "../Window.h"
+#include "../global.h"
 
 class Player {
 public:
@@ -17,6 +20,8 @@ public:
     void input(SDL_Event event);
     void draw();
 private:
+    void extinguishFire();
+    bool treeCollision(Tree);
     void loadTexture(string side);
     void changeTexture();
     void renderTexture();

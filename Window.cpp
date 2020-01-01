@@ -39,6 +39,13 @@ void Window::InitImage(){
     }
 }
 
+void Window::InitText(){
+    if(TTF_Init() != 0) {
+        logError("TTF_INIT");
+        SDL_Quit();
+    }
+}
+
 void Window::Close() {
     SDL_DestroyWindow(Window::Window); // close window
     SDL_Quit(); // clean up everything

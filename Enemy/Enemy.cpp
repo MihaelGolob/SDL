@@ -15,6 +15,9 @@ Enemy::Enemy(int x, int y, float scale, int speed, int moveDelay, string texture
     this->moveDelay = moveDelay;
     this->speed = speed;
 
+    destX = x;
+    destY = y;
+
     loadTexture("front");
     lastTime = SDL_GetTicks();
 }
@@ -24,6 +27,22 @@ void Enemy::draw() {
     changeTexture();
     renderTexture();
 }
+
+bool Enemy::collision(Tree t) {
+    int tx = t.getX();
+    int ty = t.getY();
+    int th = t.getH();
+    int tw = t.getW();
+
+    if(x + w > tx && x < tx + tw){
+        if(y < ty + th && y + h > ty){
+            return true;
+        }
+    }
+    return false;
+}
+
+// PRIVATE METHODS:
 
 void Enemy::loadTexture(string side) {
     // load the png image to a texture
@@ -55,8 +74,8 @@ void Enemy::renderTexture() {
 void Enemy::movement() {
     unsigned int curr = SDL_GetTicks();
     if(readyToMove && curr - lastTime > moveDelay){
-        destX = rand()%window.width - w;
-        destY = rand()%window.height - h;
+        destX = rand()%(window.width - w);
+        destY = rand()%(window.height - h);
         readyToMove = false;
     }
     move();
@@ -77,9 +96,23 @@ void Enemy::move(){
         if (y > destY - speed && y < destY + speed) {
             x = destX;
             y = destY;
-            if(!readyToMove)
+            if(!readyToMove){
                 lastTime = SDL_GetTicks();
+                startFire();
+            }
             readyToMove = true;
+        }
+    }
+}
+
+void Enemy::startFire() {
+    int random = rand()%3;
+    if(random == 0){
+        for(auto &t : allTrees){
+            if(collision(t)){
+                t.setOnFire();
+                break;
+            }
         }
     }
 }

@@ -17,15 +17,28 @@ using namespace std;
 class Tree {
 public:
     Tree(int x, int y, int width, int height, string textureSource, Window window);
+    void setOnFire();
+    void extinguishFire();
     void draw();
+    // getters
+    int getX();
+    int getY();
+    int getW();
+    int getH();
 private:
-    void loadTexture();
+    void loadTexture(string name);
     void renderTexture();
+    void checkFire();
 
     int x, y, w, h;
     string textureSource;
     Window window;
     SDL_Texture *texture;
+
+    int timeToBurn;
+    bool dead;
+    unsigned int timeOnFire;
+    bool onFire;
 };
 
 

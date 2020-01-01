@@ -94,6 +94,12 @@
 		<Unit filename="D:/Documents/SDL/Player/Player.h">
 			<Option target="SDL"/>
 		</Unit>
+		<Unit filename="D:/Documents/SDL/Text/Text.cpp">
+			<Option target="SDL"/>
+		</Unit>
+		<Unit filename="D:/Documents/SDL/Text/Text.h">
+			<Option target="SDL"/>
+		</Unit>
 		<Unit filename="D:/Documents/SDL/Tree/Tree.cpp">
 			<Option target="SDL"/>
 		</Unit>
@@ -104,6 +110,9 @@
 			<Option target="SDL"/>
 		</Unit>
 		<Unit filename="D:/Documents/SDL/Window.h">
+			<Option target="SDL"/>
+		</Unit>
+		<Unit filename="D:/Documents/SDL/global.h">
 			<Option target="SDL"/>
 		</Unit>
 		<Unit filename="D:/Documents/SDL/main.cpp">

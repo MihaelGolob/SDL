@@ -9,6 +9,7 @@
 #include <string>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
+#include <SDL2/SDL_ttf.h>
 
 using namespace std;
 
@@ -17,6 +18,7 @@ public:
     void InitWindow(string title, int width, int height);
     void InitRenderer();
     void InitImage();
+    void InitText();
     void Close();
     void logError(string msg);
     SDL_Window *Window = nullptr;

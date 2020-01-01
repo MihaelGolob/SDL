@@ -9,16 +9,23 @@
 
 #include "Window.h"
 #include "Player/Player.h"
-#include "Tree/Tree.h"
 #include "Enemy/Enemy.h"
+#include "Text/Text.h"
+#include "Tree/Tree.h"
+
+using namespace std;
 
 const int HEIGHT = 600;
 const int WIDTH = 1000;
 
-using namespace std;
+// global variables
+vector<Tree> allTrees = {};
+vector<Enemy> enemies = {};
+int level;
 
-void drawBackground(Window);
-void createTrees(Window &, vector<Tree> &, string);
+void drawBackground(Window, SDL_Texture *);
+void createTrees(Window &, string);
+void createEnemies(int, Window &, string);
 
 int main(int argc, char *argv[]) {
     srand(time(0)); // set seed for random
@@ -27,14 +34,23 @@ int main(int argc, char *argv[]) {
     window.InitWindow("SDL", WIDTH, HEIGHT); // create new Window (more details in Window.cpp)
     window.InitRenderer(); // initialize renderer (more details in Window.cpp)
     window.InitImage();
+    window.InitText();
     SDL_Event event; // new event
     bool quit = false;
 
-    Player player(WIDTH/2,HEIGHT/2,2,"../Assets/hero/idle/",window); // create player
-    Enemy enemy(10, 10, 2, 5, 5000, "../Assets/enemy/idle/", window);
+    // open background texture:
+    SDL_Texture *background = IMG_LoadTexture(window.Renderer, "../Assets/environment/grass1.png");
+    if(background == nullptr)
+        window.logError("TEXTURE");
 
-    vector<Tree> allTrees;
-    createTrees(window, allTrees, "../Assets/environment/tree.png");
+    // create all objects:
+    createTrees(window, "../Assets/environment/");
+    createEnemies(3, window, "../Assets/enemy/idle/");
+    Player player(WIDTH/2,HEIGHT/2,2,"../Assets/hero/idle/",window); // create player
+
+    // make a color for text
+    SDL_Color color = {255,255,255,255};
+    Text text("HELLO WORLD", "../Assets/fonts/raleway/Raleway-Light.ttf", 100,100,50,color,window);
 
     while(!quit){
         // poll events:
@@ -54,32 +70,29 @@ int main(int argc, char *argv[]) {
 
         //draw
 
-        drawBackground(window);
-        for(auto i : allTrees) {
-            i.draw();
+        drawBackground(window, background);
+        for(auto &e : enemies){
+            e.draw();
         }
-        enemy.draw();
+        for(auto &t : allTrees) {
+            t.draw();
+        }
 
         player.draw(); // drawn at the end so the player is always on top
+        text.draw();
 
         //update frame
         SDL_SetRenderDrawColor(window.Renderer, 0, 0, 0, 255); // set color for background
         SDL_RenderPresent(window.Renderer); // update frame
     }
 
+    SDL_Quit();
     window.Close(); // close window
 
     return 0;
 }
 
-void drawBackground(Window window){
-    SDL_Texture *background;
-    background = IMG_LoadTexture(window.Renderer, "../Assets/environment/grass1.png");
-
-    if(background == nullptr) {
-        window.logError("TEXTURE");
-    }
-
+void drawBackground(Window window, SDL_Texture *background){
     int x = 0, y = 0, w = 0, h = 0;
     SDL_QueryTexture(background, nullptr, nullptr, &w, &h);
 
@@ -100,7 +113,7 @@ void drawBackground(Window window){
     }
 }
 
-void createTrees(Window &window, vector<Tree> &allTrees, string source){
+void createTrees(Window &window, string source){
     int x = 0, y = 0;
     int treeWidth = 50;
     int treeHeight = 50;
@@ -112,5 +125,16 @@ void createTrees(Window &window, vector<Tree> &allTrees, string source){
             x = 0;
             y += treeHeight + 3;
         }
+    }
+}
+
+void createEnemies(int amount, Window &window, string source){
+    for (int i = 0; i < amount; i++) {
+        int x = rand()%(WIDTH - 100);
+        int y = rand()%(HEIGHT - 100);
+        int speed = rand()%6 + 3;
+        int delay = rand()%8000 + 2000;
+        Enemy enemy(x, y, 2, speed, delay, source, window);
+        enemies.push_back(enemy);
     }
 }

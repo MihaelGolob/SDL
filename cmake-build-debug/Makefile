@@ -176,6 +176,33 @@ Player/Player.cpp.s:
 	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Player/Player.cpp.s
 .PHONY : Player/Player.cpp.s
 
+Text/Text.obj: Text/Text.cpp.obj
+
+.PHONY : Text/Text.obj
+
+# target to build an object file
+Text/Text.cpp.obj:
+	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Text/Text.cpp.obj
+.PHONY : Text/Text.cpp.obj
+
+Text/Text.i: Text/Text.cpp.i
+
+.PHONY : Text/Text.i
+
+# target to preprocess a source file
+Text/Text.cpp.i:
+	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Text/Text.cpp.i
+.PHONY : Text/Text.cpp.i
+
+Text/Text.s: Text/Text.cpp.s
+
+.PHONY : Text/Text.s
+
+# target to generate assembly for a file
+Text/Text.cpp.s:
+	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Text/Text.cpp.s
+.PHONY : Text/Text.cpp.s
+
 Tree/Tree.obj: Tree/Tree.cpp.obj
 
 .PHONY : Tree/Tree.obj
@@ -272,6 +299,9 @@ help:
 	@echo ... Player/Player.obj
 	@echo ... Player/Player.i
 	@echo ... Player/Player.s
+	@echo ... Text/Text.obj
+	@echo ... Text/Text.i
+	@echo ... Text/Text.s
 	@echo ... Tree/Tree.obj
 	@echo ... Tree/Tree.i
 	@echo ... Tree/Tree.s

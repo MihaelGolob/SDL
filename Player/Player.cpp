@@ -32,6 +32,97 @@ Player::Player(int x, int y, float scale, string texture, Window &window) {
     speed = 5;
 }
 
+void Player::draw() {
+    // enable to display a square around the object (for collisions)
+    /*SDL_Rect r;
+    r.x = x;
+    r.y = y;
+    r.w = w;
+    r.h = h;
+
+    SDL_SetRenderDrawBlendMode(window.Renderer, SDL_BLENDMODE_BLEND);
+    SDL_SetRenderDrawColor(window.Renderer, 255, 255, 255, 255);
+    SDL_RenderDrawRect(window.Renderer, &r);*/
+
+    //draw the object
+    changeTexture();
+    renderTexture();
+    movement();
+    extinguishFire();
+}
+
+void Player::input(SDL_Event event) {
+    if(event.type == SDL_KEYDOWN){
+        switch(event.key.keysym.sym){
+            case SDLK_UP:
+                up = true;
+                break;
+            case SDLK_DOWN:
+                down = true;
+                break;
+            case SDLK_LEFT:
+                left = true;
+                break;
+            case SDLK_RIGHT:
+                right = true;
+                break;
+        }
+    }
+    if(event.type == SDL_KEYUP){
+        switch(event.key.keysym.sym){
+            case SDLK_UP:
+                up = false;
+                break;
+            case SDLK_DOWN:
+                down = false;
+                break;
+            case SDLK_LEFT:
+                left = false;
+                break;
+            case SDLK_RIGHT:
+                right = false;
+                break;
+        }
+    }
+}
+
+void Player::movement() {
+    // move player if button is pressed
+    if(up)
+        y -= speed;
+    if(down)
+        y += speed;
+    if(left)
+        x -= speed;
+    if(right)
+        x += speed;
+
+    windowCollision();
+}
+
+// PRIVATE METHODS:
+
+void Player::extinguishFire(){
+    for(auto &t : allTrees){
+        if(treeCollision(t))
+            t.extinguishFire();
+    }
+}
+
+bool Player::treeCollision(Tree t) {
+    int tx = t.getX();
+    int ty = t.getY();
+    int th = t.getH();
+    int tw = t.getW();
+
+    if(x + w > tx && x < tx + tw){
+        if(y < ty + th && y + h > ty){
+            return true;
+        }
+    }
+    return false;
+}
+
 void Player::loadTexture(string side){
     // load the png image to a texture
     string tmp = texturePath + side + ".png";
@@ -85,20 +176,6 @@ void Player::renderTexture(){
         SDL_RenderCopyEx(window.Renderer, texture, nullptr, &rect, 0, nullptr, SDL_FLIP_HORIZONTAL);
 }
 
-void Player::movement() {
-    // move player if button is pressed
-    if(up)
-        y -= speed;
-    if(down)
-        y += speed;
-    if(left)
-        x -= speed;
-    if(right)
-        x += speed;
-
-    windowCollision();
-}
-
 void Player::windowCollision() {
     // stop the player if it is on the edge of the window
 
@@ -110,57 +187,4 @@ void Player::windowCollision() {
         y = 0;
     if(y+h > window.height)
         y = window.height-h;
-}
-
-void Player::input(SDL_Event event) {
-    if(event.type == SDL_KEYDOWN){
-        switch(event.key.keysym.sym){
-            case SDLK_UP:
-                up = true;
-                break;
-            case SDLK_DOWN:
-                down = true;
-                break;
-            case SDLK_LEFT:
-                left = true;
-                break;
-            case SDLK_RIGHT:
-                right = true;
-                break;
-        }
-    }
-    if(event.type == SDL_KEYUP){
-        switch(event.key.keysym.sym){
-            case SDLK_UP:
-                up = false;
-                break;
-            case SDLK_DOWN:
-                down = false;
-                break;
-            case SDLK_LEFT:
-                left = false;
-                break;
-            case SDLK_RIGHT:
-                right = false;
-                break;
-        }
-    }
-}
-
-void Player::draw() {
-    // enable to display a square around the object (for collisions)
-    /*SDL_Rect r;
-    r.x = x;
-    r.y = y;
-    r.w = w;
-    r.h = h;
-
-    SDL_SetRenderDrawBlendMode(window.Renderer, SDL_BLENDMODE_BLEND);
-    SDL_SetRenderDrawColor(window.Renderer, 255, 255, 255, 255);
-    SDL_RenderDrawRect(window.Renderer, &r);*/
-
-    //draw the object
-    changeTexture();
-    renderTexture();
-    movement();
 }
