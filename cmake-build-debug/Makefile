@@ -122,6 +122,33 @@ SDL/fast:
 	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/build
 .PHONY : SDL/fast
 
+Ally/Ally.obj: Ally/Ally.cpp.obj
+
+.PHONY : Ally/Ally.obj
+
+# target to build an object file
+Ally/Ally.cpp.obj:
+	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Ally/Ally.cpp.obj
+.PHONY : Ally/Ally.cpp.obj
+
+Ally/Ally.i: Ally/Ally.cpp.i
+
+.PHONY : Ally/Ally.i
+
+# target to preprocess a source file
+Ally/Ally.cpp.i:
+	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Ally/Ally.cpp.i
+.PHONY : Ally/Ally.cpp.i
+
+Ally/Ally.s: Ally/Ally.cpp.s
+
+.PHONY : Ally/Ally.s
+
+# target to generate assembly for a file
+Ally/Ally.cpp.s:
+	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Ally/Ally.cpp.s
+.PHONY : Ally/Ally.cpp.s
+
 Enemy/Enemy.obj: Enemy/Enemy.cpp.obj
 
 .PHONY : Enemy/Enemy.obj
@@ -293,6 +320,9 @@ help:
 	@echo ... SDL
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... Ally/Ally.obj
+	@echo ... Ally/Ally.i
+	@echo ... Ally/Ally.s
 	@echo ... Enemy/Enemy.obj
 	@echo ... Enemy/Enemy.i
 	@echo ... Enemy/Enemy.s

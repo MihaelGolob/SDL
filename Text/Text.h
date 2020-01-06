@@ -16,6 +16,7 @@ public:
     Text(string text, string fontSource, int x, int y, int size, SDL_Color color, Window &window);
     void draw();
     void changeText(string text);
+    void changePos(int x, int y);
 private:
     void renderTexture();
     void loadNewTexture();

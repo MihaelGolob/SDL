@@ -11,6 +11,7 @@ Text::Text(string text, string fontSource, int x, int y, int size, SDL_Color col
     this->y = y;
     this->color = color;
     this->fontSource = fontSource;
+    this->size = size;
 
     TTF_Font *font = TTF_OpenFont(fontSource.c_str(), size);
     if (font == nullptr)
@@ -41,6 +42,11 @@ void Text::changeText(string text) {
     loadNewTexture();
 }
 
+void Text::changePos(int x, int y) {
+    this->x = x;
+    this->y = y;
+}
+
 // PRIVATE METHODS:
 
 void Text::renderTexture() {
@@ -64,6 +70,7 @@ void Text::loadNewTexture() {
         window.logError("FONT SURFACE");
     }
 
+    SDL_DestroyTexture(texture);
     texture = SDL_CreateTextureFromSurface(window.Renderer, surf);
     if(texture == nullptr)
         window.logError("FONT TEXTURE");

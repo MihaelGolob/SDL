@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="D:/Documents/SDL/Ally/Ally.cpp">
+			<Option target="SDL"/>
+		</Unit>
+		<Unit filename="D:/Documents/SDL/Ally/Ally.h">
+			<Option target="SDL"/>
+		</Unit>
 		<Unit filename="D:/Documents/SDL/Enemy/Enemy.cpp">
 			<Option target="SDL"/>
 		</Unit>

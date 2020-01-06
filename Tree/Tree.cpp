@@ -56,6 +56,10 @@ int Tree::getH() {
     return h;
 }
 
+bool Tree::isDead() {
+    return dead;
+}
+
 // PRIVATE METHODS:
 
 void Tree::loadTexture(string name) {
@@ -72,6 +76,7 @@ void Tree::checkFire(){
     if(curr - timeOnFire >= timeToBurn){
         loadTexture("treeDead");
         dead = true;
+        numDeadTrees++;
     }
 }
 

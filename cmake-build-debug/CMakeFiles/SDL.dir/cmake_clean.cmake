@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/SDL.dir/Ally/Ally.cpp.obj"
   "CMakeFiles/SDL.dir/Enemy/Enemy.cpp.obj"
   "CMakeFiles/SDL.dir/Player/Player.cpp.obj"
   "CMakeFiles/SDL.dir/Text/Text.cpp.obj"

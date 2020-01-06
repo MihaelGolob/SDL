@@ -11,6 +11,7 @@
 #include <SDL2/SDL_image.h>
 
 #include "../Window.h"
+#include "../global.h"
 
 using namespace std;
 
@@ -25,6 +26,7 @@ public:
     int getY();
     int getW();
     int getH();
+    bool isDead();
 private:
     void loadTexture(string name);
     void renderTexture();

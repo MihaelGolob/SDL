@@ -48,7 +48,6 @@ void Player::draw() {
     changeTexture();
     renderTexture();
     movement();
-    extinguishFire();
 }
 
 void Player::input(SDL_Event event) {
@@ -66,6 +65,12 @@ void Player::input(SDL_Event event) {
             case SDLK_RIGHT:
                 right = true;
                 break;
+            case SDLK_SPACE:
+                space = true;
+                break;
+            case SDLK_RETURN:
+                enter = true;
+                break;
         }
     }
     if(event.type == SDL_KEYUP){
@@ -82,7 +87,20 @@ void Player::input(SDL_Event event) {
             case SDLK_RIGHT:
                 right = false;
                 break;
+            case SDLK_SPACE:
+                space = false;
+                break;
+            case SDLK_RETURN:
+                enter = false;
+                break;
         }
+    }
+
+    if (space) {
+        extinguishFire();
+    }
+    if (enter) {
+        attackEnemy();
     }
 }
 
@@ -109,18 +127,11 @@ void Player::extinguishFire(){
     }
 }
 
-bool Player::treeCollision(Tree t) {
-    int tx = t.getX();
-    int ty = t.getY();
-    int th = t.getH();
-    int tw = t.getW();
-
-    if(x + w > tx && x < tx + tw){
-        if(y < ty + th && y + h > ty){
-            return true;
-        }
+void Player::attackEnemy() {
+    for (auto &e : enemies) {
+        if(enemyCollision(e))
+            e.kill();
     }
-    return false;
 }
 
 void Player::loadTexture(string side){
@@ -174,6 +185,36 @@ void Player::renderTexture(){
         SDL_RenderCopy(window.Renderer, texture, nullptr, &rect);
     else
         SDL_RenderCopyEx(window.Renderer, texture, nullptr, &rect, 0, nullptr, SDL_FLIP_HORIZONTAL);
+}
+
+// collisions:
+
+bool Player::enemyCollision(Enemy e){
+    int ex = e.getX();
+    int ey = e.getY();
+    int eh = e.getH();
+    int ew = e.getW();
+
+    if(x + w > ex && x < ex + ew){
+        if(y < ey + eh && y + h > ey){
+            return true;
+        }
+    }
+    return false;
+}
+
+bool Player::treeCollision(Tree t) {
+    int tx = t.getX();
+    int ty = t.getY();
+    int th = t.getH();
+    int tw = t.getW();
+
+    if(x + w > tx && x < tx + tw){
+        if(y < ty + th && y + h > ty){
+            return true;
+        }
+    }
+    return false;
 }
 
 void Player::windowCollision() {

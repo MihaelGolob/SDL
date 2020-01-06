@@ -9,9 +9,8 @@
 
 #include "Window.h"
 #include "Player/Player.h"
-#include "Enemy/Enemy.h"
 #include "Text/Text.h"
-#include "Tree/Tree.h"
+#include "Ally/Ally.h"
 
 using namespace std;
 
@@ -22,10 +21,13 @@ const int WIDTH = 1000;
 vector<Tree> allTrees = {};
 vector<Enemy> enemies = {};
 int level;
+int numDeadTrees = 0;
+int oldNum = 0;
 
 void drawBackground(Window, SDL_Texture *);
 void createTrees(Window &, string);
 void createEnemies(int, Window &, string);
+void printText(Text &);
 
 int main(int argc, char *argv[]) {
     srand(time(0)); // set seed for random
@@ -45,12 +47,15 @@ int main(int argc, char *argv[]) {
 
     // create all objects:
     createTrees(window, "../Assets/environment/");
-    createEnemies(3, window, "../Assets/enemy/idle/");
+    createEnemies(6, window, "../Assets/enemy/idle/");
     Player player(WIDTH/2,HEIGHT/2,2,"../Assets/hero/idle/",window); // create player
 
     // make a color for text
     SDL_Color color = {255,255,255,255};
-    Text text("HELLO WORLD", "../Assets/fonts/raleway/Raleway-Light.ttf", 100,100,50,color,window);
+    Text treePercentage("100%", "../Assets/fonts/raleway/Raleway-Light.ttf", WIDTH-120,HEIGHT-60,50,color,window);
+
+    //
+    Ally ally(100, 100, 3, 2, 1000, "D:/Documents/SDL/Assets/ally/idle", window);
 
     while(!quit){
         // poll events:
@@ -59,7 +64,7 @@ int main(int argc, char *argv[]) {
             {
                 quit = true;
             }
-            if(event.type == SDL_WINDOWEVENT) {
+            if(event.type == SDL_WINDOWEVENT) { // change window width, and height if resized
                 SDL_GetWindowSize(window.Window, &window.width, &window.height);
             }
 
@@ -78,8 +83,10 @@ int main(int argc, char *argv[]) {
             t.draw();
         }
 
+        ally.draw();
+
         player.draw(); // drawn at the end so the player is always on top
-        text.draw();
+        printText(treePercentage);
 
         //update frame
         SDL_SetRenderDrawColor(window.Renderer, 0, 0, 0, 255); // set color for background
@@ -111,6 +118,18 @@ void drawBackground(Window window, SDL_Texture *background){
             rect.y += h;
         }
     }
+}
+
+void printText(Text &treePercentage){
+    if(oldNum != numDeadTrees){
+        oldNum = numDeadTrees;
+        float perc = (float)(allTrees.size()-numDeadTrees)/(float)allTrees.size();
+        int per = perc*100;
+        string text = to_string(per);
+        text += "%";
+        treePercentage.changeText(text);
+    }
+    treePercentage.draw();
 }
 
 void createTrees(Window &window, string source){

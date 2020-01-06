@@ -2,13 +2,13 @@
 // Created by MICHAEL_DOVE on 9. 12. 2019.
 //
 
-#ifndef SDL_PLAYER_H
-#define SDL_PLAYER_H
+#pragma once
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 
 #include "../Tree/Tree.h"
+#include "../Enemy/Enemy.h"
 #include "../Window.h"
 #include "../global.h"
 
@@ -21,10 +21,12 @@ public:
     void draw();
 private:
     void extinguishFire();
-    bool treeCollision(Tree);
     void loadTexture(string side);
     void changeTexture();
     void renderTexture();
+    void attackEnemy();
+    bool treeCollision(Tree);
+    bool enemyCollision(Enemy);
     void windowCollision();
 
     Window window;
@@ -32,10 +34,8 @@ private:
     string texturePath;
     int x, y, w, h;
     float scale;
-    bool up = false,down = false,left = false,right = false;
     int speed;
     bool flipHorizontal = false;
+    // input variables:
+    bool up = false, down = false, left = false, right = false, space = false, enter = false;
 };
-
-
-#endif //SDL_PLAYER_H
