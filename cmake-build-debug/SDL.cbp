@@ -100,6 +100,12 @@
 		<Unit filename="D:/Documents/SDL/Player/Player.h">
 			<Option target="SDL"/>
 		</Unit>
+		<Unit filename="D:/Documents/SDL/Sprite.cpp">
+			<Option target="SDL"/>
+		</Unit>
+		<Unit filename="D:/Documents/SDL/Sprite.h">
+			<Option target="SDL"/>
+		</Unit>
 		<Unit filename="D:/Documents/SDL/Text/Text.cpp">
 			<Option target="SDL"/>
 		</Unit>

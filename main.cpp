@@ -20,6 +20,8 @@ const int WIDTH = 1000;
 // global variables
 vector<Tree> allTrees = {};
 vector<Enemy> enemies = {};
+vector<Ally> allies = {};
+
 int level;
 int numDeadTrees = 0;
 int oldNum = 0;
@@ -27,6 +29,7 @@ int oldNum = 0;
 void drawBackground(Window, SDL_Texture *);
 void createTrees(Window &, string);
 void createEnemies(int, Window &, string);
+void createAllies(int, Window &, string);
 void printText(Text &);
 
 int main(int argc, char *argv[]) {
@@ -48,14 +51,12 @@ int main(int argc, char *argv[]) {
     // create all objects:
     createTrees(window, "../Assets/environment/");
     createEnemies(6, window, "../Assets/enemy/idle/");
+    createAllies(3, window, "../Assets/ally/idle/");
     Player player(WIDTH/2,HEIGHT/2,2,"../Assets/hero/idle/",window); // create player
 
     // make a color for text
     SDL_Color color = {255,255,255,255};
     Text treePercentage("100%", "../Assets/fonts/raleway/Raleway-Light.ttf", WIDTH-120,HEIGHT-60,50,color,window);
-
-    //
-    Ally ally(100, 100, 3, 2, 1000, "D:/Documents/SDL/Assets/ally/idle", window);
 
     while(!quit){
         // poll events:
@@ -73,7 +74,7 @@ int main(int argc, char *argv[]) {
         // loop functions:
         SDL_RenderClear(window.Renderer); // clear surface
 
-        //draw
+        // draw all objects
 
         drawBackground(window, background);
         for(auto &e : enemies){
@@ -82,8 +83,9 @@ int main(int argc, char *argv[]) {
         for(auto &t : allTrees) {
             t.draw();
         }
-
-        ally.draw();
+        for (auto &a : allies) {
+            a.draw();
+        }
 
         player.draw(); // drawn at the end so the player is always on top
         printText(treePercentage);
@@ -155,5 +157,16 @@ void createEnemies(int amount, Window &window, string source){
         int delay = rand()%8000 + 2000;
         Enemy enemy(x, y, 2, speed, delay, source, window);
         enemies.push_back(enemy);
+    }
+}
+
+void createAllies(int amount, Window &window, string source){
+    for (int i = 0; i < amount; i++) {
+        int x = rand()%(WIDTH - 100);
+        int y = rand()%(HEIGHT - 100);
+        int speed = rand()%3 + 5;
+        int delay = rand()%5000 + 2000;
+        Ally ally(x, y, 1.5, speed, delay, source, window);
+        allies.push_back(ally);
     }
 }

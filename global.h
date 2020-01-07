@@ -9,9 +9,12 @@
 
 class Enemy;
 class Tree;
+class Ally;
 
 extern vector<Tree> allTrees;
 extern vector<Enemy> enemies;
+extern vector<Ally> allies;
+
 extern int level;
 extern int numDeadTrees;
 

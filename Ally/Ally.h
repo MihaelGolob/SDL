@@ -5,18 +5,22 @@
 #pragma once
 
 #include <iostream>
+#include <string>
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 
 #include "../Enemy/Enemy.h"
+#include "../Sprite.h"
 
-class Ally : public Enemy{
+class Ally : public Sprite{
 public:
     Ally(int x, int y, float scale, int speed, int moveDelay, string textureSource, Window &window);
 
 private:
-    // TODO add all neccessery methods, and implement constructor
+    void extinguishFire();
+    bool treeCollision(Tree tree);
+    void collision();
 };
 
 

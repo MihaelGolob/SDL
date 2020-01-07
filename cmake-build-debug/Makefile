@@ -203,6 +203,33 @@ Player/Player.cpp.s:
 	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Player/Player.cpp.s
 .PHONY : Player/Player.cpp.s
 
+Sprite.obj: Sprite.cpp.obj
+
+.PHONY : Sprite.obj
+
+# target to build an object file
+Sprite.cpp.obj:
+	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Sprite.cpp.obj
+.PHONY : Sprite.cpp.obj
+
+Sprite.i: Sprite.cpp.i
+
+.PHONY : Sprite.i
+
+# target to preprocess a source file
+Sprite.cpp.i:
+	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Sprite.cpp.i
+.PHONY : Sprite.cpp.i
+
+Sprite.s: Sprite.cpp.s
+
+.PHONY : Sprite.s
+
+# target to generate assembly for a file
+Sprite.cpp.s:
+	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Sprite.cpp.s
+.PHONY : Sprite.cpp.s
+
 Text/Text.obj: Text/Text.cpp.obj
 
 .PHONY : Text/Text.obj
@@ -329,6 +356,9 @@ help:
 	@echo ... Player/Player.obj
 	@echo ... Player/Player.i
 	@echo ... Player/Player.s
+	@echo ... Sprite.obj
+	@echo ... Sprite.i
+	@echo ... Sprite.s
 	@echo ... Text/Text.obj
 	@echo ... Text/Text.i
 	@echo ... Text/Text.s
