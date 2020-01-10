@@ -19,7 +19,7 @@ public:
     void draw();
 
 protected:
-    void loadTexture(string path);
+    void loadTexture(string path, SDL_Texture **texture);
     void renderTexture();
     void changeTexture();
     void movement();
@@ -33,8 +33,11 @@ protected:
 
     Window window;
 
+    int orientation = 0;
     string texturePath;
-    SDL_Texture *texture = nullptr;
+    SDL_Texture *front = nullptr;
+    SDL_Texture *side = nullptr;
+    SDL_Texture *back = nullptr;
     SDL_RendererFlip flip = SDL_FLIP_NONE;
 
     float speed;

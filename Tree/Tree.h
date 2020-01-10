@@ -28,14 +28,17 @@ public:
     int getH();
     bool isDead();
 private:
-    void loadTexture(string name);
+    void loadTexture(string name, SDL_Texture **texture);
     void renderTexture();
     void checkFire();
 
     int x, y, w, h;
     string textureSource;
     Window window;
-    SDL_Texture *texture;
+
+    SDL_Texture *normal;
+    SDL_Texture *fire;
+    SDL_Texture *choped;
 
     int timeToBurn;
     bool dead;

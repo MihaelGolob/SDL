@@ -22,7 +22,9 @@ Sprite::Sprite(int x, int y, float scale, int speed, int moveDelay, string textu
     destX = x;
     destY = y;
 
-    loadTexture("front");
+    loadTexture("front", &front);
+    loadTexture("back", &back);
+    loadTexture("side", &side);
     lastTime = SDL_GetTicks();
 }
 
@@ -34,15 +36,15 @@ void Sprite::draw() {
 
 // PRIVATE METHODS:
 
-void Sprite::loadTexture(string side) {
+void Sprite::loadTexture(string side, SDL_Texture **texture) {
     // load the png image to a texture
     string source = texturePath + side + ".png";
-    texture = IMG_LoadTexture(window.Renderer, source.c_str());
-    if(texture == nullptr)
+    *texture = IMG_LoadTexture(window.Renderer, source.c_str());
+    if(*texture == nullptr)
         window.logError("TEXTURE");
 
     // if the object was created without width and height, get them from the image
-    SDL_QueryTexture(texture, nullptr, nullptr, &w, &h);
+    SDL_QueryTexture(*texture, nullptr, nullptr, &w, &h);
     w *= scale;
     h *= scale;
 }
@@ -55,24 +57,29 @@ void Sprite::renderTexture() {
     rect.w = w;
     rect.h = h;
 
-    SDL_RenderCopyEx(window.Renderer, texture, nullptr, &rect, 0, nullptr, flip);
+    if(orientation == 0)
+        SDL_RenderCopyEx(window.Renderer, front, nullptr, &rect, 0, nullptr, flip);
+    else if(orientation == 1)
+        SDL_RenderCopyEx(window.Renderer, back, nullptr, &rect, 0, nullptr, flip);
+    else
+        SDL_RenderCopyEx(window.Renderer, side, nullptr, &rect, 0, nullptr, flip);
 }
 
 void Sprite::changeTexture() {
     if (destX > x) {
-        loadTexture("side");
+        orientation = 2;
         flip = SDL_FLIP_NONE;
     } else if (destX < x) {
-        loadTexture("side");
+        orientation = 2;
         flip = SDL_FLIP_HORIZONTAL;
     } else if(destY > y) {
-        loadTexture("front");
+        orientation = 0;
         flip = SDL_FLIP_NONE;
     } else if (destY < y) {
-        loadTexture("back");
+        orientation = 1;
         flip = SDL_FLIP_NONE;
     } else {
-        loadTexture("front");
+        orientation = 0;
         flip = SDL_FLIP_NONE;
     }
 

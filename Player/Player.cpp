@@ -4,20 +4,6 @@
 
 #include "Player.h"
 
-Player::Player(int x, int y, int width, int height, string texture, Window &window) {
-    this->x = x;
-    this->y = y;
-    this->w = width;
-    this->h = height;
-    this->scale = 1;
-    this->window = window;
-    texturePath = texture;
-
-    loadTexture("front");
-
-    speed = 5;
-}
-
 Player::Player(int x, int y, float scale, string texture, Window &window) {
     this->x = x;
     this->y = y;
@@ -27,7 +13,10 @@ Player::Player(int x, int y, float scale, string texture, Window &window) {
     this->window = window;
     texturePath = texture;
 
-    loadTexture("front");
+    loadTexture("front", &front);
+    loadTexture("side", &side);
+    loadTexture("back", &back);
+    extinguishTime = 1000;
 
     speed = 5;
 }
@@ -134,16 +123,16 @@ void Player::attackEnemy() {
     }
 }
 
-void Player::loadTexture(string side){
+void Player::loadTexture(string side, SDL_Texture **texture){
     // load the png image to a texture
     string tmp = texturePath + side + ".png";
-    texture = IMG_LoadTexture(window.Renderer, tmp.c_str());
-    if(texture == nullptr)
+    *texture = IMG_LoadTexture(window.Renderer, tmp.c_str());
+    if(*texture == nullptr)
         window.logError("TEXTURE");
 
     // if the object was created without width and height, get them from the image
     if(w == 0 && h == 0){
-        SDL_QueryTexture(texture, nullptr, nullptr, &w, &h);
+        SDL_QueryTexture(*texture, nullptr, nullptr, &w, &h);
         w *= scale;
         h *= scale;
     }
@@ -152,24 +141,24 @@ void Player::loadTexture(string side){
 void Player::changeTexture() {
     // check which button is pressed and change the texture and flip accordingly
     if(up){
-        loadTexture("back");
-        flipHorizontal = false;
+        orientation = 1;
+        flip = SDL_FLIP_NONE;
     }
     else if(down){
-        loadTexture("front");
-        flipHorizontal = false;
+        orientation = 0;
+        flip = SDL_FLIP_NONE;
     }
     else if(left){
-        loadTexture("side");
-        flipHorizontal = true;
+        orientation = 2;
+        flip = SDL_FLIP_HORIZONTAL;
     }
     else if(right){
-        loadTexture("side");
-        flipHorizontal = false;
+        orientation = 2;
+        flip = SDL_FLIP_NONE;
     }
     else{
-        loadTexture("front");
-        flipHorizontal = false;
+        orientation = 0;
+        flip = SDL_FLIP_NONE;
     }
 }
 
@@ -181,10 +170,12 @@ void Player::renderTexture(){
     rect.w = w;
     rect.h = h;
 
-    if(!flipHorizontal)
-        SDL_RenderCopy(window.Renderer, texture, nullptr, &rect);
+    if(orientation == 0)
+        SDL_RenderCopyEx(window.Renderer, front, nullptr, &rect, 0, nullptr, flip);
+    else if(orientation == 1)
+        SDL_RenderCopyEx(window.Renderer, back, nullptr, &rect, 0, nullptr, flip);
     else
-        SDL_RenderCopyEx(window.Renderer, texture, nullptr, &rect, 0, nullptr, SDL_FLIP_HORIZONTAL);
+        SDL_RenderCopyEx(window.Renderer, side, nullptr, &rect, 0, nullptr, flip);
 }
 
 // collisions:

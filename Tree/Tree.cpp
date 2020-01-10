@@ -16,7 +16,12 @@ Tree::Tree(int x, int y, int width, int height, string textureSource, Window win
     dead = false;
     onFire = false;
 
-    loadTexture("tree");
+    normal = nullptr;
+    fire = nullptr;
+    choped = nullptr;
+    loadTexture("tree", &normal);
+    loadTexture("treeFire", &fire);
+    loadTexture("treeDead", &choped);
 }
 
 void Tree::draw() {
@@ -29,14 +34,14 @@ void Tree::setOnFire() {
     if(!onFire){
         onFire = true;
         timeOnFire = SDL_GetTicks();
-        loadTexture("treeFire");
+        //loadTexture("treeFire");
     }
 }
 
 void Tree::extinguishFire() {
     if(onFire && !dead){
         onFire = false;
-        loadTexture("tree");
+        //loadTexture("tree");
     }
 }
 
@@ -62,19 +67,19 @@ bool Tree::isDead() {
 
 // PRIVATE METHODS:
 
-void Tree::loadTexture(string name) {
+void Tree::loadTexture(string name, SDL_Texture **texture) {
     // load the png image to a texture
     string tx = textureSource + name + ".png";
-    texture = IMG_LoadTexture(window.Renderer, tx.c_str());
+    *texture = IMG_LoadTexture(window.Renderer, tx.c_str());
 
-    if(texture == nullptr)
+    if(*texture == nullptr)
         window.logError("TEXTURE");
 }
 
 void Tree::checkFire(){
     unsigned int curr = SDL_GetTicks();
     if(curr - timeOnFire >= timeToBurn){
-        loadTexture("treeDead");
+        //loadTexture("treeDead");
         dead = true;
         numDeadTrees++;
     }
@@ -87,5 +92,10 @@ void Tree::renderTexture() {
     rect.w = w;
     rect.h = h;
 
-    SDL_RenderCopy(window.Renderer, texture, nullptr, &rect);
+    if(onFire)
+        SDL_RenderCopy(window.Renderer, fire, nullptr, &rect);
+    else if(dead)
+        SDL_RenderCopy(window.Renderer, choped, nullptr, &rect);
+    else
+        SDL_RenderCopy(window.Renderer, normal, nullptr, &rect);
 }

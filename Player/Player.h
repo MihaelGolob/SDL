@@ -14,14 +14,13 @@
 
 class Player {
 public:
-    Player(int x, int y, int width, int height, string texture, Window &window);
     Player(int x, int y, float scale, string texture, Window &window);
     void movement();
     void input(SDL_Event event);
     void draw();
 private:
     void extinguishFire();
-    void loadTexture(string side);
+    void loadTexture(string side, SDL_Texture **texture);
     void changeTexture();
     void renderTexture();
     void attackEnemy();
@@ -30,12 +29,21 @@ private:
     void windowCollision();
 
     Window window;
-    SDL_Texture *texture = nullptr;
+
+    SDL_RendererFlip flip = SDL_FLIP_NONE;
+    SDL_Texture *front = nullptr;
+    SDL_Texture *side = nullptr;
+    SDL_Texture *back = nullptr;
+    int orientation = 0;
     string texturePath;
-    int x, y, w, h;
     float scale;
+
+
+    int x, y, w, h;
     int speed;
-    bool flipHorizontal = false;
     // input variables:
     bool up = false, down = false, left = false, right = false, space = false, enter = false;
+
+    int extinguishTime;
+    unsigned int startExting;
 };
