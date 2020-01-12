@@ -52,7 +52,7 @@ int main(int argc, char *argv[]) {
     createTrees(window, "../Assets/environment/");
     createEnemies(6, window, "../Assets/enemy/idle/");
     createAllies(3, window, "../Assets/ally/idle/");
-    Player player(WIDTH/2,HEIGHT/2,2,"../Assets/hero/idle/",window); // create player
+    Player player(WIDTH/2,HEIGHT/2,2,"../Assets/hero/",window); // create player
 
     // make a color for text
     SDL_Color color = {255,255,255,255};

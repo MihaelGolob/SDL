@@ -4,6 +4,8 @@
 
 #pragma once
 
+#include <vector>
+
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 
@@ -20,7 +22,7 @@ public:
     void draw();
 private:
     void extinguishFire();
-    void loadTexture(string side, SDL_Texture **texture);
+    void loadTexture(string side, vector<SDL_Texture*> &textures, int numTex);
     void changeTexture();
     void renderTexture();
     void attackEnemy();
@@ -30,10 +32,14 @@ private:
 
     Window window;
 
+    vector <SDL_Texture *> front;
+    vector <SDL_Texture *> back;
+    vector <SDL_Texture *> side;
+    SDL_Texture *idle = nullptr;
+
+    unsigned int textureTime;
+    int textureIndex;
     SDL_RendererFlip flip = SDL_FLIP_NONE;
-    SDL_Texture *front = nullptr;
-    SDL_Texture *side = nullptr;
-    SDL_Texture *back = nullptr;
     int orientation = 0;
     string texturePath;
     float scale;

@@ -13,9 +13,13 @@ Player::Player(int x, int y, float scale, string texture, Window &window) {
     this->window = window;
     texturePath = texture;
 
-    loadTexture("front", &front);
-    loadTexture("side", &side);
-    loadTexture("back", &back);
+    loadTexture("front", front, 6);
+    loadTexture("side", side, 6);
+    loadTexture("back", back, 6);
+
+    textureTime = SDL_GetTicks();
+    textureIndex = 1;
+
     extinguishTime = 1000;
 
     speed = 5;
@@ -109,6 +113,98 @@ void Player::movement() {
 
 // PRIVATE METHODS:
 
+void Player::loadTexture(string side, vector<SDL_Texture*> &textures, int numTex){
+    // load the png image to a texture
+    for(int i = 0; i < numTex; i++){
+        string tmp = texturePath + "walk/" + side + "/" + side + to_string(i+1) + ".png";
+        SDL_Texture *texture = IMG_LoadTexture(window.Renderer, tmp.c_str());
+        if(texture == nullptr)
+            window.logError("TEXTURE");
+
+        textures.push_back(texture);
+
+        // if the object was created without width and height, get them from the image
+        if(w == 0 && h == 0){
+            SDL_QueryTexture(texture, nullptr, nullptr, &w, &h);
+            w *= scale;
+            h *= scale;
+        }
+        if(idle == nullptr){
+            string tmp = texturePath + "idle/front.png";
+            idle = IMG_LoadTexture(window.Renderer, tmp.c_str());
+            if(texture == nullptr)
+                window.logError("TEXTURE");
+        }
+    }
+}
+
+void Player::changeTexture() {
+    // check which button is pressed and change the texture and flip accordingly
+    if(up){
+        orientation = 1;
+        flip = SDL_FLIP_NONE;
+        SDL_QueryTexture(back[0], nullptr, nullptr, &w, &h);
+        w *= scale;
+        h *= scale;
+    }
+    else if(down){
+        orientation = 0;
+        flip = SDL_FLIP_NONE;
+        SDL_QueryTexture(front[0], nullptr, nullptr, &w, &h);
+        w *= scale;
+        h *= scale;
+    }
+    else if(left){
+        orientation = 2;
+        flip = SDL_FLIP_HORIZONTAL;
+        SDL_QueryTexture(side[0], nullptr, nullptr, &w, &h);
+        w *= scale;
+        h *= scale;
+    }
+    else if(right){
+        orientation = 2;
+        flip = SDL_FLIP_NONE;
+        SDL_QueryTexture(side[0], nullptr, nullptr, &w, &h);
+        w *= scale;
+        h *= scale;
+    }
+    else{
+        orientation = 3;
+        flip = SDL_FLIP_NONE;
+        SDL_QueryTexture(idle, nullptr, nullptr, &w, &h);
+        w *= scale;
+        h *= scale;
+    }
+
+    unsigned int curr = SDL_GetTicks();
+    int delay = 1000.0/60 * 5;
+    if(curr - textureTime > delay){
+        textureIndex++;
+        if(textureIndex > 5)
+            textureIndex = 0;
+        textureTime = SDL_GetTicks();
+    }
+}
+
+void Player::renderTexture(){
+    // draw the texture and flip it if necessary
+    SDL_Rect rect;
+    rect.x = x;
+    rect.y = y;
+    rect.w = w;
+    rect.h = h;
+
+
+    if(orientation == 0)
+        SDL_RenderCopyEx(window.Renderer, front[textureIndex], nullptr, &rect, 0, nullptr, flip);
+    else if(orientation == 1)
+        SDL_RenderCopyEx(window.Renderer, back[textureIndex], nullptr, &rect, 0, nullptr, flip);
+    else if(orientation == 2)
+        SDL_RenderCopyEx(window.Renderer, side[textureIndex], nullptr, &rect, 0, nullptr, flip);
+    else
+        SDL_RenderCopyEx(window.Renderer, idle, nullptr, &rect, 0, nullptr, flip);
+}
+
 void Player::extinguishFire(){
     for(auto &t : allTrees){
         if(treeCollision(t))
@@ -121,61 +217,6 @@ void Player::attackEnemy() {
         if(enemyCollision(e))
             e.kill();
     }
-}
-
-void Player::loadTexture(string side, SDL_Texture **texture){
-    // load the png image to a texture
-    string tmp = texturePath + side + ".png";
-    *texture = IMG_LoadTexture(window.Renderer, tmp.c_str());
-    if(*texture == nullptr)
-        window.logError("TEXTURE");
-
-    // if the object was created without width and height, get them from the image
-    if(w == 0 && h == 0){
-        SDL_QueryTexture(*texture, nullptr, nullptr, &w, &h);
-        w *= scale;
-        h *= scale;
-    }
-}
-
-void Player::changeTexture() {
-    // check which button is pressed and change the texture and flip accordingly
-    if(up){
-        orientation = 1;
-        flip = SDL_FLIP_NONE;
-    }
-    else if(down){
-        orientation = 0;
-        flip = SDL_FLIP_NONE;
-    }
-    else if(left){
-        orientation = 2;
-        flip = SDL_FLIP_HORIZONTAL;
-    }
-    else if(right){
-        orientation = 2;
-        flip = SDL_FLIP_NONE;
-    }
-    else{
-        orientation = 0;
-        flip = SDL_FLIP_NONE;
-    }
-}
-
-void Player::renderTexture(){
-    // draw the texture and flip it if necessary
-    SDL_Rect rect;
-    rect.x = x;
-    rect.y = y;
-    rect.w = w;
-    rect.h = h;
-
-    if(orientation == 0)
-        SDL_RenderCopyEx(window.Renderer, front, nullptr, &rect, 0, nullptr, flip);
-    else if(orientation == 1)
-        SDL_RenderCopyEx(window.Renderer, back, nullptr, &rect, 0, nullptr, flip);
-    else
-        SDL_RenderCopyEx(window.Renderer, side, nullptr, &rect, 0, nullptr, flip);
 }
 
 // collisions:

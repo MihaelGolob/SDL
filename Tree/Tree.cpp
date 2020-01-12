@@ -92,7 +92,7 @@ void Tree::renderTexture() {
     rect.w = w;
     rect.h = h;
 
-    if(onFire)
+    if(onFire && !dead)
         SDL_RenderCopy(window.Renderer, fire, nullptr, &rect);
     else if(dead)
         SDL_RenderCopy(window.Renderer, choped, nullptr, &rect);
