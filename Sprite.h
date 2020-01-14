@@ -7,6 +7,7 @@
 #include <iostream>
 #include <string>
 #include <cmath>
+#include <vector>
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
@@ -19,7 +20,7 @@ public:
     void draw();
 
 protected:
-    void loadTexture(string path, SDL_Texture **texture);
+    void loadTexture(string side, vector<SDL_Texture*> &textures, int numTex);
     void renderTexture();
     void changeTexture();
     void movement();
@@ -33,11 +34,16 @@ protected:
 
     Window window;
 
+    vector<SDL_Texture *> front;
+    vector<SDL_Texture *> back;
+    vector<SDL_Texture *> side;
+    SDL_Texture *idle = nullptr;
+
     int orientation = 0;
     string texturePath;
-    SDL_Texture *front = nullptr;
-    SDL_Texture *side = nullptr;
-    SDL_Texture *back = nullptr;
+    int textureIndex;
+    int numTex;
+    unsigned int textureTime;
     SDL_RendererFlip flip = SDL_FLIP_NONE;
 
     float speed;

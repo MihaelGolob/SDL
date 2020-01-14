@@ -50,8 +50,8 @@ int main(int argc, char *argv[]) {
 
     // create all objects:
     createTrees(window, "../Assets/environment/");
-    createEnemies(6, window, "../Assets/enemy/idle/");
-    createAllies(3, window, "../Assets/ally/idle/");
+    createEnemies(6, window, "../Assets/enemy/");
+    createAllies(3, window, "../Assets/ally/");
     Player player(WIDTH/2,HEIGHT/2,2,"../Assets/hero/",window); // create player
 
     // make a color for text
