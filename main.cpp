@@ -138,10 +138,12 @@ void createTrees(Window &window, string source){
     int x = 0, y = 0;
     int treeWidth = 50;
     int treeHeight = 50;
+    int id = 0;
     while(y <= HEIGHT - treeHeight){
-        Tree tree(x,y,treeWidth,treeHeight, source, window);
+        Tree tree(x,y,treeWidth,treeHeight, id, source, window);
         allTrees.push_back(tree);
         x += treeWidth + 5;
+        id++;
         if(x > WIDTH-treeWidth){
             x = 0;
             y += treeHeight + 3;

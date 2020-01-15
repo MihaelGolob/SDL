@@ -103,6 +103,7 @@ void Player::movement() {
         y -= speed;
     if(down)
         y += speed;
+
     if(left)
         x -= speed;
     if(right)

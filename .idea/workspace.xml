@@ -13,39 +13,15 @@
   <component name="ChangeListManager">
     <list default="true" id="9642b25e-5778-4634-bd66-328a5c095221" name="Default Changelist" comment="c">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ally/idle/front.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ally/idle/front.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ally/walk/treant-walk-back/treant-walk-back-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ally/walk/treant-walk-back/treant-walk-back-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ally/walk/treant-walk-back/treant-walk-back-3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ally/walk/treant-walk-back/treant-walk-back-4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ally/walk/treant-walk-front/treant-walk-front-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ally/walk/treant-walk-front/treant-walk-front-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ally/walk/treant-walk-front/treant-walk-front-3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ally/walk/treant-walk-front/treant-walk-front-4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ally/walk/treant-walk-side/treant-walk-side-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ally/walk/treant-walk-side/treant-walk-side-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ally/walk/treant-walk-side/treant-walk-side-3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ally/walk/treant-walk-side/treant-walk-side-4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/enemy/idle/front.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/enemy/idle/front.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/enemy/walk/mole-walk-back/mole-walk-back-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/enemy/walk/mole-walk-back/mole-walk-back-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/enemy/walk/mole-walk-back/mole-walk-back-3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/enemy/walk/mole-walk-back/mole-walk-back-4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/enemy/walk/mole-walk-front/mole-walk-front-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/enemy/walk/mole-walk-front/mole-walk-front-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/enemy/walk/mole-walk-front/mole-walk-front-3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/enemy/walk/mole-walk-front/mole-walk-front-4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/enemy/walk/mole-walk-side/mole-walk-side-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/enemy/walk/mole-walk-side/mole-walk-side-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/enemy/walk/mole-walk-side/mole-walk-side-3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/enemy/walk/mole-walk-side/mole-walk-side-4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sprite.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Sprite.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sprite.h" beforeDir="false" afterPath="$PROJECT_DIR$/Sprite.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Enemy/Enemy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Enemy/Enemy.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/Player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Player/Player.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tree/Tree.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Tree/Tree.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tree/Tree.h" beforeDir="false" afterPath="$PROJECT_DIR$/Tree/Tree.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Ally/Ally.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Ally/Ally.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/CXX.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Enemy/Enemy.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Enemy/Enemy.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Player/Player.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Player/Player.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Sprite.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Sprite.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Tree/Tree.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Tree/Tree.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/main.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/objects.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/SDL.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/SDL.exe" afterDir="false" />
@@ -162,7 +138,8 @@
       <workItem from="1578816284890" duration="2091000" />
       <workItem from="1578822341217" duration="874000" />
       <workItem from="1578934897319" duration="2990000" />
-      <workItem from="1579014288416" duration="599000" />
+      <workItem from="1579014288416" duration="2660000" />
+      <workItem from="1579025865489" duration="836000" />
     </task>
     <servers />
   </component>

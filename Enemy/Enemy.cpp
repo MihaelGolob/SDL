@@ -25,7 +25,6 @@ bool Enemy::treeCollision(Tree t) {
 void Enemy::kill() {
     if(!enemiesClose()){
         // destroy this enemy and remove it from array of enemies
-        // TODO actually destroy the enemy!
         for (int i = 0; i < enemies.size(); i++) {
             if(enemies[i].x == x && enemies[i].y == y) {
                 enemies.erase(enemies.begin()+i);
