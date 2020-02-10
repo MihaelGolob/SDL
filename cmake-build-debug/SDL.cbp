@@ -94,6 +94,12 @@
 		<Unit filename="D:/Documents/SDL/Enemy/Enemy.h">
 			<Option target="SDL"/>
 		</Unit>
+		<Unit filename="D:/Documents/SDL/LevelManager.cpp">
+			<Option target="SDL"/>
+		</Unit>
+		<Unit filename="D:/Documents/SDL/LevelManager.h">
+			<Option target="SDL"/>
+		</Unit>
 		<Unit filename="D:/Documents/SDL/Player/Player.cpp">
 			<Option target="SDL"/>
 		</Unit>

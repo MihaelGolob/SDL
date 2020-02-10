@@ -11,6 +11,7 @@
 #include "Player/Player.h"
 #include "Text/Text.h"
 #include "Ally/Ally.h"
+#include "LevelManager.h"
 
 using namespace std;
 
@@ -22,14 +23,17 @@ vector<Tree> allTrees = {};
 vector<Enemy> enemies = {};
 vector<Ally> allies = {};
 
-int level;
+int level = 1;
 int numDeadTrees = 0;
 int oldNum = 0;
 
+Text levelText;
+Text clearanceText;
+
+// function prototypes
 void drawBackground(Window, SDL_Texture *);
+void drawObjects();
 void createTrees(Window &, string);
-void createEnemies(int, Window &, string);
-void createAllies(int, Window &, string);
 void printText(Text &);
 
 int main(int argc, char *argv[]) {
@@ -48,15 +52,24 @@ int main(int argc, char *argv[]) {
     if(background == nullptr)
         window.logError("TEXTURE");
 
+    //create Level Manager
+    LevelManager levelManager("../Assets/ally/", "../Assets/enemy/", &window);
+    levelManager.spawnEnemies(6);
+    levelManager.spawnAllies(3);
+
     // create all objects:
     createTrees(window, "../Assets/environment/");
-    createEnemies(6, window, "../Assets/enemy/");
-    createAllies(3, window, "../Assets/ally/");
     Player player(WIDTH/2,HEIGHT/2,2,"../Assets/hero/",window); // create player
 
     // make a color for text
-    SDL_Color color = {255,255,255,255};
+    SDL_Color color = {255, 255, 255,255};
     Text treePercentage("100%", "../Assets/fonts/raleway/Raleway-Light.ttf", WIDTH-120,HEIGHT-60,50,color,window);
+
+    // initialize text class for printing out level
+    levelText.init("level " + to_string(level), "../Assets/fonts/raleway/Raleway-Light.ttf", 10, 10, 40, color, window);
+    // text for printing if level is cleared or failed, leave it empty for now
+    color = {179, 24, 16, 255};
+    clearanceText.init(" ", "../Assets/fonts/raleway/Raleway-Light.ttf", WIDTH / 2 - 200, HEIGHT / 2, 70, color, window);
 
     while(!quit){
         // poll events:
@@ -72,24 +85,19 @@ int main(int argc, char *argv[]) {
             player.input(event);
         }
         // loop functions:
+
         SDL_RenderClear(window.Renderer); // clear surface
+        levelManager.nextLevel(); // check if the level is cleared
 
         // draw all objects
 
         drawBackground(window, background);
-        for(auto &e : enemies){
-            e.draw();
-        }
-        for(auto &t : allTrees) {
-            t.draw();
-        }
-        for (auto &a : allies) {
-            a.draw();
-        }
+        drawObjects();
 
         player.draw(); // drawn at the end so the player is always on top
-        printText(treePercentage);
 
+        printText(treePercentage);
+        clearanceText.draw();
         //update frame
         SDL_SetRenderDrawColor(window.Renderer, 0, 0, 0, 255); // set color for background
         SDL_RenderPresent(window.Renderer); // update frame
@@ -99,6 +107,18 @@ int main(int argc, char *argv[]) {
     window.Close(); // close window
 
     return 0;
+}
+
+void drawObjects(){
+    for(auto &e : enemies){
+        e.draw();
+    }
+    for(auto &t : allTrees) {
+        t.draw();
+    }
+    for (auto &a : allies) {
+        a.draw();
+    }
 }
 
 void drawBackground(Window window, SDL_Texture *background){
@@ -148,27 +168,5 @@ void createTrees(Window &window, string source){
             x = 0;
             y += treeHeight + 3;
         }
-    }
-}
-
-void createEnemies(int amount, Window &window, string source){
-    for (int i = 0; i < amount; i++) {
-        int x = rand()%(WIDTH - 100);
-        int y = rand()%(HEIGHT - 100);
-        int speed = rand()%6 + 3;
-        int delay = rand()%8000 + 2000;
-        Enemy enemy(x, y, 2, speed, delay, source, window);
-        enemies.push_back(enemy);
-    }
-}
-
-void createAllies(int amount, Window &window, string source){
-    for (int i = 0; i < amount; i++) {
-        int x = rand()%(WIDTH - 100);
-        int y = rand()%(HEIGHT - 100);
-        int speed = rand()%3 + 5;
-        int delay = rand()%5000 + 2000;
-        Ally ally(x, y, 1.5, speed, delay, source, window);
-        allies.push_back(ally);
     }
 }

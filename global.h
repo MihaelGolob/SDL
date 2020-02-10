@@ -10,6 +10,7 @@
 class Enemy;
 class Tree;
 class Ally;
+class Text;
 
 extern vector<Tree> allTrees;
 extern vector<Enemy> enemies;
@@ -17,5 +18,8 @@ extern vector<Ally> allies;
 
 extern int level;
 extern int numDeadTrees;
+
+extern Text levelText;
+extern Text clearanceText;
 
 #endif //SDL_GLOBAL_H

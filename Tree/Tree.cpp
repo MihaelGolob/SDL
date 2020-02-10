@@ -71,6 +71,10 @@ bool Tree::isDead() {
     return dead;
 }
 
+bool Tree::isOnFire(){
+    return onFire;
+};
+
 // PRIVATE METHODS:
 
 void Tree::loadTexture(string name, SDL_Texture **texture) {

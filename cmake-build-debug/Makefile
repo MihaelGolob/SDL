@@ -176,6 +176,33 @@ Enemy/Enemy.cpp.s:
 	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Enemy/Enemy.cpp.s
 .PHONY : Enemy/Enemy.cpp.s
 
+LevelManager.obj: LevelManager.cpp.obj
+
+.PHONY : LevelManager.obj
+
+# target to build an object file
+LevelManager.cpp.obj:
+	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/LevelManager.cpp.obj
+.PHONY : LevelManager.cpp.obj
+
+LevelManager.i: LevelManager.cpp.i
+
+.PHONY : LevelManager.i
+
+# target to preprocess a source file
+LevelManager.cpp.i:
+	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/LevelManager.cpp.i
+.PHONY : LevelManager.cpp.i
+
+LevelManager.s: LevelManager.cpp.s
+
+.PHONY : LevelManager.s
+
+# target to generate assembly for a file
+LevelManager.cpp.s:
+	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/LevelManager.cpp.s
+.PHONY : LevelManager.cpp.s
+
 Player/Player.obj: Player/Player.cpp.obj
 
 .PHONY : Player/Player.obj
@@ -353,6 +380,9 @@ help:
 	@echo ... Enemy/Enemy.obj
 	@echo ... Enemy/Enemy.i
 	@echo ... Enemy/Enemy.s
+	@echo ... LevelManager.obj
+	@echo ... LevelManager.i
+	@echo ... LevelManager.s
 	@echo ... Player/Player.obj
 	@echo ... Player/Player.i
 	@echo ... Player/Player.s

@@ -22,7 +22,7 @@ Player::Player(int x, int y, float scale, string texture, Window &window) {
 
     extinguishTime = 1000;
 
-    speed = 5;
+    speed = 4;
 }
 
 void Player::draw() {
@@ -252,7 +252,6 @@ bool Player::treeCollision(Tree t) {
 
 void Player::windowCollision() {
     // stop the player if it is on the edge of the window
-
     if(x+w > window.width)
         x = window.width-w;
     if(x < 0)

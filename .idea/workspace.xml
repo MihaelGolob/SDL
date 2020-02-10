@@ -7,24 +7,44 @@
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
     <configurations>
+      <configuration PROFILE_NAME="Release" CONFIG_NAME="Release" />
       <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
     </configurations>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9642b25e-5778-4634-bd66-328a5c095221" name="Default Changelist" comment="c">
+      <change afterPath="$PROJECT_DIR$/LevelManager.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LevelManager.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Enemy/Enemy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Enemy/Enemy.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Player/Player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Player/Player.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sprite.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Sprite.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Text/Text.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Text/Text.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Text/Text.h" beforeDir="false" afterPath="$PROJECT_DIR$/Text/Text.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tree/Tree.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Tree/Tree.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tree/Tree.h" beforeDir="false" afterPath="$PROJECT_DIR$/Tree/Tree.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Ally/Ally.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Ally/Ally.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/DependInfo.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Enemy/Enemy.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Enemy/Enemy.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Player/Player.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Player/Player.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Sprite.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Sprite.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Text/Text.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Text/Text.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Tree/Tree.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Tree/Tree.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/depend.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/main.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/objects.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/objects1.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/objects1.rsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/SDL.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/SDL.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/SDL.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/SDL.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/global.h" beforeDir="false" afterPath="$PROJECT_DIR$/global.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,6 +57,9 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="FavoritesManager">
+    <favorites_list name="SDL" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -49,10 +72,11 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.customizations" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Documents\SDL" />
       <recent name="D:\Documents\SDL\Tree" />
     </key>
   </component>
@@ -140,6 +164,21 @@
       <workItem from="1578934897319" duration="2990000" />
       <workItem from="1579014288416" duration="2660000" />
       <workItem from="1579025865489" duration="836000" />
+      <workItem from="1579112591040" duration="631000" />
+      <workItem from="1579113262390" duration="145000" />
+      <workItem from="1579116630717" duration="142000" />
+      <workItem from="1579537967723" duration="1748000" />
+      <workItem from="1579540457700" duration="1010000" />
+      <workItem from="1579633512237" duration="50000" />
+      <workItem from="1579640841328" duration="973000" />
+      <workItem from="1579641830097" duration="73000" />
+      <workItem from="1579641915526" duration="603000" />
+      <workItem from="1579812895569" duration="214000" />
+      <workItem from="1579952531578" duration="7744000" />
+      <workItem from="1581017008281" duration="874000" />
+      <workItem from="1581266773571" duration="159000" />
+      <workItem from="1581283066897" duration="1575000" />
+      <workItem from="1581353184299" duration="1193000" />
     </task>
     <servers />
   </component>

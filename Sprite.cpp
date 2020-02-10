@@ -145,6 +145,8 @@ void Sprite::movement() {
 }
 
 void Sprite::move(){
+    // TODO improve this move system!
+
     if (destX > x && destY < y) {
         x += speedX;
         y -= speedY;
@@ -167,6 +169,7 @@ void Sprite::move(){
         y += speed;
     }
 
+    // on position
     if(x > destX - speed && x < destX + speed){
         if (y > destY - speed && y < destY + speed) {
             x = destX;

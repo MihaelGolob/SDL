@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "D:/Documents/SDL/Ally/Ally.cpp" "D:/Documents/SDL/cmake-build-debug/CMakeFiles/SDL.dir/Ally/Ally.cpp.obj"
   "D:/Documents/SDL/Enemy/Enemy.cpp" "D:/Documents/SDL/cmake-build-debug/CMakeFiles/SDL.dir/Enemy/Enemy.cpp.obj"
+  "D:/Documents/SDL/LevelManager.cpp" "D:/Documents/SDL/cmake-build-debug/CMakeFiles/SDL.dir/LevelManager.cpp.obj"
   "D:/Documents/SDL/Player/Player.cpp" "D:/Documents/SDL/cmake-build-debug/CMakeFiles/SDL.dir/Player/Player.cpp.obj"
   "D:/Documents/SDL/Sprite.cpp" "D:/Documents/SDL/cmake-build-debug/CMakeFiles/SDL.dir/Sprite.cpp.obj"
   "D:/Documents/SDL/Text/Text.cpp" "D:/Documents/SDL/cmake-build-debug/CMakeFiles/SDL.dir/Text/Text.cpp.obj"

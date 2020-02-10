@@ -29,6 +29,7 @@ public:
     int getW();
     int getH();
     bool isDead();
+    bool isOnFire();
 private:
     void loadTexture(string name, SDL_Texture **texture);
     void renderTexture();

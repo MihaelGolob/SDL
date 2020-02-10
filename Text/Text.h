@@ -13,7 +13,9 @@
 
 class Text {
 public:
+    Text();
     Text(string text, string fontSource, int x, int y, int size, SDL_Color color, Window &window);
+    void init(string text, string fontSource, int x, int y, int size, SDL_Color color, Window &window);
     void draw();
     void changeText(string text);
     void changePos(int x, int y);

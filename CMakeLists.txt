@@ -6,6 +6,6 @@ link_directories(D:\\Documents\\SDL\\SDL2\\lib)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(SDL main.cpp Window.cpp Window.h Player/Player.cpp Player/Player.h Tree/Tree.cpp Tree/Tree.h Enemy/Enemy.cpp Enemy/Enemy.h global.h Text/Text.cpp Text/Text.h Ally/Ally.cpp Ally/Ally.h Sprite.cpp Sprite.h)
+add_executable(SDL main.cpp Window.cpp Player/Player.cpp Tree/Tree.cpp Enemy/Enemy.cpp global.h Text/Text.cpp Ally/Ally.cpp Sprite.cpp LevelManager.cpp)
 
 target_link_libraries(SDL mingw32 SDL2main SDL2 SDL2_image SDL2_ttf)
