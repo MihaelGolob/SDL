@@ -31,6 +31,9 @@ Sprite::Sprite(int x, int y, float scale, int speed, int moveDelay, string textu
     textureTime = SDL_GetTicks();
 
     lastTime = SDL_GetTicks();
+
+    id = counter;
+    counter++;
 }
 
 Sprite::Sprite(int x, int y, float scale, int speed, string textureSource, Window &window) {
@@ -59,12 +62,28 @@ Sprite::Sprite(int x, int y, float scale, int speed, string textureSource, Windo
     textureTime = SDL_GetTicks();
 
     lastTime = SDL_GetTicks();
+
+    id = counter;
+    counter++;
 }
+
+int Sprite::counter = 0;
 
 void Sprite::draw() {
     changeTexture();
     renderTexture();
+    loopMethods();
     movement();
+}
+
+// GETTERS:
+
+int Sprite::getX() {
+    return x;
+}
+
+int Sprite::getY(){
+    return y;
 }
 
 // PRIVATE METHODS:
@@ -174,6 +193,23 @@ void Sprite::movement() {
             speedY = 1;
     }
     move();
+}
+
+void Sprite::moveTo(int posX, int posY){
+    destX = posX;
+    destY = posY;
+    readyToMove = false;
+
+    float dx = abs(destX - x);
+    float dy = abs(destY - y);
+    double mag = sqrt(pow(dx, 2) + pow(dy, 2));
+
+    speedX = (speed * dx) / mag;
+    speedY = (speed * dy) / mag;
+    if(speedX < 1)
+        speedX = 1;
+    if(speedY < 1)
+        speedY = 1;
 }
 
 void Sprite::move(){

@@ -20,7 +20,16 @@ public:
 private:
     void extinguishFire();
     bool treeCollision(Tree tree);
-    void collision();
+
+    // enemy tracing
+    void changeTarget();
+    Enemy& findEnemyClose();
+    float calculateDist(int posX, int posY);
+
+    void collision() override;
+    void loopMethods() override;
+
+    int visionDist;
 };
 
 

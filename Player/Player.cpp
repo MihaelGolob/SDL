@@ -132,6 +132,8 @@ void Player::changeTexture() {
     }
 }
 
+void Player::loopMethods() {}
+
 void Player::extinguishFire(){
     for(auto &t : allTrees){
         if(treeCollision(t))

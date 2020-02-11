@@ -26,7 +26,7 @@ void Enemy::kill() {
     if(!enemiesClose()){
         // destroy this enemy and remove it from array of enemies
         for (int i = 0; i < enemies.size(); i++) {
-            if(enemies[i].x == x && enemies[i].y == y) {
+            if(enemies[i].id == id) {
                 enemies.erase(enemies.begin()+i);
                 break;
             }
@@ -61,6 +61,8 @@ int Enemy::getH(){
 void Enemy::collision(){
     startFire();
 }
+
+void Enemy::loopMethods() {}
 
 bool Enemy::enemiesClose() {
     for (auto &e : enemies) {

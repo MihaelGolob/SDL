@@ -22,6 +22,7 @@ public:
 private:
     void changeTexture() override;
     void collision() override;
+    void loopMethods() override;
 
     void extinguishFire();
     void attackEnemy();

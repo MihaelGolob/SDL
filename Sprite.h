@@ -20,14 +20,18 @@ public:
     Sprite(int x, int y, float scale, int speed, string textureSource, Window &window);
     void draw();
 
+    int getX();
+    int getY();
 protected:
     void loadTexture(string side, vector<SDL_Texture*> &textures, int numTex);
     void renderTexture();
     virtual void changeTexture();
     virtual void movement();
+    void moveTo(int posX, int posY);
     void move();
 
     virtual void collision() = 0;
+    virtual void loopMethods() = 0;
 
 
     int x, y, w, h;
@@ -54,4 +58,7 @@ protected:
     bool readyToMove = false;
     unsigned int lastTime;
     int moveDelay;
+
+    int id;
+    static int counter;
 };

@@ -30,6 +30,8 @@ public:
     int getH();
 private:
     void collision() override;
+    void loopMethods() override;
+
     bool enemiesClose();
     void startFire();
 
