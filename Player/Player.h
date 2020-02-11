@@ -14,42 +14,21 @@
 #include "../Window.h"
 #include "../global.h"
 
-class Player {
+class Player : public Sprite{
 public:
-    Player(int x, int y, float scale, string texture, Window &window);
-    void movement();
+    Player(int x, int y, float scale, float speed, string texture, Window &window);
+    void movement() override;
     void input(SDL_Event event);
-    void draw();
 private:
+    void changeTexture() override;
+    void collision() override;
+
     void extinguishFire();
-    void loadTexture(string side, vector<SDL_Texture*> &textures, int numTex);
-    void changeTexture();
-    void renderTexture();
     void attackEnemy();
     bool treeCollision(Tree);
     bool enemyCollision(Enemy);
     void windowCollision();
 
-    Window window;
-
-    vector <SDL_Texture *> front;
-    vector <SDL_Texture *> back;
-    vector <SDL_Texture *> side;
-    SDL_Texture *idle = nullptr;
-
-    unsigned int textureTime;
-    int textureIndex;
-    SDL_RendererFlip flip = SDL_FLIP_NONE;
-    int orientation = 0;
-    string texturePath;
-    float scale;
-
-
-    int x, y, w, h;
-    float speed;
     // input variables:
-    bool up = false, down = false, left = false, right = false, space = false, enter = false;
-
-    int extinguishTime;
-    unsigned int startExting;
+    bool up, down, left, right, space, enter;
 };

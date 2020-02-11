@@ -17,13 +17,14 @@
 class Sprite{
 public:
     Sprite(int x, int y, float scale, int speed, int moveDelay, string textureSource, Window &window);
+    Sprite(int x, int y, float scale, int speed, string textureSource, Window &window);
     void draw();
 
 protected:
     void loadTexture(string side, vector<SDL_Texture*> &textures, int numTex);
     void renderTexture();
-    void changeTexture();
-    void movement();
+    virtual void changeTexture();
+    virtual void movement();
     void move();
 
     virtual void collision() = 0;

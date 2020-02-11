@@ -33,6 +33,34 @@ Sprite::Sprite(int x, int y, float scale, int speed, int moveDelay, string textu
     lastTime = SDL_GetTicks();
 }
 
+Sprite::Sprite(int x, int y, float scale, int speed, string textureSource, Window &window) {
+    this->x = x;
+    this->y = y;
+    this->scale = scale;
+    this->speed = speed;
+    this->window = window;
+    texturePath = textureSource;
+
+    this->h = 0;
+    this->w = 0;
+
+    this->speedX = 0;
+    this->speedY = 0;
+
+    destX = x;
+    destY = y;
+
+    numTex = 6;
+    loadTexture("front", front, numTex);
+    loadTexture("back", back, numTex);
+    loadTexture("side", side, numTex);
+
+    textureIndex = 0;
+    textureTime = SDL_GetTicks();
+
+    lastTime = SDL_GetTicks();
+}
+
 void Sprite::draw() {
     changeTexture();
     renderTexture();

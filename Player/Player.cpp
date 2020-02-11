@@ -4,43 +4,13 @@
 
 #include "Player.h"
 
-Player::Player(int x, int y, float scale, string texture, Window &window) {
-    this->x = x;
-    this->y = y;
-    this->w = 0;
-    this->h = 0;
-    this->scale = scale;
-    this->window = window;
-    texturePath = texture;
-
-    loadTexture("front", front, 6);
-    loadTexture("side", side, 6);
-    loadTexture("back", back, 6);
-
-    textureTime = SDL_GetTicks();
-    textureIndex = 1;
-
-    extinguishTime = 1000;
-
-    speed = 3;
-}
-
-void Player::draw() {
-    // enable to display a square around the object (for collisions)
-    /*SDL_Rect r;
-    r.x = x;
-    r.y = y;
-    r.w = w;
-    r.h = h;
-
-    SDL_SetRenderDrawBlendMode(window.Renderer, SDL_BLENDMODE_BLEND);
-    SDL_SetRenderDrawColor(window.Renderer, 255, 255, 255, 255);
-    SDL_RenderDrawRect(window.Renderer, &r);*/
-
-    //draw the object
-    changeTexture();
-    renderTexture();
-    movement();
+Player::Player(int x, int y, float scale, float speed, string texture, Window &window) : Sprite(x,y,scale,speed,texture, window) {
+    up = false;
+    down = false;
+    left = false;
+    right = false;
+    space = false;
+    enter = false;
 }
 
 void Player::input(SDL_Event event) {
@@ -114,31 +84,6 @@ void Player::movement() {
 
 // PRIVATE METHODS:
 
-void Player::loadTexture(string side, vector<SDL_Texture*> &textures, int numTex){
-    // load the png image to a texture
-    for(int i = 0; i < numTex; i++){
-        string tmp = texturePath + "walk/" + side + "/" + side + to_string(i+1) + ".png";
-        SDL_Texture *texture = IMG_LoadTexture(window.Renderer, tmp.c_str());
-        if(texture == nullptr)
-            window.logError("TEXTURE");
-
-        textures.push_back(texture);
-
-        // if the object was created without width and height, get them from the image
-        if(w == 0 && h == 0){
-            SDL_QueryTexture(texture, nullptr, nullptr, &w, &h);
-            w *= scale;
-            h *= scale;
-        }
-        if(idle == nullptr){
-            string tmp = texturePath + "idle/front.png";
-            idle = IMG_LoadTexture(window.Renderer, tmp.c_str());
-            if(texture == nullptr)
-                window.logError("TEXTURE");
-        }
-    }
-}
-
 void Player::changeTexture() {
     // check which button is pressed and change the texture and flip accordingly
     if(up){
@@ -187,25 +132,6 @@ void Player::changeTexture() {
     }
 }
 
-void Player::renderTexture(){
-    // draw the texture and flip it if necessary
-    SDL_Rect rect;
-    rect.x = x;
-    rect.y = y;
-    rect.w = w;
-    rect.h = h;
-
-
-    if(orientation == 0)
-        SDL_RenderCopyEx(window.Renderer, front[textureIndex], nullptr, &rect, 0, nullptr, flip);
-    else if(orientation == 1)
-        SDL_RenderCopyEx(window.Renderer, back[textureIndex], nullptr, &rect, 0, nullptr, flip);
-    else if(orientation == 2)
-        SDL_RenderCopyEx(window.Renderer, side[textureIndex], nullptr, &rect, 0, nullptr, flip);
-    else
-        SDL_RenderCopyEx(window.Renderer, idle, nullptr, &rect, 0, nullptr, flip);
-}
-
 void Player::extinguishFire(){
     for(auto &t : allTrees){
         if(treeCollision(t))
@@ -221,6 +147,8 @@ void Player::attackEnemy() {
 }
 
 // collisions:
+
+void Player::collision() {}
 
 bool Player::enemyCollision(Enemy e){
     int ex = e.getX();

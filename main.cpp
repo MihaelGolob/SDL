@@ -61,7 +61,7 @@ int main(int argc, char *argv[]) {
 
     // create all objects:
     createTrees(window, "../Assets/environment/");
-    Player player(WIDTH/2,HEIGHT/2,2,"../Assets/hero/",window); // create player
+    Player player(WIDTH/2,HEIGHT/2,2,3,"../Assets/hero/",window); // create player
 
     // make a color for text
     SDL_Color color = {255, 255, 255,255};
