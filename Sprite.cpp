@@ -85,19 +85,7 @@ void Sprite::renderTexture() {
 }
 
 void Sprite::changeTexture() {
-    if (destX > x) {
-        orientation = 2;
-        flip = SDL_FLIP_NONE;
-        SDL_QueryTexture(side[0], nullptr, nullptr, &w, &h);
-        w *= scale;
-        h *= scale;
-    } else if (destX < x) {
-        orientation = 2;
-        flip = SDL_FLIP_HORIZONTAL;
-        SDL_QueryTexture(side[0], nullptr, nullptr, &w, &h);
-        w *= scale;
-        h *= scale;
-    } else if(destY > y) {
+    if(destY > y) {
         orientation = 0;
         flip = SDL_FLIP_NONE;
         SDL_QueryTexture(front[0], nullptr, nullptr, &w, &h);
@@ -107,6 +95,18 @@ void Sprite::changeTexture() {
         orientation = 1;
         flip = SDL_FLIP_NONE;
         SDL_QueryTexture(back[0], nullptr, nullptr, &w, &h);
+        w *= scale;
+        h *= scale;
+    } else if (destX > x) {
+        orientation = 2;
+        flip = SDL_FLIP_NONE;
+        SDL_QueryTexture(side[0], nullptr, nullptr, &w, &h);
+        w *= scale;
+        h *= scale;
+    } else if (destX < x) {
+        orientation = 2;
+        flip = SDL_FLIP_HORIZONTAL;
+        SDL_QueryTexture(side[0], nullptr, nullptr, &w, &h);
         w *= scale;
         h *= scale;
     } else {
@@ -140,6 +140,10 @@ void Sprite::movement() {
 
         speedX = (speed * dx) / mag;
         speedY = (speed * dy) / mag;
+        if(speedX < 1)
+            speedX = 1;
+        if(speedY < 1)
+            speedY = 1;
     }
     move();
 }

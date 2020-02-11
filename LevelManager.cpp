@@ -39,7 +39,7 @@ void LevelManager::spawnEnemies(int amount) {
     for (int i = 0; i < amount; i++) {
         int x = rand()%(window->width - 100);
         int y = rand()%(window->height - 100);
-        int speed = rand()%3;
+        int speed = rand()%3 + 1;
         int delay = rand()%2000;
         Enemy enemy(x, y, 2, speed, delay, enemySource, *window);
         enemies.push_back(enemy);
@@ -50,7 +50,7 @@ void LevelManager::spawnAllies(int amount) {
     for (int i = 0; i < amount; i++) {
         int x = rand()%(window->width - 100);
         int y = rand()%(window->height - 100);
-        int speed = rand()%3;
+        int speed = rand()%3 + 1;
         int delay = rand()%2000;
         Ally ally(x, y, 1.5, speed, delay, allySource, *window);
         allies.push_back(ally);

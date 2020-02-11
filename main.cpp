@@ -27,6 +27,8 @@ int level = 1;
 int numDeadTrees = 0;
 int oldNum = 0;
 
+double deltaTime;
+
 Text levelText;
 Text clearanceText;
 
@@ -71,7 +73,13 @@ int main(int argc, char *argv[]) {
     color = {179, 24, 16, 255};
     clearanceText.init(" ", "../Assets/fonts/raleway/Raleway-Light.ttf", WIDTH / 2 - 200, HEIGHT / 2, 70, color, window);
 
+    unsigned long oldTime = SDL_GetTicks();
     while(!quit){
+        //calculate deltaTime:
+        unsigned long delta = SDL_GetTicks() - oldTime;
+        deltaTime = delta/1000.0;
+        oldTime = SDL_GetTicks();
+
         // poll events:
         while(SDL_PollEvent(&event)){ // go through all events
             if(event.type == SDL_QUIT)  // if the X button is pressed - quit

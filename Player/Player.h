@@ -46,7 +46,7 @@ private:
 
 
     int x, y, w, h;
-    int speed;
+    float speed;
     // input variables:
     bool up = false, down = false, left = false, right = false, space = false, enter = false;
 

@@ -22,7 +22,7 @@ Player::Player(int x, int y, float scale, string texture, Window &window) {
 
     extinguishTime = 1000;
 
-    speed = 4;
+    speed = 3;
 }
 
 void Player::draw() {

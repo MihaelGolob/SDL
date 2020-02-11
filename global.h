@@ -19,6 +19,8 @@ extern vector<Ally> allies;
 extern int level;
 extern int numDeadTrees;
 
+extern double deltaTime;
+
 extern Text levelText;
 extern Text clearanceText;
 
