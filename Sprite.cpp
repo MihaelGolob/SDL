@@ -137,33 +137,18 @@ void Sprite::changeTexture() {
     if(destY > y) {
         orientation = 0;
         flip = SDL_FLIP_NONE;
-        SDL_QueryTexture(front[0], nullptr, nullptr, &w, &h);
-        w *= scale;
-        h *= scale;
     } else if (destY < y) {
         orientation = 1;
         flip = SDL_FLIP_NONE;
-        SDL_QueryTexture(back[0], nullptr, nullptr, &w, &h);
-        w *= scale;
-        h *= scale;
     } else if (destX > x) {
         orientation = 2;
         flip = SDL_FLIP_NONE;
-        SDL_QueryTexture(side[0], nullptr, nullptr, &w, &h);
-        w *= scale;
-        h *= scale;
     } else if (destX < x) {
         orientation = 2;
         flip = SDL_FLIP_HORIZONTAL;
-        SDL_QueryTexture(side[0], nullptr, nullptr, &w, &h);
-        w *= scale;
-        h *= scale;
     } else {
         orientation = 3;
         flip = SDL_FLIP_NONE;
-        SDL_QueryTexture(idle, nullptr, nullptr, &w, &h);
-        w *= scale;
-        h *= scale;
     }
 
     unsigned int curr = SDL_GetTicks();
