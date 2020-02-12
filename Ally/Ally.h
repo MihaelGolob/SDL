@@ -23,8 +23,10 @@ private:
 
     // enemy tracing
     void changeTarget();
-    Enemy& findEnemyClose();
+    bool findEnemyClose(Enemy &enemy);
     float calculateDist(int posX, int posY);
+
+    void die();
 
     void collision() override;
     void loopMethods() override;

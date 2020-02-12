@@ -18,6 +18,7 @@ class Sprite{
 public:
     Sprite(int x, int y, float scale, int speed, int moveDelay, string textureSource, Window &window);
     Sprite(int x, int y, float scale, int speed, string textureSource, Window &window);
+    Sprite();
     void draw();
 
     int getX();

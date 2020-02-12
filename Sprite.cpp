@@ -67,6 +67,8 @@ Sprite::Sprite(int x, int y, float scale, int speed, string textureSource, Windo
     counter++;
 }
 
+Sprite::Sprite() = default;
+
 int Sprite::counter = 0;
 
 void Sprite::draw() {

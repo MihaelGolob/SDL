@@ -8,6 +8,8 @@ Enemy::Enemy(int x, int y, float scale, int speed, int moveDelay, string texture
     radius = 20;
 }
 
+Enemy::Enemy() = default;
+
 bool Enemy::treeCollision(Tree t) {
     int tx = t.getX();
     int ty = t.getY();
@@ -22,7 +24,7 @@ bool Enemy::treeCollision(Tree t) {
     return false;
 }
 
-void Enemy::kill() {
+bool Enemy::kill() {
     if(!enemiesClose()){
         // destroy this enemy and remove it from array of enemies
         for (int i = 0; i < enemies.size(); i++) {
@@ -31,10 +33,12 @@ void Enemy::kill() {
                 break;
             }
         }
+        return true;
     }
     else{
         //TODO if enemies are close kill the player
         cout << "ANOTHER ENEMY WAS CLOSE, YOU ARE DEAD!" << endl;
+        return false;
     }
 }
 

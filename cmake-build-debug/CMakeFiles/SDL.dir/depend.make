@@ -51,6 +51,7 @@ CMakeFiles/SDL.dir/Ally/Ally.cpp.obj: ../SDL2/include/SDL2/close_code.h
 CMakeFiles/SDL.dir/Ally/Ally.cpp.obj: ../Ally/Ally.cpp
 CMakeFiles/SDL.dir/Ally/Ally.cpp.obj: ../Ally/Ally.h
 CMakeFiles/SDL.dir/Ally/Ally.cpp.obj: ../Enemy/Enemy.h
+CMakeFiles/SDL.dir/Ally/Ally.cpp.obj: ../Player/Player.h
 CMakeFiles/SDL.dir/Ally/Ally.cpp.obj: ../Sprite.h
 CMakeFiles/SDL.dir/Ally/Ally.cpp.obj: ../Tree/Tree.h
 CMakeFiles/SDL.dir/Ally/Ally.cpp.obj: ../Window.h
@@ -105,6 +106,7 @@ CMakeFiles/SDL.dir/Enemy/Enemy.cpp.obj: ../SDL2/include/SDL2/begin_code.h
 CMakeFiles/SDL.dir/Enemy/Enemy.cpp.obj: ../SDL2/include/SDL2/close_code.h
 CMakeFiles/SDL.dir/Enemy/Enemy.cpp.obj: ../Enemy/Enemy.cpp
 CMakeFiles/SDL.dir/Enemy/Enemy.cpp.obj: ../Enemy/Enemy.h
+CMakeFiles/SDL.dir/Enemy/Enemy.cpp.obj: ../Player/Player.h
 CMakeFiles/SDL.dir/Enemy/Enemy.cpp.obj: ../Sprite.h
 CMakeFiles/SDL.dir/Enemy/Enemy.cpp.obj: ../Tree/Tree.h
 CMakeFiles/SDL.dir/Enemy/Enemy.cpp.obj: ../Window.h
@@ -161,6 +163,7 @@ CMakeFiles/SDL.dir/LevelManager.cpp.obj: ../Ally/Ally.h
 CMakeFiles/SDL.dir/LevelManager.cpp.obj: ../Enemy/Enemy.h
 CMakeFiles/SDL.dir/LevelManager.cpp.obj: ../LevelManager.cpp
 CMakeFiles/SDL.dir/LevelManager.cpp.obj: ../LevelManager.h
+CMakeFiles/SDL.dir/LevelManager.cpp.obj: ../Player/Player.h
 CMakeFiles/SDL.dir/LevelManager.cpp.obj: ../Sprite.h
 CMakeFiles/SDL.dir/LevelManager.cpp.obj: ../Text/Text.h
 CMakeFiles/SDL.dir/LevelManager.cpp.obj: ../Tree/Tree.h

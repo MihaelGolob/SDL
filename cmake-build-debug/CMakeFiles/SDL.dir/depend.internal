@@ -52,6 +52,7 @@ CMakeFiles/SDL.dir/Ally/Ally.cpp.obj
  D:/Documents/SDL/Ally/Ally.cpp
  D:/Documents/SDL/Ally/Ally.h
  D:/Documents/SDL/Enemy/Enemy.h
+ D:/Documents/SDL/Player/Player.h
  D:/Documents/SDL/Sprite.h
  D:/Documents/SDL/Tree/Tree.h
  D:/Documents/SDL/Window.h
@@ -106,6 +107,7 @@ CMakeFiles/SDL.dir/Enemy/Enemy.cpp.obj
  ../SDL2/include/SDL2/close_code.h
  D:/Documents/SDL/Enemy/Enemy.cpp
  D:/Documents/SDL/Enemy/Enemy.h
+ D:/Documents/SDL/Player/Player.h
  D:/Documents/SDL/Sprite.h
  D:/Documents/SDL/Tree/Tree.h
  D:/Documents/SDL/Window.h
@@ -162,6 +164,7 @@ CMakeFiles/SDL.dir/LevelManager.cpp.obj
  D:/Documents/SDL/Enemy/Enemy.h
  D:/Documents/SDL/LevelManager.cpp
  D:/Documents/SDL/LevelManager.h
+ D:/Documents/SDL/Player/Player.h
  D:/Documents/SDL/Sprite.h
  D:/Documents/SDL/Text/Text.h
  D:/Documents/SDL/Tree/Tree.h

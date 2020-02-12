@@ -17,11 +17,13 @@
 #include "../Tree/Tree.h"
 #include "../global.h"
 #include "../Sprite.h"
+#include "../Player/Player.h"
 
 class Enemy : public Sprite{
 public:
     Enemy(int x, int y, float scale, int speed, int moveDelay, string textureSource, Window &window);
-    void kill();
+    Enemy();
+    bool kill();
     bool treeCollision(Tree);
 
     int getX();
