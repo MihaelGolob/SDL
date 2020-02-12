@@ -32,6 +32,7 @@ public:
     bool isOnFire();
 private:
     void loadTexture(string name, SDL_Texture **texture);
+    void loadTexture(string name, vector<SDL_Texture *> &textures, int num);
     void renderTexture();
     void checkFire();
     void spreadFire();
@@ -43,8 +44,8 @@ private:
     Window window;
 
     SDL_Texture *normal;
-    SDL_Texture *fire;
     SDL_Texture *choped;
+    vector<SDL_Texture *> fire;
 
     int timeToBurn;
     bool dead;
@@ -53,6 +54,9 @@ private:
 
     unsigned int spreadTime;
     int spreadingFreq;
+
+    int textureIndex;
+    unsigned int textureTime;
 };
 
 
