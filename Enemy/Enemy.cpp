@@ -4,7 +4,7 @@
 
 #include "Enemy.h"
 
-Enemy::Enemy(int x, int y, float scale, int speed, int moveDelay, string textureSource, Window &window) : Sprite(x, y, scale, speed, moveDelay, textureSource, window){
+Enemy::Enemy(int x, int y, float scale, int speed, int moveDelay, Texture *texture, Window &window) : Sprite(x, y, scale, speed, moveDelay, texture, window){
     radius = 20;
 }
 

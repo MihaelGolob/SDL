@@ -13,18 +13,18 @@
 #include <SDL2/SDL_image.h>
 
 #include "Window.h"
+#include "Texture/Texture.h"
 
 class Sprite{
 public:
-    Sprite(int x, int y, float scale, int speed, int moveDelay, string textureSource, Window &window);
-    Sprite(int x, int y, float scale, int speed, string textureSource, Window &window);
+    Sprite(int x, int y, float scale, int speed, int moveDelay, Texture *texture, Window &window);
+    Sprite(int x, int y, float scale, int speed, Texture *texture, Window &window);
     Sprite();
     void draw();
 
     int getX();
     int getY();
 protected:
-    void loadTexture(string side, vector<SDL_Texture*> &textures, int numTex);
     void renderTexture();
     virtual void changeTexture();
     virtual void movement();
@@ -40,13 +40,9 @@ protected:
 
     Window window;
 
-    vector<SDL_Texture *> front;
-    vector<SDL_Texture *> back;
-    vector<SDL_Texture *> side;
-    SDL_Texture *idle = nullptr;
+    Texture *texture;
 
     int orientation = 0;
-    string texturePath;
     int textureIndex;
     int numTex;
     unsigned int textureTime;

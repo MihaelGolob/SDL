@@ -21,7 +21,7 @@
 
 class Enemy : public Sprite{
 public:
-    Enemy(int x, int y, float scale, int speed, int moveDelay, string textureSource, Window &window);
+    Enemy(int x, int y, float scale, int speed, int moveDelay, Texture *texture, Window &window);
     Enemy();
     bool kill();
     bool treeCollision(Tree);

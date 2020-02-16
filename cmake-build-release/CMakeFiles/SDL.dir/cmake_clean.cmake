@@ -5,6 +5,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/SDL.dir/Player/Player.cpp.obj"
   "CMakeFiles/SDL.dir/Sprite.cpp.obj"
   "CMakeFiles/SDL.dir/Text/Text.cpp.obj"
+  "CMakeFiles/SDL.dir/Texture/Texture.cpp.obj"
   "CMakeFiles/SDL.dir/Tree/Tree.cpp.obj"
   "CMakeFiles/SDL.dir/Window.cpp.obj"
   "CMakeFiles/SDL.dir/main.cpp.obj"

@@ -14,12 +14,13 @@
 
 #include "../Window.h"
 #include "../global.h"
+#include "../Texture/Texture.h"
 
 using namespace std;
 
 class Tree {
 public:
-    Tree(int x, int y, int width, int height, int ID, string textureSource, Window window);
+    Tree(int x, int y, int width, int height, int ID, Texture *texture, Window window);
     void setOnFire();
     void extinguishFire();
     void draw();
@@ -31,8 +32,6 @@ public:
     bool isDead();
     bool isOnFire();
 private:
-    void loadTexture(string name, SDL_Texture **texture);
-    void loadTexture(string name, vector<SDL_Texture *> &textures, int num);
     void renderTexture();
     void checkFire();
     void spreadFire();
@@ -40,12 +39,9 @@ private:
     int ID;
 
     int x, y, w, h;
-    string textureSource;
     Window window;
 
-    SDL_Texture *normal;
-    SDL_Texture *choped;
-    vector<SDL_Texture *> fire;
+    Texture *texture;
 
     int timeToBurn;
     bool dead;

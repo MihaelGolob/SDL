@@ -118,6 +118,12 @@
 		<Unit filename="D:/Documents/SDL/Text/Text.h">
 			<Option target="SDL"/>
 		</Unit>
+		<Unit filename="D:/Documents/SDL/Texture/Texture.cpp">
+			<Option target="SDL"/>
+		</Unit>
+		<Unit filename="D:/Documents/SDL/Texture/Texture.h">
+			<Option target="SDL"/>
+		</Unit>
 		<Unit filename="D:/Documents/SDL/Tree/Tree.cpp">
 			<Option target="SDL"/>
 		</Unit>

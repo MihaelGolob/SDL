@@ -284,6 +284,33 @@ Text/Text.cpp.s:
 	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Text/Text.cpp.s
 .PHONY : Text/Text.cpp.s
 
+Texture/Texture.obj: Texture/Texture.cpp.obj
+
+.PHONY : Texture/Texture.obj
+
+# target to build an object file
+Texture/Texture.cpp.obj:
+	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Texture/Texture.cpp.obj
+.PHONY : Texture/Texture.cpp.obj
+
+Texture/Texture.i: Texture/Texture.cpp.i
+
+.PHONY : Texture/Texture.i
+
+# target to preprocess a source file
+Texture/Texture.cpp.i:
+	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Texture/Texture.cpp.i
+.PHONY : Texture/Texture.cpp.i
+
+Texture/Texture.s: Texture/Texture.cpp.s
+
+.PHONY : Texture/Texture.s
+
+# target to generate assembly for a file
+Texture/Texture.cpp.s:
+	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Texture/Texture.cpp.s
+.PHONY : Texture/Texture.cpp.s
+
 Tree/Tree.obj: Tree/Tree.cpp.obj
 
 .PHONY : Tree/Tree.obj
@@ -392,6 +419,9 @@ help:
 	@echo ... Text/Text.obj
 	@echo ... Text/Text.i
 	@echo ... Text/Text.s
+	@echo ... Texture/Texture.obj
+	@echo ... Texture/Texture.i
+	@echo ... Texture/Texture.s
 	@echo ... Tree/Tree.obj
 	@echo ... Tree/Tree.i
 	@echo ... Tree/Tree.s

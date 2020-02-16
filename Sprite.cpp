@@ -4,14 +4,15 @@
 
 #include "Sprite.h"
 
-Sprite::Sprite(int x, int y, float scale, int speed, int moveDelay, string textureSource, Window &window) {
+Sprite::Sprite(int x, int y, float scale, int speed, int moveDelay, Texture *texture, Window &window) {
     this->x = x;
     this->y = y;
     this->scale = scale;
     this->speed = speed;
     this->moveDelay = moveDelay;
     this->window = window;
-    texturePath = textureSource;
+    this->texture = texture;
+
 
     this->h = 0;
     this->w = 0;
@@ -22,10 +23,11 @@ Sprite::Sprite(int x, int y, float scale, int speed, int moveDelay, string textu
     destX = x;
     destY = y;
 
-    numTex = 4;
-    loadTexture("front", front, numTex);
-    loadTexture("back", back, numTex);
-    loadTexture("side", side, numTex);
+    if(w == 0 && h == 0){
+        SDL_QueryTexture(texture->getTexture("idle",0), nullptr, nullptr, &w, &h);
+        w *= scale;
+        h *= scale;
+    }
 
     textureIndex = 0;
     textureTime = SDL_GetTicks();
@@ -36,13 +38,13 @@ Sprite::Sprite(int x, int y, float scale, int speed, int moveDelay, string textu
     counter++;
 }
 
-Sprite::Sprite(int x, int y, float scale, int speed, string textureSource, Window &window) {
+Sprite::Sprite(int x, int y, float scale, int speed, Texture *texture, Window &window) {
     this->x = x;
     this->y = y;
     this->scale = scale;
     this->speed = speed;
     this->window = window;
-    texturePath = textureSource;
+    this->texture = texture;
 
     this->h = 0;
     this->w = 0;
@@ -53,10 +55,11 @@ Sprite::Sprite(int x, int y, float scale, int speed, string textureSource, Windo
     destX = x;
     destY = y;
 
-    numTex = 6;
-    loadTexture("front", front, numTex);
-    loadTexture("back", back, numTex);
-    loadTexture("side", side, numTex);
+    if(w == 0 && h == 0){
+        SDL_QueryTexture(texture->getTexture("idle",0), nullptr, nullptr, &w, &h);
+        w *= scale;
+        h *= scale;
+    }
 
     textureIndex = 0;
     textureTime = SDL_GetTicks();
@@ -90,30 +93,6 @@ int Sprite::getY(){
 
 // PRIVATE METHODS:
 
-void Sprite::loadTexture(string side, vector<SDL_Texture*> &textures, int numTex) {
-    for(int i = 0; i < numTex; i++){
-        string tmp = texturePath + "walk/" + side + "/" + side + to_string(i+1) + ".png";
-        SDL_Texture *texture = IMG_LoadTexture(window.Renderer, tmp.c_str());
-        if(texture == nullptr)
-            window.logError("TEXTURE");
-
-        textures.push_back(texture);
-
-        // if the object was created without width and height, get them from the image
-        if(w == 0 && h == 0){
-            SDL_QueryTexture(texture, nullptr, nullptr, &w, &h);
-            w *= scale;
-            h *= scale;
-        }
-        if(idle == nullptr){
-            string tmp = texturePath + "idle/front.png";
-            idle = IMG_LoadTexture(window.Renderer, tmp.c_str());
-            if(texture == nullptr)
-                window.logError("TEXTURE");
-        }
-    }
-}
-
 void Sprite::renderTexture() {
     // draw texture
     SDL_Rect rect;
@@ -123,13 +102,13 @@ void Sprite::renderTexture() {
     rect.h = h;
 
     if(orientation == 0)
-        SDL_RenderCopyEx(window.Renderer, front[textureIndex], nullptr, &rect, 0, nullptr, flip);
+        SDL_RenderCopyEx(window.Renderer, texture->getTexture("front", textureIndex), nullptr, &rect, 0, nullptr, flip);
     else if(orientation == 1)
-        SDL_RenderCopyEx(window.Renderer, back[textureIndex], nullptr, &rect, 0, nullptr, flip);
+        SDL_RenderCopyEx(window.Renderer, texture->getTexture("back", textureIndex), nullptr, &rect, 0, nullptr, flip);
     else if(orientation == 2)
-        SDL_RenderCopyEx(window.Renderer, side[textureIndex], nullptr, &rect, 0, nullptr, flip);
+        SDL_RenderCopyEx(window.Renderer, texture->getTexture("side", textureIndex), nullptr, &rect, 0, nullptr, flip);
     else
-        SDL_RenderCopyEx(window.Renderer, idle, nullptr, &rect, 0, nullptr, flip);
+        SDL_RenderCopyEx(window.Renderer, texture->getTexture("idle", textureIndex), nullptr, &rect, 0, nullptr, flip);
 
 }
 
@@ -137,18 +116,33 @@ void Sprite::changeTexture() {
     if(destY > y) {
         orientation = 0;
         flip = SDL_FLIP_NONE;
+        SDL_QueryTexture(Sprite::texture->getTexture("front",0), nullptr, nullptr, &w, &h);
+        w *= scale;
+        h *= scale;
     } else if (destY < y) {
         orientation = 1;
         flip = SDL_FLIP_NONE;
+        SDL_QueryTexture(Sprite::texture->getTexture("back",0), nullptr, nullptr, &w, &h);
+        w *= scale;
+        h *= scale;
     } else if (destX > x) {
         orientation = 2;
         flip = SDL_FLIP_NONE;
+        SDL_QueryTexture(Sprite::texture->getTexture("side",0), nullptr, nullptr, &w, &h);
+        w *= scale;
+        h *= scale;
     } else if (destX < x) {
         orientation = 2;
         flip = SDL_FLIP_HORIZONTAL;
+        SDL_QueryTexture(Sprite::texture->getTexture("side",0), nullptr, nullptr, &w, &h);
+        w *= scale;
+        h *= scale;
     } else {
         orientation = 3;
         flip = SDL_FLIP_NONE;
+        SDL_QueryTexture(Sprite::texture->getTexture("front",0), nullptr, nullptr, &w, &h);
+        w *= scale;
+        h *= scale;
     }
 
     unsigned int curr = SDL_GetTicks();
@@ -200,8 +194,6 @@ void Sprite::moveTo(int posX, int posY){
 }
 
 void Sprite::move(){
-    // TODO improve this move system!
-
     if (destX > x && destY < y) {
         x += speedX;
         y -= speedY;

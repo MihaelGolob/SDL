@@ -16,14 +16,15 @@
 
 class LevelManager {
 public:
-    LevelManager(string allySource, string enemySource, Window *window);
+    LevelManager(Texture *allyTexture, Texture *enemyTexture, Window *window);
     void nextLevel();
     void spawnEnemies(int amount);
     void spawnAllies(int amount);
 private:
     Window *window;
-    string enemySource;
-    string allySource;
+
+    Texture *enemyTextures;
+    Texture *allyTexture;
 };
 
 

@@ -53,6 +53,7 @@ CMakeFiles/SDL.dir/Ally/Ally.cpp.obj: ../Ally/Ally.h
 CMakeFiles/SDL.dir/Ally/Ally.cpp.obj: ../Enemy/Enemy.h
 CMakeFiles/SDL.dir/Ally/Ally.cpp.obj: ../Player/Player.h
 CMakeFiles/SDL.dir/Ally/Ally.cpp.obj: ../Sprite.h
+CMakeFiles/SDL.dir/Ally/Ally.cpp.obj: ../Texture/Texture.h
 CMakeFiles/SDL.dir/Ally/Ally.cpp.obj: ../Tree/Tree.h
 CMakeFiles/SDL.dir/Ally/Ally.cpp.obj: ../Window.h
 CMakeFiles/SDL.dir/Ally/Ally.cpp.obj: ../global.h
@@ -108,6 +109,7 @@ CMakeFiles/SDL.dir/Enemy/Enemy.cpp.obj: ../Enemy/Enemy.cpp
 CMakeFiles/SDL.dir/Enemy/Enemy.cpp.obj: ../Enemy/Enemy.h
 CMakeFiles/SDL.dir/Enemy/Enemy.cpp.obj: ../Player/Player.h
 CMakeFiles/SDL.dir/Enemy/Enemy.cpp.obj: ../Sprite.h
+CMakeFiles/SDL.dir/Enemy/Enemy.cpp.obj: ../Texture/Texture.h
 CMakeFiles/SDL.dir/Enemy/Enemy.cpp.obj: ../Tree/Tree.h
 CMakeFiles/SDL.dir/Enemy/Enemy.cpp.obj: ../Window.h
 CMakeFiles/SDL.dir/Enemy/Enemy.cpp.obj: ../global.h
@@ -166,6 +168,7 @@ CMakeFiles/SDL.dir/LevelManager.cpp.obj: ../LevelManager.h
 CMakeFiles/SDL.dir/LevelManager.cpp.obj: ../Player/Player.h
 CMakeFiles/SDL.dir/LevelManager.cpp.obj: ../Sprite.h
 CMakeFiles/SDL.dir/LevelManager.cpp.obj: ../Text/Text.h
+CMakeFiles/SDL.dir/LevelManager.cpp.obj: ../Texture/Texture.h
 CMakeFiles/SDL.dir/LevelManager.cpp.obj: ../Tree/Tree.h
 CMakeFiles/SDL.dir/LevelManager.cpp.obj: ../Window.h
 CMakeFiles/SDL.dir/LevelManager.cpp.obj: ../global.h
@@ -221,6 +224,7 @@ CMakeFiles/SDL.dir/Player/Player.cpp.obj: ../Enemy/Enemy.h
 CMakeFiles/SDL.dir/Player/Player.cpp.obj: ../Player/Player.cpp
 CMakeFiles/SDL.dir/Player/Player.cpp.obj: ../Player/Player.h
 CMakeFiles/SDL.dir/Player/Player.cpp.obj: ../Sprite.h
+CMakeFiles/SDL.dir/Player/Player.cpp.obj: ../Texture/Texture.h
 CMakeFiles/SDL.dir/Player/Player.cpp.obj: ../Tree/Tree.h
 CMakeFiles/SDL.dir/Player/Player.cpp.obj: ../Window.h
 CMakeFiles/SDL.dir/Player/Player.cpp.obj: ../global.h
@@ -274,6 +278,7 @@ CMakeFiles/SDL.dir/Sprite.cpp.obj: ../SDL2/include/SDL2/begin_code.h
 CMakeFiles/SDL.dir/Sprite.cpp.obj: ../SDL2/include/SDL2/close_code.h
 CMakeFiles/SDL.dir/Sprite.cpp.obj: ../Sprite.cpp
 CMakeFiles/SDL.dir/Sprite.cpp.obj: ../Sprite.h
+CMakeFiles/SDL.dir/Sprite.cpp.obj: ../Texture/Texture.h
 CMakeFiles/SDL.dir/Sprite.cpp.obj: ../Window.h
 
 CMakeFiles/SDL.dir/Text/Text.cpp.obj: ../SDL2/include/SDL2/SDL.h
@@ -327,6 +332,57 @@ CMakeFiles/SDL.dir/Text/Text.cpp.obj: ../Text/Text.cpp
 CMakeFiles/SDL.dir/Text/Text.cpp.obj: ../Text/Text.h
 CMakeFiles/SDL.dir/Text/Text.cpp.obj: ../Window.h
 
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_assert.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_atomic.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_audio.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_blendmode.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_clipboard.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_config.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_cpuinfo.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_endian.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_error.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_events.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_filesystem.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_gamecontroller.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_gesture.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_haptic.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_hints.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_image.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_joystick.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_keyboard.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_keycode.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_loadso.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_log.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_main.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_messagebox.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_mouse.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_mutex.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_pixels.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_platform.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_power.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_quit.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_rect.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_render.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_rwops.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_scancode.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_sensor.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_shape.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_stdinc.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_surface.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_system.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_thread.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_timer.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_touch.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_ttf.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_version.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/SDL_video.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/begin_code.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../SDL2/include/SDL2/close_code.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../Texture/Texture.cpp
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../Texture/Texture.h
+CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: ../Window.h
+
 CMakeFiles/SDL.dir/Tree/Tree.cpp.obj: ../SDL2/include/SDL2/SDL.h
 CMakeFiles/SDL.dir/Tree/Tree.cpp.obj: ../SDL2/include/SDL2/SDL_assert.h
 CMakeFiles/SDL.dir/Tree/Tree.cpp.obj: ../SDL2/include/SDL2/SDL_atomic.h
@@ -374,6 +430,7 @@ CMakeFiles/SDL.dir/Tree/Tree.cpp.obj: ../SDL2/include/SDL2/SDL_version.h
 CMakeFiles/SDL.dir/Tree/Tree.cpp.obj: ../SDL2/include/SDL2/SDL_video.h
 CMakeFiles/SDL.dir/Tree/Tree.cpp.obj: ../SDL2/include/SDL2/begin_code.h
 CMakeFiles/SDL.dir/Tree/Tree.cpp.obj: ../SDL2/include/SDL2/close_code.h
+CMakeFiles/SDL.dir/Tree/Tree.cpp.obj: ../Texture/Texture.h
 CMakeFiles/SDL.dir/Tree/Tree.cpp.obj: ../Tree/Tree.cpp
 CMakeFiles/SDL.dir/Tree/Tree.cpp.obj: ../Tree/Tree.h
 CMakeFiles/SDL.dir/Tree/Tree.cpp.obj: ../Window.h
@@ -482,6 +539,7 @@ CMakeFiles/SDL.dir/main.cpp.obj: ../LevelManager.h
 CMakeFiles/SDL.dir/main.cpp.obj: ../Player/Player.h
 CMakeFiles/SDL.dir/main.cpp.obj: ../Sprite.h
 CMakeFiles/SDL.dir/main.cpp.obj: ../Text/Text.h
+CMakeFiles/SDL.dir/main.cpp.obj: ../Texture/Texture.h
 CMakeFiles/SDL.dir/main.cpp.obj: ../Tree/Tree.h
 CMakeFiles/SDL.dir/main.cpp.obj: ../Window.h
 CMakeFiles/SDL.dir/main.cpp.obj: ../global.h

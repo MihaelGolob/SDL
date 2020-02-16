@@ -12,6 +12,7 @@
 #include "Text/Text.h"
 #include "Ally/Ally.h"
 #include "LevelManager.h"
+#include "Texture/Texture.h"
 
 using namespace std;
 
@@ -35,7 +36,7 @@ Text clearanceText;
 // function prototypes
 void drawBackground(Window, SDL_Texture *);
 void drawObjects();
-void createTrees(Window &, string);
+void createTrees(Window &, Texture *);
 void printText(Text &);
 
 int main(int argc, char *argv[]) {
@@ -54,14 +55,22 @@ int main(int argc, char *argv[]) {
     if(background == nullptr)
         window.logError("TEXTURE");
 
-    //create Level Manager
-    LevelManager levelManager("../Assets/ally/", "../Assets/enemy/", &window);
+    // create textures for sprites
+    auto *allyTexture = new Texture("../Assets/ally/",4,window);
+    auto *enemyTexture = new Texture("../Assets/enemy/", 4, window);
+
+    // create Level Manager
+    LevelManager levelManager(allyTexture, enemyTexture, &window);
     levelManager.spawnEnemies(6);
     levelManager.spawnAllies(3);
 
-    // create all objects:
-    createTrees(window, "../Assets/environment/");
-    Player player(WIDTH/2,HEIGHT/2,2,3,"../Assets/hero/",window); // create player
+    // create all trees:
+    auto *treeTexture = new Texture("../Assets/environment/", 4, true, window);
+    createTrees(window, treeTexture);
+
+    // create player
+    auto *playerTexture = new Texture("../Assets/hero/", 6, window);
+    Player player(WIDTH/2,HEIGHT/2,2,3, playerTexture,window); // create player
 
     // make a color for text
     SDL_Color color = {255, 255, 255,255};
@@ -114,6 +123,10 @@ int main(int argc, char *argv[]) {
     SDL_Quit();
     window.Close(); // close window
 
+    delete enemyTexture;
+    delete allyTexture;
+    delete treeTexture;
+
     return 0;
 }
 
@@ -162,13 +175,13 @@ void printText(Text &treePercentage){
     treePercentage.draw();
 }
 
-void createTrees(Window &window, string source){
+void createTrees(Window &window, Texture *texture){
     int x = 0, y = 0;
     int treeWidth = 50;
     int treeHeight = 50;
     int id = 0;
     while(y <= HEIGHT - treeHeight){
-        Tree tree(x,y,treeWidth,treeHeight, id, source, window);
+        Tree tree(x,y,treeWidth,treeHeight, id, texture, window);
         allTrees.push_back(tree);
         x += treeWidth + 5;
         id++;

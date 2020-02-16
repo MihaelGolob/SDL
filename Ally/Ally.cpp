@@ -4,7 +4,7 @@
 
 #include "Ally.h"
 
-Ally::Ally(int x, int y, float scale, int speed, int moveDelay, string textureSource, Window &window) : Sprite(x, y, scale, speed, moveDelay, textureSource, window){
+Ally::Ally(int x, int y, float scale, int speed, int moveDelay, Texture *texture, Window &window) : Sprite(x, y, scale, speed, moveDelay, texture, window){
     visionDist = 50;
 }
 
@@ -62,6 +62,7 @@ bool Ally::findEnemyClose(Enemy &enemy) {
             return true;
         }
     }
+    return false;
 }
 
 float Ally::calculateDist(int posX, int posY) {

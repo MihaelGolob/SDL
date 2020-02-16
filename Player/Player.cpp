@@ -4,7 +4,7 @@
 
 #include "Player.h"
 
-Player::Player(int x, int y, float scale, float speed, string texture, Window &window) : Sprite(x,y,scale,speed,texture, window) {
+Player::Player(int x, int y, float scale, float speed, Texture *texture, Window &window) : Sprite(x,y,scale,speed,texture, window) {
     up = false;
     down = false;
     left = false;
@@ -89,35 +89,35 @@ void Player::changeTexture() {
     if(up){
         orientation = 1;
         flip = SDL_FLIP_NONE;
-        SDL_QueryTexture(back[0], nullptr, nullptr, &w, &h);
+        SDL_QueryTexture(Sprite::texture->getTexture("back",0), nullptr, nullptr, &w, &h);
         w *= scale;
         h *= scale;
     }
     else if(down){
         orientation = 0;
         flip = SDL_FLIP_NONE;
-        SDL_QueryTexture(front[0], nullptr, nullptr, &w, &h);
+        SDL_QueryTexture(Sprite::texture->getTexture("front",0), nullptr, nullptr, &w, &h);
         w *= scale;
         h *= scale;
     }
     else if(left){
         orientation = 2;
         flip = SDL_FLIP_HORIZONTAL;
-        SDL_QueryTexture(side[0], nullptr, nullptr, &w, &h);
+        SDL_QueryTexture(Sprite::texture->getTexture("side",0), nullptr, nullptr, &w, &h);
         w *= scale;
         h *= scale;
     }
     else if(right){
         orientation = 2;
         flip = SDL_FLIP_NONE;
-        SDL_QueryTexture(side[0], nullptr, nullptr, &w, &h);
+        SDL_QueryTexture(Sprite::texture->getTexture("side",0), nullptr, nullptr, &w, &h);
         w *= scale;
         h *= scale;
     }
     else{
         orientation = 3;
         flip = SDL_FLIP_NONE;
-        SDL_QueryTexture(idle, nullptr, nullptr, &w, &h);
+        SDL_QueryTexture(Sprite::texture->getTexture("idle",0), nullptr, nullptr, &w, &h);
         w *= scale;
         h *= scale;
     }

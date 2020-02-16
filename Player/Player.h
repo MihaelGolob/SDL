@@ -16,7 +16,7 @@
 
 class Player : public Sprite{
 public:
-    Player(int x, int y, float scale, float speed, string texture, Window &window);
+    Player(int x, int y, float scale, float speed, Texture *texture, Window &window);
     void movement() override;
     void input(SDL_Event event);
 private:

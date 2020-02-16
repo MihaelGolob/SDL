@@ -15,7 +15,7 @@
 
 class Ally : public Sprite{
 public:
-    Ally(int x, int y, float scale, int speed, int moveDelay, string textureSource, Window &window);
+    Ally(int x, int y, float scale, int speed, int moveDelay, Texture *texture, Window &window);
 
 private:
     void extinguishFire();

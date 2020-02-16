@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "D:/Documents/SDL/Player/Player.cpp" "D:/Documents/SDL/cmake-build-release/CMakeFiles/SDL.dir/Player/Player.cpp.obj"
   "D:/Documents/SDL/Sprite.cpp" "D:/Documents/SDL/cmake-build-release/CMakeFiles/SDL.dir/Sprite.cpp.obj"
   "D:/Documents/SDL/Text/Text.cpp" "D:/Documents/SDL/cmake-build-release/CMakeFiles/SDL.dir/Text/Text.cpp.obj"
+  "D:/Documents/SDL/Texture/Texture.cpp" "D:/Documents/SDL/cmake-build-release/CMakeFiles/SDL.dir/Texture/Texture.cpp.obj"
   "D:/Documents/SDL/Tree/Tree.cpp" "D:/Documents/SDL/cmake-build-release/CMakeFiles/SDL.dir/Tree/Tree.cpp.obj"
   "D:/Documents/SDL/Window.cpp" "D:/Documents/SDL/cmake-build-release/CMakeFiles/SDL.dir/Window.cpp.obj"
   "D:/Documents/SDL/main.cpp" "D:/Documents/SDL/cmake-build-release/CMakeFiles/SDL.dir/main.cpp.obj"

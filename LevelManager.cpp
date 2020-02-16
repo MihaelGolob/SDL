@@ -4,9 +4,9 @@
 
 #include "LevelManager.h"
 
-LevelManager::LevelManager(string allySource, string enemySource, Window *window) {
-    this->allySource = allySource;
-    this->enemySource = enemySource;
+LevelManager::LevelManager(Texture *allyTexture, Texture *enemyTexture, Window *window) {
+    this->allyTexture = allyTexture;
+    this->enemyTextures = enemyTexture;
     this->window = window;
 }
 
@@ -41,7 +41,7 @@ void LevelManager::spawnEnemies(int amount) {
         int y = rand()%(window->height - 100);
         int speed = rand()%3 + 1;
         int delay = rand()%2000;
-        Enemy enemy(x, y, 2, speed, delay, enemySource, *window);
+        Enemy enemy(x, y, 2, speed, delay, enemyTextures, *window);
         enemies.push_back(enemy);
     }
 }
@@ -52,7 +52,7 @@ void LevelManager::spawnAllies(int amount) {
         int y = rand()%(window->height - 100);
         int speed = rand()%3 + 1;
         int delay = rand()%2000;
-        Ally ally(x, y, 1.5, speed, delay, allySource, *window);
+        Ally ally(x, y, 1.5, speed, delay, allyTexture, *window);
         allies.push_back(ally);
     }
 }

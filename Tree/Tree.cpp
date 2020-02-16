@@ -4,13 +4,13 @@
 
 #include "Tree.h"
 
-Tree::Tree(int x, int y, int width, int height, int ID, string textureSource, Window window) {
+Tree::Tree(int x, int y, int width, int height, int ID, Texture *texture, Window window) {
     this->x = x;
     this->y = y;
     this->w = width;
     this->h = height;
     this->ID = ID;
-    this->textureSource = textureSource;
+    this->texture = texture;
     this->window = window;
 
     spreadingFreq = rand()%3000 + 3000;
@@ -19,15 +19,8 @@ Tree::Tree(int x, int y, int width, int height, int ID, string textureSource, Wi
     dead = false;
     onFire = false;
 
-    normal = nullptr;
-    choped = nullptr;
-
     textureIndex = 0;
     textureTime = SDL_GetTicks();
-
-    loadTexture("tree", &normal);
-    loadTexture("treeDead", &choped);
-    loadTexture("fire", fire, 4);
 }
 
 void Tree::draw() {
@@ -80,28 +73,6 @@ bool Tree::isOnFire(){
 
 // PRIVATE METHODS:
 
-void Tree::loadTexture(string name, SDL_Texture **texture) {
-    // load the png image to a texture
-    string tx = textureSource + name + ".png";
-    *texture = IMG_LoadTexture(window.Renderer, tx.c_str());
-
-    if(*texture == nullptr)
-        window.logError("TEXTURE");
-}
-
-void Tree::loadTexture(string name, vector<SDL_Texture *> &textures, int num) {
-    // load the png image to a texture
-    for (int i = 0; i < num; i++) {
-        string tx = textureSource + name + to_string(i) + ".png";
-        SDL_Texture *texture = IMG_LoadTexture(window.Renderer, tx.c_str());
-
-        if(texture == nullptr)
-            window.logError("TEXTURE");
-
-        textures.push_back(texture);
-    }
-}
-
 void Tree::renderTexture() {
     SDL_Rect rect;
     rect.x = x;
@@ -110,11 +81,11 @@ void Tree::renderTexture() {
     rect.h = h;
 
     if(onFire && !dead)
-        SDL_RenderCopy(window.Renderer, fire[textureIndex], nullptr, &rect);
+        SDL_RenderCopy(window.Renderer, texture->getTexture("fire", textureIndex), nullptr, &rect);
     else if(dead)
-        SDL_RenderCopy(window.Renderer, choped, nullptr, &rect);
+        SDL_RenderCopy(window.Renderer, texture->getTexture("chopped",0), nullptr, &rect);
     else
-        SDL_RenderCopy(window.Renderer, normal, nullptr, &rect);
+        SDL_RenderCopy(window.Renderer, texture->getTexture("normal", 0), nullptr, &rect);
 
     unsigned int curr = SDL_GetTicks();
     int delay = 1000.0/60 * 5;
