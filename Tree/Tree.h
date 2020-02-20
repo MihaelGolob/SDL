@@ -24,6 +24,7 @@ public:
     void setOnFire();
     void extinguishFire();
     void draw();
+    void reset();
     // getters
     int getX();
     int getY();

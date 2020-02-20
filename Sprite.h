@@ -44,7 +44,6 @@ protected:
 
     int orientation = 0;
     int textureIndex;
-    int numTex;
     unsigned int textureTime;
     SDL_RendererFlip flip = SDL_FLIP_NONE;
 

@@ -61,8 +61,7 @@ int main(int argc, char *argv[]) {
 
     // create Level Manager
     LevelManager levelManager(allyTexture, enemyTexture, &window);
-    levelManager.spawnEnemies(6);
-    levelManager.spawnAllies(3);
+    levelManager.startLevel();
 
     // create all trees:
     auto *treeTexture = new Texture("../Assets/environment/", 4, true, window);
@@ -80,9 +79,10 @@ int main(int argc, char *argv[]) {
     levelText.init("level " + to_string(level), "../Assets/fonts/raleway/Raleway-Light.ttf", 10, 10, 40, color, window);
     // text for printing if level is cleared or failed, leave it empty for now
     color = {179, 24, 16, 255};
-    clearanceText.init(" ", "../Assets/fonts/raleway/Raleway-Light.ttf", WIDTH / 2 - 200, HEIGHT / 2, 70, color, window);
+    clearanceText.init(" ", "../Assets/fonts/raleway/Raleway-Light.ttf", WIDTH / 2 - 300, HEIGHT / 2 - 50, 70, color, window);
 
     unsigned long oldTime = SDL_GetTicks();
+
     while(!quit){
         //calculate deltaTime:
         unsigned long delta = SDL_GetTicks() - oldTime;
@@ -104,7 +104,7 @@ int main(int argc, char *argv[]) {
         // loop functions:
 
         SDL_RenderClear(window.Renderer); // clear surface
-        levelManager.nextLevel(); // check if the level is cleared
+        levelManager.checkLevel(); // check if the level is cleared
 
         // draw all objects
 
@@ -173,6 +173,7 @@ void printText(Text &treePercentage){
         treePercentage.changeText(text);
     }
     treePercentage.draw();
+    levelText.draw();
 }
 
 void createTrees(Window &window, Texture *texture){

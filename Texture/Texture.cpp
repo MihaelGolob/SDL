@@ -30,18 +30,22 @@ Texture::Texture(string source, int numTextures, bool tree, Window &window) {
     loadTreeTexture("fire", fire);
 }
 
-SDL_Texture* Texture::getTexture(string side, int index) {
-    if (side == "front") {
+int Texture::getNumTex(){
+    return numTextures;
+}
+
+SDL_Texture* Texture::getTexture(string orientation, int index) {
+    if (orientation == "front") {
         return front[index];
-    } else if (side == "back") {
+    } else if (orientation == "back") {
         return back[index];
-    } else if (side == "side") {
-        return this->side[index];
-    } else if (side == "chopped") {
+    } else if (orientation == "side") {
+        return side[index];
+    } else if (orientation == "chopped") {
         return chopped;
-    } else if (side == "normal") {
+    } else if (orientation == "normal") {
         return normal;
-    } else if (side == "fire") {
+    } else if (orientation == "fire") {
         return fire[index];
     }
     else {

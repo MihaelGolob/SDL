@@ -36,8 +36,6 @@ bool Enemy::kill() {
         return true;
     }
     else{
-        //TODO if enemies are close kill the player
-        cout << "ANOTHER ENEMY WAS CLOSE, YOU ARE DEAD!" << endl;
         return false;
     }
 }

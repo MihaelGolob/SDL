@@ -47,6 +47,13 @@ void Tree::extinguishFire() {
     }
 }
 
+void Tree::reset() {
+    dead = false;
+    onFire = false;
+}
+
+// getters
+
 int Tree::getX() {
     return x;
 }

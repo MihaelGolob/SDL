@@ -149,7 +149,7 @@ void Sprite::changeTexture() {
     int delay = 1000.0/60 * 5;
     if(curr - textureTime > delay){
         textureIndex++;
-        if(textureIndex > numTex-1)
+        if(textureIndex > texture->getNumTex()-1)
             textureIndex = 0;
         textureTime = SDL_GetTicks();
     }

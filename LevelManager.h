@@ -17,10 +17,17 @@
 class LevelManager {
 public:
     LevelManager(Texture *allyTexture, Texture *enemyTexture, Window *window);
-    void nextLevel();
-    void spawnEnemies(int amount);
-    void spawnAllies(int amount);
+    void checkLevel();
+    void startLevel();
 private:
+    void clearLevel();
+    void spawnAllies(int amount);
+    void spawnEnemies(int amount);
+
+    unsigned int timer;
+    int delay;
+    bool waiting;
+
     Window *window;
 
     Texture *enemyTextures;

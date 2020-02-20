@@ -19,7 +19,8 @@ public:
     Texture(string source, int numTextures, bool tree, Window &window);
     Texture() = default;
 
-    SDL_Texture *getTexture(string side, int index);
+    SDL_Texture *getTexture(string orientation, int index);
+    int getNumTex();
 private:
     void loadTexture(string side, vector<SDL_Texture*> &textures);
     void loadTreeTexture(string name, vector<SDL_Texture *> &textures);
