@@ -17,8 +17,8 @@ void LevelManager::startLevel() {
     clearLevel();
     switch (level) {
         case 1:
-            spawnEnemies(10);
-            spawnAllies(2);
+            spawnEnemies(3);
+            spawnAllies(1);
             break;
         case 2:
             spawnEnemies(5);
@@ -90,7 +90,7 @@ void LevelManager::spawnEnemies(int amount) {
         int y = rand()%(window->height - 100);
         int speed = rand()%3 + 1;
         int delay = rand()%2000;
-        Enemy enemy(x, y, 2, speed, delay, enemyTextures, *window);
+        Enemy enemy(x, y, 1.5, speed, delay, enemyTextures, *window);
         enemies.push_back(enemy);
     }
 }
@@ -101,7 +101,7 @@ void LevelManager::spawnAllies(int amount) {
         int y = rand()%(window->height - 100);
         int speed = rand()%3 + 1;
         int delay = rand()%2000;
-        Ally ally(x, y, 1.5, speed, delay, allyTexture, *window);
+        Ally ally(x, y, 2, speed, delay, allyTexture, *window);
         allies.push_back(ally);
     }
 }

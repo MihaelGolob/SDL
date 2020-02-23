@@ -5,7 +5,7 @@
 #include "Ally.h"
 
 Ally::Ally(int x, int y, float scale, int speed, int moveDelay, Texture *texture, Window &window) : Sprite(x, y, scale, speed, moveDelay, texture, window){
-    visionDist = 25;
+    visionDist = 40;
 }
 
 // PRIVATE METHODS:

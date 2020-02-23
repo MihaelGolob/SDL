@@ -56,8 +56,8 @@ int main(int argc, char *argv[]) {
         window.logError("TEXTURE");
 
     // create textures for sprites
-    auto *allyTexture = new Texture("../Assets/ally/",4,window);
-    auto *enemyTexture = new Texture("../Assets/enemy/", 4, window);
+    auto *allyTexture = new Texture("../Assets/enemy/",4,window);
+    auto *enemyTexture = new Texture("../Assets/ally/", 4, window);
 
     // create Level Manager
     LevelManager levelManager(allyTexture, enemyTexture, &window);
