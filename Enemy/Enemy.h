@@ -17,7 +17,6 @@
 #include "../Tree/Tree.h"
 #include "../global.h"
 #include "../Sprite.h"
-#include "../Player/Player.h"
 
 class Enemy : public Sprite{
 public:

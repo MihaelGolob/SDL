@@ -9,6 +9,7 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 
+#include "../LevelManager.h"
 #include "../Tree/Tree.h"
 #include "../Enemy/Enemy.h"
 #include "../Window.h"
@@ -16,7 +17,7 @@
 
 class Player : public Sprite{
 public:
-    Player(int x, int y, float scale, float speed, Texture *texture, Window &window);
+    Player(int x, int y, float scale, float speed, Texture *texture, Window &window, LevelManager *levelManager);
     void movement() override;
     void input(SDL_Event event);
 private:
@@ -32,4 +33,5 @@ private:
 
     // input variables:
     bool up, down, left, right, space, enter;
+    LevelManager *levelManager;
 };

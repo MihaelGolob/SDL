@@ -4,56 +4,58 @@
 
 #include "Player.h"
 
-Player::Player(int x, int y, float scale, float speed, Texture *texture, Window &window) : Sprite(x,y,scale,speed,texture, window) {
+Player::Player(int x, int y, float scale, float speed, Texture *texture, Window &window, LevelManager *levelManager) : Sprite(x,y,scale,speed,texture, window) {
     up = false;
     down = false;
     left = false;
     right = false;
     space = false;
     enter = false;
+
+    this->levelManager = levelManager;
 }
 
 void Player::input(SDL_Event event) {
     if(event.type == SDL_KEYDOWN){
         switch(event.key.keysym.sym){
-            case SDLK_UP:
+            case SDLK_w:
                 up = true;
                 break;
-            case SDLK_DOWN:
+            case SDLK_s:
                 down = true;
                 break;
-            case SDLK_LEFT:
+            case SDLK_a:
                 left = true;
                 break;
-            case SDLK_RIGHT:
+            case SDLK_d:
                 right = true;
                 break;
             case SDLK_SPACE:
                 space = true;
                 break;
-            case SDLK_RETURN:
+            case SDLK_f:
                 enter = true;
                 break;
         }
     }
     if(event.type == SDL_KEYUP){
         switch(event.key.keysym.sym){
-            case SDLK_UP:
+            case SDLK_w:
                 up = false;
                 break;
-            case SDLK_DOWN:
+            case SDLK_s:
                 down = false;
                 break;
-            case SDLK_LEFT:
+            case SDLK_a:
                 left = false;
                 break;
-            case SDLK_RIGHT:
+            case SDLK_d:
                 right = false;
                 break;
             case SDLK_SPACE:
                 space = false;
                 break;
-            case SDLK_RETURN:
+            case SDLK_f:
                 enter = false;
                 break;
         }
@@ -123,10 +125,10 @@ void Player::changeTexture() {
     }
 
     unsigned int curr = SDL_GetTicks();
-    int delay = 1000.0/60 * 5;
+    int delay = 1000.0/60 * 6;
     if(curr - textureTime > delay){
         textureIndex++;
-        if(textureIndex > 5)
+        if(textureIndex > 3)
             textureIndex = 0;
         textureTime = SDL_GetTicks();
     }
@@ -143,8 +145,10 @@ void Player::extinguishFire(){
 
 void Player::attackEnemy() {
     for (auto &e : enemies) {
-        if(enemyCollision(e))
-            e.kill();
+        if(enemyCollision(e)){
+            if(!e.kill())
+                levelManager->failLevel("Enemies killed the player!");
+        }
     }
 }
 

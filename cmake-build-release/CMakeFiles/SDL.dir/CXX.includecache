@@ -646,6 +646,10 @@ D:/Documents/SDL/Enemy/Enemy.h
 ../Sprite.h
 D:/Documents/SDL/Sprite.h
 
+D:/Documents/SDL/Enemy/Enemy.cpp
+Enemy.h
+D:/Documents/SDL/Enemy/Enemy.h
+
 D:/Documents/SDL/Enemy/Enemy.h
 iostream
 -
@@ -672,6 +676,32 @@ D:/Documents/SDL/Sprite.h
 ../Player/Player.h
 D:/Documents/SDL/Player/Player.h
 
+D:/Documents/SDL/LevelManager.cpp
+LevelManager.h
+D:/Documents/SDL/LevelManager.h
+
+D:/Documents/SDL/LevelManager.h
+vector
+-
+string
+-
+Tree/Tree.h
+D:/Documents/SDL/Tree/Tree.h
+Window.h
+D:/Documents/SDL/Window.h
+global.h
+D:/Documents/SDL/global.h
+Enemy/Enemy.h
+D:/Documents/SDL/Enemy/Enemy.h
+Ally/Ally.h
+D:/Documents/SDL/Ally/Ally.h
+Text/Text.h
+D:/Documents/SDL/Text/Text.h
+
+D:/Documents/SDL/Player/Player.cpp
+Player.h
+D:/Documents/SDL/Player/Player.h
+
 D:/Documents/SDL/Player/Player.h
 vector
 -
@@ -687,6 +717,8 @@ D:/Documents/SDL/Enemy/Enemy.h
 D:/Documents/SDL/Window.h
 ../global.h
 D:/Documents/SDL/global.h
+../LevelManager.h
+D:/Documents/SDL/LevelManager.h
 
 D:/Documents/SDL/Sprite.h
 iostream
@@ -706,6 +738,16 @@ D:/Documents/SDL/Window.h
 Texture/Texture.h
 D:/Documents/SDL/Texture/Texture.h
 
+D:/Documents/SDL/Text/Text.h
+string
+-
+SDL2/SDL.h
+-
+SDL2/SDL_ttf.h
+-
+../Window.h
+D:/Documents/SDL/Window.h
+
 D:/Documents/SDL/Texture/Texture.h
 vector
 -
@@ -715,6 +757,10 @@ SDL2/SDL.h
 -
 ../Window.h
 D:/Documents/SDL/Window.h
+
+D:/Documents/SDL/Tree/Tree.cpp
+Tree.h
+D:/Documents/SDL/Tree/Tree.h
 
 D:/Documents/SDL/Tree/Tree.h
 iostream
@@ -751,4 +797,32 @@ SDL2/SDL_ttf.h
 D:/Documents/SDL/global.h
 vector
 -
+
+D:/Documents/SDL/main.cpp
+iostream
+-
+string
+-
+vector
+-
+cstdlib
+-
+ctime
+-
+SDL2/SDL.h
+-
+SDL2/SDL_image.h
+-
+Window.h
+D:/Documents/SDL/Window.h
+Player/Player.h
+D:/Documents/SDL/Player/Player.h
+Text/Text.h
+D:/Documents/SDL/Text/Text.h
+Ally/Ally.h
+D:/Documents/SDL/Ally/Ally.h
+LevelManager.h
+D:/Documents/SDL/LevelManager.h
+Texture/Texture.h
+D:/Documents/SDL/Texture/Texture.h
 

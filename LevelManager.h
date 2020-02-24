@@ -16,9 +16,12 @@
 
 class LevelManager {
 public:
+    LevelManager() = default;
     LevelManager(Texture *allyTexture, Texture *enemyTexture, Window *window);
     void checkLevel();
     void startLevel();
+    void failLevel(string msg);
+    void newLevel();
 private:
     void clearLevel();
     void spawnAllies(int amount);

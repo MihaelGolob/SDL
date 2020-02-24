@@ -29,6 +29,7 @@ private:
     string text, fontSource;
     SDL_Texture *texture;
     SDL_Color color;
+    TTF_Font *font;
     Window window;
 };
 

@@ -18,7 +18,7 @@ void LevelManager::startLevel() {
     switch (level) {
         case 1:
             spawnEnemies(3);
-            spawnAllies(1);
+            spawnAllies(2);
             break;
         case 2:
             spawnEnemies(5);
@@ -57,21 +57,11 @@ void LevelManager::checkLevel() {
     //check if any enemies are still alive or if a tree is on fire
     if(!waiting && enemies.empty() && allClear){
         //if yes increase level and make it harder
-        cout << "level clear" << endl;
-        level++;
-        // display level complete text
-        levelText.changeText("Level: " + to_string(level));
-        clearanceText.changeText("LEVEL COMPLETE!");
-
-        // start timer for new level
-        timer = SDL_GetTicks();
-        waiting = true;
+        newLevel();
     }
 
     if(!waiting && (float)(allTrees.size()-numDeadTrees)/(float)allTrees.size() < 0.7) {
-        clearanceText.changeText("LEVEL FAILED!");
-        timer = SDL_GetTicks();
-        waiting = true;
+        failLevel("LEVEL FAILED!");
     }
 
     if (waiting) {
@@ -84,13 +74,31 @@ void LevelManager::checkLevel() {
 
 }
 
+void LevelManager::failLevel(string msg) {
+    clearanceText.changeText(msg);
+    timer = SDL_GetTicks();
+    waiting = true;
+}
+
+void LevelManager::newLevel() {
+    cout << "level clear" << endl;
+    level++;
+    // display level complete text
+    levelText.changeText("Level: " + to_string(level));
+    clearanceText.changeText("LEVEL COMPLETE!");
+
+    // start timer for new level
+    timer = SDL_GetTicks();
+    waiting = true;
+}
+
 void LevelManager::spawnEnemies(int amount) {
     for (int i = 0; i < amount; i++) {
         int x = rand()%(window->width - 100);
         int y = rand()%(window->height - 100);
         int speed = rand()%3 + 1;
         int delay = rand()%2000;
-        Enemy enemy(x, y, 1.5, speed, delay, enemyTextures, *window);
+        Enemy enemy(x, y, 1, speed, delay, enemyTextures, *window);
         enemies.push_back(enemy);
     }
 }
@@ -101,7 +109,7 @@ void LevelManager::spawnAllies(int amount) {
         int y = rand()%(window->height - 100);
         int speed = rand()%3 + 1;
         int delay = rand()%2000;
-        Ally ally(x, y, 2, speed, delay, allyTexture, *window);
+        Ally ally(x, y, 1, speed, delay, allyTexture, *window);
         allies.push_back(ally);
     }
 }

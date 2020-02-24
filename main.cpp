@@ -33,6 +33,8 @@ double deltaTime;
 Text levelText;
 Text clearanceText;
 
+LevelManager levelManager;
+
 // function prototypes
 void drawBackground(Window, SDL_Texture *);
 void drawObjects();
@@ -56,11 +58,12 @@ int main(int argc, char *argv[]) {
         window.logError("TEXTURE");
 
     // create textures for sprites
-    auto *allyTexture = new Texture("../Assets/enemy/",4,window);
-    auto *enemyTexture = new Texture("../Assets/ally/", 4, window);
+    auto *allyTexture = new Texture("../Assets/ally/",4,window);
+    auto *enemyTexture = new Texture("../Assets/enemy/", 4, window);
 
     // create Level Manager
-    LevelManager levelManager(allyTexture, enemyTexture, &window);
+    LevelManager tmp(allyTexture, enemyTexture, &window);
+    levelManager = tmp;
     levelManager.startLevel();
 
     // create all trees:
@@ -68,18 +71,18 @@ int main(int argc, char *argv[]) {
     createTrees(window, treeTexture);
 
     // create player
-    auto *playerTexture = new Texture("../Assets/hero/", 6, window);
-    Player player(WIDTH/2,HEIGHT/2,2,3, playerTexture,window); // create player
+    auto *playerTexture = new Texture("../Assets/hero/", 4, window);
+    Player player(WIDTH/2,HEIGHT/2,1,3, playerTexture,window,&levelManager); // create player
 
     // make a color for text
     SDL_Color color = {255, 255, 255,255};
-    Text treePercentage("100%", "../Assets/fonts/raleway/Raleway-Light.ttf", WIDTH-120,HEIGHT-60,50,color,window);
+    Text treePercentage("100%", "../Assets/fonts/Seagram tfb.ttf", WIDTH-120,HEIGHT-60,50,color,window);
 
     // initialize text class for printing out level
-    levelText.init("level " + to_string(level), "../Assets/fonts/raleway/Raleway-Light.ttf", 10, 10, 40, color, window);
+    levelText.init("level " + to_string(level), "../Assets/fonts/Seagram tfb.ttf", 10, 10, 40, color, window);
     // text for printing if level is cleared or failed, leave it empty for now
     color = {179, 24, 16, 255};
-    clearanceText.init(" ", "../Assets/fonts/raleway/Raleway-Light.ttf", WIDTH / 2 - 300, HEIGHT / 2 - 50, 70, color, window);
+    clearanceText.init(" ", "../Assets/fonts/Seagram tfb.ttf", 50, HEIGHT / 2 - 50, 70, color, window);
 
     unsigned long oldTime = SDL_GetTicks();
 
@@ -131,11 +134,11 @@ int main(int argc, char *argv[]) {
 }
 
 void drawObjects(){
-    for(auto &e : enemies){
-        e.draw();
-    }
     for(auto &t : allTrees) {
         t.draw();
+    }
+    for(auto &e : enemies){
+        e.draw();
     }
     for (auto &a : allies) {
         a.draw();
@@ -177,7 +180,7 @@ void printText(Text &treePercentage){
 }
 
 void createTrees(Window &window, Texture *texture){
-    int x = 0, y = 0;
+    int x = 5, y = 5;
     int treeWidth = 50;
     int treeHeight = 50;
     int id = 0;
@@ -187,7 +190,7 @@ void createTrees(Window &window, Texture *texture){
         x += treeWidth + 5;
         id++;
         if(x > WIDTH-treeWidth){
-            x = 0;
+            x = 5;
             y += treeHeight + 3;
         }
     }

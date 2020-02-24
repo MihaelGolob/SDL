@@ -51,7 +51,6 @@ CMakeFiles/SDL.dir/Ally/Ally.cpp.obj: ../SDL2/include/SDL2/close_code.h
 CMakeFiles/SDL.dir/Ally/Ally.cpp.obj: ../Ally/Ally.cpp
 CMakeFiles/SDL.dir/Ally/Ally.cpp.obj: ../Ally/Ally.h
 CMakeFiles/SDL.dir/Ally/Ally.cpp.obj: ../Enemy/Enemy.h
-CMakeFiles/SDL.dir/Ally/Ally.cpp.obj: ../Player/Player.h
 CMakeFiles/SDL.dir/Ally/Ally.cpp.obj: ../Sprite.h
 CMakeFiles/SDL.dir/Ally/Ally.cpp.obj: ../Texture/Texture.h
 CMakeFiles/SDL.dir/Ally/Ally.cpp.obj: ../Tree/Tree.h
@@ -107,7 +106,6 @@ CMakeFiles/SDL.dir/Enemy/Enemy.cpp.obj: ../SDL2/include/SDL2/begin_code.h
 CMakeFiles/SDL.dir/Enemy/Enemy.cpp.obj: ../SDL2/include/SDL2/close_code.h
 CMakeFiles/SDL.dir/Enemy/Enemy.cpp.obj: ../Enemy/Enemy.cpp
 CMakeFiles/SDL.dir/Enemy/Enemy.cpp.obj: ../Enemy/Enemy.h
-CMakeFiles/SDL.dir/Enemy/Enemy.cpp.obj: ../Player/Player.h
 CMakeFiles/SDL.dir/Enemy/Enemy.cpp.obj: ../Sprite.h
 CMakeFiles/SDL.dir/Enemy/Enemy.cpp.obj: ../Texture/Texture.h
 CMakeFiles/SDL.dir/Enemy/Enemy.cpp.obj: ../Tree/Tree.h
@@ -165,7 +163,6 @@ CMakeFiles/SDL.dir/LevelManager.cpp.obj: ../Ally/Ally.h
 CMakeFiles/SDL.dir/LevelManager.cpp.obj: ../Enemy/Enemy.h
 CMakeFiles/SDL.dir/LevelManager.cpp.obj: ../LevelManager.cpp
 CMakeFiles/SDL.dir/LevelManager.cpp.obj: ../LevelManager.h
-CMakeFiles/SDL.dir/LevelManager.cpp.obj: ../Player/Player.h
 CMakeFiles/SDL.dir/LevelManager.cpp.obj: ../Sprite.h
 CMakeFiles/SDL.dir/LevelManager.cpp.obj: ../Text/Text.h
 CMakeFiles/SDL.dir/LevelManager.cpp.obj: ../Texture/Texture.h
@@ -220,10 +217,13 @@ CMakeFiles/SDL.dir/Player/Player.cpp.obj: ../SDL2/include/SDL2/SDL_version.h
 CMakeFiles/SDL.dir/Player/Player.cpp.obj: ../SDL2/include/SDL2/SDL_video.h
 CMakeFiles/SDL.dir/Player/Player.cpp.obj: ../SDL2/include/SDL2/begin_code.h
 CMakeFiles/SDL.dir/Player/Player.cpp.obj: ../SDL2/include/SDL2/close_code.h
+CMakeFiles/SDL.dir/Player/Player.cpp.obj: ../Ally/Ally.h
 CMakeFiles/SDL.dir/Player/Player.cpp.obj: ../Enemy/Enemy.h
+CMakeFiles/SDL.dir/Player/Player.cpp.obj: ../LevelManager.h
 CMakeFiles/SDL.dir/Player/Player.cpp.obj: ../Player/Player.cpp
 CMakeFiles/SDL.dir/Player/Player.cpp.obj: ../Player/Player.h
 CMakeFiles/SDL.dir/Player/Player.cpp.obj: ../Sprite.h
+CMakeFiles/SDL.dir/Player/Player.cpp.obj: ../Text/Text.h
 CMakeFiles/SDL.dir/Player/Player.cpp.obj: ../Texture/Texture.h
 CMakeFiles/SDL.dir/Player/Player.cpp.obj: ../Tree/Tree.h
 CMakeFiles/SDL.dir/Player/Player.cpp.obj: ../Window.h

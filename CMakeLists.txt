@@ -1,8 +1,9 @@
 cmake_minimum_required(VERSION 3.13)
 project(SDL)
 
-include_directories(D:\\Documents\\SDL\\SDL2\\include)
-link_directories(D:\\Documents\\SDL\\SDL2\\lib)
+
+include_directories(SDL2/include)
+link_directories(SDL2/lib)
 
 set(CMAKE_CXX_STANDARD 14)
 
