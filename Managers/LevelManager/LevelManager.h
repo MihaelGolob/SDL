@@ -7,12 +7,12 @@
 #include <vector>
 #include <string>
 
-#include "Tree/Tree.h"
-#include "Window.h"
-#include "global.h"
-#include "Enemy/Enemy.h"
-#include "Ally/Ally.h"
-#include "Text/Text.h"
+#include "../../Tree/Tree.h"
+#include "../../Window.h"
+#include "../../global.h"
+#include "../../Enemy/Enemy.h"
+#include "../../Ally/Ally.h"
+#include "../../Text/Text.h"
 
 class LevelManager {
 public:
