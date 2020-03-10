@@ -10,7 +10,7 @@ void Window::InitWindow(string title, int width, int height) {
     Window::width = width;
     Window::height = height;
     // INITIALIZE SDL AND CREATE WINDOW
-    if(SDL_Init(SDL_INIT_VIDEO) < 0){ // initialize SDL
+    if(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO) < 0){ // initialize SDL
         logError("SDL");
     }
     else{

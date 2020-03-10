@@ -13,9 +13,9 @@ Tree::Tree(int x, int y, int width, int height, int ID, Texture *texture, Window
     this->texture = texture;
     this->window = window;
 
-    spreadingFreq = rand()%3000 + 3000;
+    spreadingFreq = rand()%3000 + 1500;
 
-    timeToBurn = rand()%3000 + 9000;
+    timeToBurn = rand()%3000 + 7000;
     dead = false;
     onFire = false;
 

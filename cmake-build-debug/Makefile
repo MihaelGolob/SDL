@@ -176,32 +176,86 @@ Enemy/Enemy.cpp.s:
 	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Enemy/Enemy.cpp.s
 .PHONY : Enemy/Enemy.cpp.s
 
-LevelManager.obj: LevelManager.cpp.obj
+Managers/LevelManager/LevelManager.obj: Managers/LevelManager/LevelManager.cpp.obj
 
-.PHONY : LevelManager.obj
+.PHONY : Managers/LevelManager/LevelManager.obj
 
 # target to build an object file
-LevelManager.cpp.obj:
-	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/LevelManager.cpp.obj
-.PHONY : LevelManager.cpp.obj
+Managers/LevelManager/LevelManager.cpp.obj:
+	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Managers/LevelManager/LevelManager.cpp.obj
+.PHONY : Managers/LevelManager/LevelManager.cpp.obj
 
-LevelManager.i: LevelManager.cpp.i
+Managers/LevelManager/LevelManager.i: Managers/LevelManager/LevelManager.cpp.i
 
-.PHONY : LevelManager.i
+.PHONY : Managers/LevelManager/LevelManager.i
 
 # target to preprocess a source file
-LevelManager.cpp.i:
-	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/LevelManager.cpp.i
-.PHONY : LevelManager.cpp.i
+Managers/LevelManager/LevelManager.cpp.i:
+	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Managers/LevelManager/LevelManager.cpp.i
+.PHONY : Managers/LevelManager/LevelManager.cpp.i
 
-LevelManager.s: LevelManager.cpp.s
+Managers/LevelManager/LevelManager.s: Managers/LevelManager/LevelManager.cpp.s
 
-.PHONY : LevelManager.s
+.PHONY : Managers/LevelManager/LevelManager.s
 
 # target to generate assembly for a file
-LevelManager.cpp.s:
-	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/LevelManager.cpp.s
-.PHONY : LevelManager.cpp.s
+Managers/LevelManager/LevelManager.cpp.s:
+	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Managers/LevelManager/LevelManager.cpp.s
+.PHONY : Managers/LevelManager/LevelManager.cpp.s
+
+Managers/SceneManager/SceneManager.obj: Managers/SceneManager/SceneManager.cpp.obj
+
+.PHONY : Managers/SceneManager/SceneManager.obj
+
+# target to build an object file
+Managers/SceneManager/SceneManager.cpp.obj:
+	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Managers/SceneManager/SceneManager.cpp.obj
+.PHONY : Managers/SceneManager/SceneManager.cpp.obj
+
+Managers/SceneManager/SceneManager.i: Managers/SceneManager/SceneManager.cpp.i
+
+.PHONY : Managers/SceneManager/SceneManager.i
+
+# target to preprocess a source file
+Managers/SceneManager/SceneManager.cpp.i:
+	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Managers/SceneManager/SceneManager.cpp.i
+.PHONY : Managers/SceneManager/SceneManager.cpp.i
+
+Managers/SceneManager/SceneManager.s: Managers/SceneManager/SceneManager.cpp.s
+
+.PHONY : Managers/SceneManager/SceneManager.s
+
+# target to generate assembly for a file
+Managers/SceneManager/SceneManager.cpp.s:
+	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Managers/SceneManager/SceneManager.cpp.s
+.PHONY : Managers/SceneManager/SceneManager.cpp.s
+
+Managers/SoundManager/SoundManager.obj: Managers/SoundManager/SoundManager.cpp.obj
+
+.PHONY : Managers/SoundManager/SoundManager.obj
+
+# target to build an object file
+Managers/SoundManager/SoundManager.cpp.obj:
+	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Managers/SoundManager/SoundManager.cpp.obj
+.PHONY : Managers/SoundManager/SoundManager.cpp.obj
+
+Managers/SoundManager/SoundManager.i: Managers/SoundManager/SoundManager.cpp.i
+
+.PHONY : Managers/SoundManager/SoundManager.i
+
+# target to preprocess a source file
+Managers/SoundManager/SoundManager.cpp.i:
+	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Managers/SoundManager/SoundManager.cpp.i
+.PHONY : Managers/SoundManager/SoundManager.cpp.i
+
+Managers/SoundManager/SoundManager.s: Managers/SoundManager/SoundManager.cpp.s
+
+.PHONY : Managers/SoundManager/SoundManager.s
+
+# target to generate assembly for a file
+Managers/SoundManager/SoundManager.cpp.s:
+	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Managers/SoundManager/SoundManager.cpp.s
+.PHONY : Managers/SoundManager/SoundManager.cpp.s
 
 Player/Player.obj: Player/Player.cpp.obj
 
@@ -338,6 +392,33 @@ Tree/Tree.cpp.s:
 	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Tree/Tree.cpp.s
 .PHONY : Tree/Tree.cpp.s
 
+UI/Button.obj: UI/Button.cpp.obj
+
+.PHONY : UI/Button.obj
+
+# target to build an object file
+UI/Button.cpp.obj:
+	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/UI/Button.cpp.obj
+.PHONY : UI/Button.cpp.obj
+
+UI/Button.i: UI/Button.cpp.i
+
+.PHONY : UI/Button.i
+
+# target to preprocess a source file
+UI/Button.cpp.i:
+	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/UI/Button.cpp.i
+.PHONY : UI/Button.cpp.i
+
+UI/Button.s: UI/Button.cpp.s
+
+.PHONY : UI/Button.s
+
+# target to generate assembly for a file
+UI/Button.cpp.s:
+	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/UI/Button.cpp.s
+.PHONY : UI/Button.cpp.s
+
 Window.obj: Window.cpp.obj
 
 .PHONY : Window.obj
@@ -407,9 +488,15 @@ help:
 	@echo ... Enemy/Enemy.obj
 	@echo ... Enemy/Enemy.i
 	@echo ... Enemy/Enemy.s
-	@echo ... LevelManager.obj
-	@echo ... LevelManager.i
-	@echo ... LevelManager.s
+	@echo ... Managers/LevelManager/LevelManager.obj
+	@echo ... Managers/LevelManager/LevelManager.i
+	@echo ... Managers/LevelManager/LevelManager.s
+	@echo ... Managers/SceneManager/SceneManager.obj
+	@echo ... Managers/SceneManager/SceneManager.i
+	@echo ... Managers/SceneManager/SceneManager.s
+	@echo ... Managers/SoundManager/SoundManager.obj
+	@echo ... Managers/SoundManager/SoundManager.i
+	@echo ... Managers/SoundManager/SoundManager.s
 	@echo ... Player/Player.obj
 	@echo ... Player/Player.i
 	@echo ... Player/Player.s
@@ -425,6 +512,9 @@ help:
 	@echo ... Tree/Tree.obj
 	@echo ... Tree/Tree.i
 	@echo ... Tree/Tree.s
+	@echo ... UI/Button.obj
+	@echo ... UI/Button.i
+	@echo ... UI/Button.s
 	@echo ... Window.obj
 	@echo ... Window.i
 	@echo ... Window.s

@@ -71,15 +71,21 @@ void Player::input(SDL_Event event) {
 
 void Player::movement() {
     // move player if button is pressed
-    if(up)
-        y -= speed;
-    if(down)
-        y += speed;
+    int deltaSpeed = speed*deltaTime;
 
-    if(left)
-        x -= speed;
-    if(right)
-        x += speed;
+    if(up){
+        y -= deltaSpeed;
+    }
+    if(down){
+        y += deltaSpeed;
+    }
+
+    if(left){
+        x -= deltaSpeed;
+    }
+    if(right){
+        x += deltaSpeed;
+    }
 
     windowCollision();
 }
@@ -134,7 +140,9 @@ void Player::changeTexture() {
     }
 }
 
-void Player::loopMethods() {}
+void Player::loopMethods() {
+    dead = playerDead;
+}
 
 void Player::extinguishFire(){
     for(auto &t : allTrees){
@@ -146,8 +154,10 @@ void Player::extinguishFire(){
 void Player::attackEnemy() {
     for (auto &e : enemies) {
         if(enemyCollision(e)){
-            if(!e.kill())
+            if(!e.kill()){
+                playerDead = true;
                 levelManager->failLevel("Enemies killed the player!");
+            }
         }
     }
 }

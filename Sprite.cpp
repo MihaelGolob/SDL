@@ -13,7 +13,6 @@ Sprite::Sprite(int x, int y, float scale, int speed, int moveDelay, Texture *tex
     this->window = window;
     this->texture = texture;
 
-
     this->h = 0;
     this->w = 0;
 
@@ -36,6 +35,8 @@ Sprite::Sprite(int x, int y, float scale, int speed, int moveDelay, Texture *tex
 
     id = counter;
     counter++;
+
+    dead = false;
 }
 
 Sprite::Sprite(int x, int y, float scale, int speed, Texture *texture, Window &window) {
@@ -75,10 +76,12 @@ Sprite::Sprite() = default;
 int Sprite::counter = 0;
 
 void Sprite::draw() {
-    changeTexture();
-    renderTexture();
+    if (!dead) {
+        changeTexture();
+        renderTexture();
+        movement();
+    }
     loopMethods();
-    movement();
 }
 
 // GETTERS:
@@ -166,8 +169,8 @@ void Sprite::movement() {
         float dy = abs(destY - y);
         double mag = sqrt(pow(dx, 2) + pow(dy, 2));
 
-        speedX = (speed * dx) / mag;
-        speedY = (speed * dy) / mag;
+        speedX = ((speed * dx) / mag) * deltaTime;
+        speedY = ((speed * dy) / mag) * deltaTime;
         if(speedX < 1)
             speedX = 1;
         if(speedY < 1)

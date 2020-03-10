@@ -14,6 +14,7 @@
 #include "../../Ally/Ally.h"
 #include "../../Text/Text.h"
 
+
 class LevelManager {
 public:
     LevelManager() = default;
@@ -23,6 +24,8 @@ public:
     void failLevel(string msg);
     void newLevel();
 private:
+    int calcEnemyCount();
+    int calcAllyCount();
     void clearLevel();
     void spawnAllies(int amount);
     void spawnEnemies(int amount);

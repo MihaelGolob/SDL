@@ -94,10 +94,22 @@
 		<Unit filename="D:/Documents/SDL/Enemy/Enemy.h">
 			<Option target="SDL"/>
 		</Unit>
-		<Unit filename="D:/Documents/SDL/LevelManager.cpp">
+		<Unit filename="D:/Documents/SDL/Managers/LevelManager/LevelManager.cpp">
 			<Option target="SDL"/>
 		</Unit>
-		<Unit filename="D:/Documents/SDL/LevelManager.h">
+		<Unit filename="D:/Documents/SDL/Managers/LevelManager/LevelManager.h">
+			<Option target="SDL"/>
+		</Unit>
+		<Unit filename="D:/Documents/SDL/Managers/SceneManager/SceneManager.cpp">
+			<Option target="SDL"/>
+		</Unit>
+		<Unit filename="D:/Documents/SDL/Managers/SceneManager/SceneManager.h">
+			<Option target="SDL"/>
+		</Unit>
+		<Unit filename="D:/Documents/SDL/Managers/SoundManager/SoundManager.cpp">
+			<Option target="SDL"/>
+		</Unit>
+		<Unit filename="D:/Documents/SDL/Managers/SoundManager/SoundManager.h">
 			<Option target="SDL"/>
 		</Unit>
 		<Unit filename="D:/Documents/SDL/Player/Player.cpp">
@@ -128,6 +140,12 @@
 			<Option target="SDL"/>
 		</Unit>
 		<Unit filename="D:/Documents/SDL/Tree/Tree.h">
+			<Option target="SDL"/>
+		</Unit>
+		<Unit filename="D:/Documents/SDL/UI/Button.cpp">
+			<Option target="SDL"/>
+		</Unit>
+		<Unit filename="D:/Documents/SDL/UI/Button.h">
 			<Option target="SDL"/>
 		</Unit>
 		<Unit filename="D:/Documents/SDL/Window.cpp">

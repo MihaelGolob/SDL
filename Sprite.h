@@ -14,6 +14,7 @@
 
 #include "Window.h"
 #include "Texture/Texture.h"
+#include "global.h"
 
 class Sprite{
 public:
@@ -57,4 +58,6 @@ protected:
 
     int id;
     static int counter;
+
+    bool dead;
 };

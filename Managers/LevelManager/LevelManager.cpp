@@ -15,33 +15,8 @@ LevelManager::LevelManager(Texture *allyTexture, Texture *enemyTexture, Window *
 
 void LevelManager::startLevel() {
     clearLevel();
-    switch (level) {
-        case 1:
-            spawnEnemies(3);
-            spawnAllies(2);
-            break;
-        case 2:
-            spawnEnemies(5);
-            spawnAllies(2);
-            break;
-        case 3:
-            spawnEnemies(7);
-            spawnAllies(1);
-            break;
-        case 4:
-            spawnEnemies(9);
-            spawnAllies(1);
-            break;
-    }
-}
-
-void LevelManager::clearLevel() {
-    enemies.clear();
-    allies.clear();
-    for (auto &t : allTrees) {
-        t.reset();
-    }
-    numDeadTrees = 0;
+    spawnEnemies(calcEnemyCount());
+    spawnAllies(calcAllyCount());
 }
 
 void LevelManager::checkLevel() {
@@ -90,6 +65,41 @@ void LevelManager::newLevel() {
     // start timer for new level
     timer = SDL_GetTicks();
     waiting = true;
+}
+
+// PRIVATE  METHODS:
+
+int LevelManager::calcEnemyCount() {
+    int count = level * 2 + 1;
+    if (count > 15) {
+        count = level;
+    } else if (count > 9) {
+         count = level*1.5;
+    }
+
+     return count;
+}
+
+int LevelManager::calcAllyCount() {
+    int count = -0.5*level + 3;
+
+    if (level > 7) {
+        count = 0;
+    } else if (count <= 0) {
+        count = 1;
+    }
+
+    return count;
+}
+
+void LevelManager::clearLevel() {
+    enemies.clear();
+    allies.clear();
+    playerDead = false;
+    for (auto &t : allTrees) {
+        t.reset();
+    }
+    numDeadTrees = 0;
 }
 
 void LevelManager::spawnEnemies(int amount) {

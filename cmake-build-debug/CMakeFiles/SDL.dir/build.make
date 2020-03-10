@@ -168,19 +168,19 @@ CMakeFiles/SDL.dir/Sprite.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SDL.dir/Sprite.cpp.s"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\SDL\Sprite.cpp -o CMakeFiles\SDL.dir\Sprite.cpp.s
 
-CMakeFiles/SDL.dir/LevelManager.cpp.obj: CMakeFiles/SDL.dir/flags.make
-CMakeFiles/SDL.dir/LevelManager.cpp.obj: CMakeFiles/SDL.dir/includes_CXX.rsp
-CMakeFiles/SDL.dir/LevelManager.cpp.obj: ../LevelManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\SDL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/SDL.dir/LevelManager.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\SDL.dir\LevelManager.cpp.obj -c D:\Documents\SDL\LevelManager.cpp
+CMakeFiles/SDL.dir/Managers/LevelManager/LevelManager.cpp.obj: CMakeFiles/SDL.dir/flags.make
+CMakeFiles/SDL.dir/Managers/LevelManager/LevelManager.cpp.obj: CMakeFiles/SDL.dir/includes_CXX.rsp
+CMakeFiles/SDL.dir/Managers/LevelManager/LevelManager.cpp.obj: ../Managers/LevelManager/LevelManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\SDL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/SDL.dir/Managers/LevelManager/LevelManager.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\SDL.dir\Managers\LevelManager\LevelManager.cpp.obj -c D:\Documents\SDL\Managers\LevelManager\LevelManager.cpp
 
-CMakeFiles/SDL.dir/LevelManager.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SDL.dir/LevelManager.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\SDL\LevelManager.cpp > CMakeFiles\SDL.dir\LevelManager.cpp.i
+CMakeFiles/SDL.dir/Managers/LevelManager/LevelManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SDL.dir/Managers/LevelManager/LevelManager.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\SDL\Managers\LevelManager\LevelManager.cpp > CMakeFiles\SDL.dir\Managers\LevelManager\LevelManager.cpp.i
 
-CMakeFiles/SDL.dir/LevelManager.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SDL.dir/LevelManager.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\SDL\LevelManager.cpp -o CMakeFiles\SDL.dir\LevelManager.cpp.s
+CMakeFiles/SDL.dir/Managers/LevelManager/LevelManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SDL.dir/Managers/LevelManager/LevelManager.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\SDL\Managers\LevelManager\LevelManager.cpp -o CMakeFiles\SDL.dir\Managers\LevelManager\LevelManager.cpp.s
 
 CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: CMakeFiles/SDL.dir/flags.make
 CMakeFiles/SDL.dir/Texture/Texture.cpp.obj: CMakeFiles/SDL.dir/includes_CXX.rsp
@@ -196,6 +196,48 @@ CMakeFiles/SDL.dir/Texture/Texture.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SDL.dir/Texture/Texture.cpp.s"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\SDL\Texture\Texture.cpp -o CMakeFiles\SDL.dir\Texture\Texture.cpp.s
 
+CMakeFiles/SDL.dir/Managers/SceneManager/SceneManager.cpp.obj: CMakeFiles/SDL.dir/flags.make
+CMakeFiles/SDL.dir/Managers/SceneManager/SceneManager.cpp.obj: CMakeFiles/SDL.dir/includes_CXX.rsp
+CMakeFiles/SDL.dir/Managers/SceneManager/SceneManager.cpp.obj: ../Managers/SceneManager/SceneManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\SDL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/SDL.dir/Managers/SceneManager/SceneManager.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\SDL.dir\Managers\SceneManager\SceneManager.cpp.obj -c D:\Documents\SDL\Managers\SceneManager\SceneManager.cpp
+
+CMakeFiles/SDL.dir/Managers/SceneManager/SceneManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SDL.dir/Managers/SceneManager/SceneManager.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\SDL\Managers\SceneManager\SceneManager.cpp > CMakeFiles\SDL.dir\Managers\SceneManager\SceneManager.cpp.i
+
+CMakeFiles/SDL.dir/Managers/SceneManager/SceneManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SDL.dir/Managers/SceneManager/SceneManager.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\SDL\Managers\SceneManager\SceneManager.cpp -o CMakeFiles\SDL.dir\Managers\SceneManager\SceneManager.cpp.s
+
+CMakeFiles/SDL.dir/Managers/SoundManager/SoundManager.cpp.obj: CMakeFiles/SDL.dir/flags.make
+CMakeFiles/SDL.dir/Managers/SoundManager/SoundManager.cpp.obj: CMakeFiles/SDL.dir/includes_CXX.rsp
+CMakeFiles/SDL.dir/Managers/SoundManager/SoundManager.cpp.obj: ../Managers/SoundManager/SoundManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\SDL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/SDL.dir/Managers/SoundManager/SoundManager.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\SDL.dir\Managers\SoundManager\SoundManager.cpp.obj -c D:\Documents\SDL\Managers\SoundManager\SoundManager.cpp
+
+CMakeFiles/SDL.dir/Managers/SoundManager/SoundManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SDL.dir/Managers/SoundManager/SoundManager.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\SDL\Managers\SoundManager\SoundManager.cpp > CMakeFiles\SDL.dir\Managers\SoundManager\SoundManager.cpp.i
+
+CMakeFiles/SDL.dir/Managers/SoundManager/SoundManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SDL.dir/Managers/SoundManager/SoundManager.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\SDL\Managers\SoundManager\SoundManager.cpp -o CMakeFiles\SDL.dir\Managers\SoundManager\SoundManager.cpp.s
+
+CMakeFiles/SDL.dir/UI/Button.cpp.obj: CMakeFiles/SDL.dir/flags.make
+CMakeFiles/SDL.dir/UI/Button.cpp.obj: CMakeFiles/SDL.dir/includes_CXX.rsp
+CMakeFiles/SDL.dir/UI/Button.cpp.obj: ../UI/Button.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\SDL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/SDL.dir/UI/Button.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\SDL.dir\UI\Button.cpp.obj -c D:\Documents\SDL\UI\Button.cpp
+
+CMakeFiles/SDL.dir/UI/Button.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SDL.dir/UI/Button.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\SDL\UI\Button.cpp > CMakeFiles\SDL.dir\UI\Button.cpp.i
+
+CMakeFiles/SDL.dir/UI/Button.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SDL.dir/UI/Button.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\SDL\UI\Button.cpp -o CMakeFiles\SDL.dir\UI\Button.cpp.s
+
 # Object files for target SDL
 SDL_OBJECTS = \
 "CMakeFiles/SDL.dir/main.cpp.obj" \
@@ -206,8 +248,11 @@ SDL_OBJECTS = \
 "CMakeFiles/SDL.dir/Text/Text.cpp.obj" \
 "CMakeFiles/SDL.dir/Ally/Ally.cpp.obj" \
 "CMakeFiles/SDL.dir/Sprite.cpp.obj" \
-"CMakeFiles/SDL.dir/LevelManager.cpp.obj" \
-"CMakeFiles/SDL.dir/Texture/Texture.cpp.obj"
+"CMakeFiles/SDL.dir/Managers/LevelManager/LevelManager.cpp.obj" \
+"CMakeFiles/SDL.dir/Texture/Texture.cpp.obj" \
+"CMakeFiles/SDL.dir/Managers/SceneManager/SceneManager.cpp.obj" \
+"CMakeFiles/SDL.dir/Managers/SoundManager/SoundManager.cpp.obj" \
+"CMakeFiles/SDL.dir/UI/Button.cpp.obj"
 
 # External object files for target SDL
 SDL_EXTERNAL_OBJECTS =
@@ -220,13 +265,16 @@ SDL.exe: CMakeFiles/SDL.dir/Enemy/Enemy.cpp.obj
 SDL.exe: CMakeFiles/SDL.dir/Text/Text.cpp.obj
 SDL.exe: CMakeFiles/SDL.dir/Ally/Ally.cpp.obj
 SDL.exe: CMakeFiles/SDL.dir/Sprite.cpp.obj
-SDL.exe: CMakeFiles/SDL.dir/LevelManager.cpp.obj
+SDL.exe: CMakeFiles/SDL.dir/Managers/LevelManager/LevelManager.cpp.obj
 SDL.exe: CMakeFiles/SDL.dir/Texture/Texture.cpp.obj
+SDL.exe: CMakeFiles/SDL.dir/Managers/SceneManager/SceneManager.cpp.obj
+SDL.exe: CMakeFiles/SDL.dir/Managers/SoundManager/SoundManager.cpp.obj
+SDL.exe: CMakeFiles/SDL.dir/UI/Button.cpp.obj
 SDL.exe: CMakeFiles/SDL.dir/build.make
 SDL.exe: CMakeFiles/SDL.dir/linklibs.rsp
 SDL.exe: CMakeFiles/SDL.dir/objects1.rsp
 SDL.exe: CMakeFiles/SDL.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\Documents\SDL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable SDL.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\Documents\SDL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable SDL.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\SDL.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

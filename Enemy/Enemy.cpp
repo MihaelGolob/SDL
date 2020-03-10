@@ -5,7 +5,7 @@
 #include "Enemy.h"
 
 Enemy::Enemy(int x, int y, float scale, int speed, int moveDelay, Texture *texture, Window &window) : Sprite(x, y, scale, speed, moveDelay, texture, window){
-    radius = 20;
+    radius = 40;
 }
 
 Enemy::Enemy() = default;
@@ -29,6 +29,7 @@ bool Enemy::kill() {
         // destroy this enemy and remove it from array of enemies
         for (int i = 0; i < enemies.size(); i++) {
             if(enemies[i].id == id) {
+                soundManager.playSound("punch", 0);
                 enemies.erase(enemies.begin()+i);
                 break;
             }
@@ -36,6 +37,7 @@ bool Enemy::kill() {
         return true;
     }
     else{
+        soundManager.playSound("punch", 0);
         return false;
     }
 }
@@ -83,7 +85,7 @@ bool Enemy::enemiesClose() {
 }
 
 void Enemy::startFire() {
-    int random = rand()%3;
+    int random = rand()%2;
     if(random == 0){
         for(auto &t : allTrees){
             if(treeCollision(t)){
