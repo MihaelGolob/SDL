@@ -203,6 +203,33 @@ Managers/LevelManager/LevelManager.cpp.s:
 	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Managers/LevelManager/LevelManager.cpp.s
 .PHONY : Managers/LevelManager/LevelManager.cpp.s
 
+Managers/SaveManager/SaveManager.obj: Managers/SaveManager/SaveManager.cpp.obj
+
+.PHONY : Managers/SaveManager/SaveManager.obj
+
+# target to build an object file
+Managers/SaveManager/SaveManager.cpp.obj:
+	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Managers/SaveManager/SaveManager.cpp.obj
+.PHONY : Managers/SaveManager/SaveManager.cpp.obj
+
+Managers/SaveManager/SaveManager.i: Managers/SaveManager/SaveManager.cpp.i
+
+.PHONY : Managers/SaveManager/SaveManager.i
+
+# target to preprocess a source file
+Managers/SaveManager/SaveManager.cpp.i:
+	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Managers/SaveManager/SaveManager.cpp.i
+.PHONY : Managers/SaveManager/SaveManager.cpp.i
+
+Managers/SaveManager/SaveManager.s: Managers/SaveManager/SaveManager.cpp.s
+
+.PHONY : Managers/SaveManager/SaveManager.s
+
+# target to generate assembly for a file
+Managers/SaveManager/SaveManager.cpp.s:
+	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Managers/SaveManager/SaveManager.cpp.s
+.PHONY : Managers/SaveManager/SaveManager.cpp.s
+
 Managers/SceneManager/SceneManager.obj: Managers/SceneManager/SceneManager.cpp.obj
 
 .PHONY : Managers/SceneManager/SceneManager.obj
@@ -491,6 +518,9 @@ help:
 	@echo ... Managers/LevelManager/LevelManager.obj
 	@echo ... Managers/LevelManager/LevelManager.i
 	@echo ... Managers/LevelManager/LevelManager.s
+	@echo ... Managers/SaveManager/SaveManager.obj
+	@echo ... Managers/SaveManager/SaveManager.i
+	@echo ... Managers/SaveManager/SaveManager.s
 	@echo ... Managers/SceneManager/SceneManager.obj
 	@echo ... Managers/SceneManager/SceneManager.i
 	@echo ... Managers/SceneManager/SceneManager.s

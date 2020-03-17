@@ -9,8 +9,9 @@
 
 #include "Window.h"
 #include "Player/Player.h"
-#include "Managers/SceneManager/SceneManager.h"
 #include "UI/Button.h"
+#include "Managers/SceneManager/SceneManager.h"
+#include "Managers/SaveManager/SaveManager.h"
 
 using namespace std;
 
@@ -25,6 +26,9 @@ vector<Ally> allies = {};
 int level = 1;
 int numDeadTrees = 0;
 
+int Score = 0;
+string playerName = "";
+
 double deltaTime;
 
 Text levelText;
@@ -32,6 +36,7 @@ Text clearanceText;
 
 LevelManager levelManager;
 SoundManager soundManager;
+SaveManager saveManager;
 
 bool playerDead;
 
@@ -66,18 +71,18 @@ int main(int argc, char *argv[]) {
 
     // create player
     auto *playerTexture = new Texture("../Assets/hero/", 4, window);
-    Player player(WIDTH/2,HEIGHT/2,1,200, playerTexture,window,&levelManager); // create player
+    Player player(window.width/2,window.height/2,1,200, playerTexture,window,&levelManager); // create player
     playerDead = false;
 
     // make a color for text
     SDL_Color color = {255, 255, 255,255};
-    Text treePercentage("100%", "../Assets/fonts/Seagram tfb.ttf", WIDTH-120,HEIGHT-60,50,color,window);
+    Text treePercentage("100%", "../Assets/fonts/Seagram tfb.ttf", window.width-120,window.height-60,50,color,window);
 
     // initialize text class for printing out level
     levelText.init("level " + to_string(level), "../Assets/fonts/Seagram tfb.ttf", 10, 10, 40, color, window);
     // text for printing if level is cleared or failed, leave it empty for now
     color = {179, 24, 16, 255};
-    clearanceText.init(" ", "../Assets/fonts/Seagram tfb.ttf", 50, HEIGHT / 2 - 50, 70, color, window);
+    clearanceText.init(" ", "../Assets/fonts/Seagram tfb.ttf", 50, window.height / 2 - 50, 70, color, window);
 
     // create Level Manager
     LevelManager tmp(allyTexture, enemyTexture, &window);
@@ -86,12 +91,16 @@ int main(int argc, char *argv[]) {
 
     // create Scene Manager
     SceneManager sceneManager(window, background, &player, &treePercentage);
-    //sceneManager.changeScene(game);
+    // sceneManager.changeScene(Scene::highscores);
+
+    // initialize save manager
+    saveManager.init("data.save");
 
     // play music
     soundManager.addMusic("../Assets/sounds/Celestial.wav");
     soundManager.addSound("../Assets/sounds/punch.wav", "punch");
     soundManager.playMusic(-1);
+    soundManager.mute(false);
 
     unsigned long oldTime = SDL_GetTicks();
 
@@ -104,18 +113,23 @@ int main(int argc, char *argv[]) {
         // poll events:
         while(SDL_PollEvent(&event)){ // go through all events
             if(event.type == SDL_QUIT) { // if the X button is pressed - quit
+                if(playerName != "")
+                    saveManager.saveScore();
                 quit = true;
+            } else if (event.type == SDL_KEYDOWN) {
+                if(event.key.keysym.sym == SDLK_ESCAPE) {
+                    // save and exit if escape key is pressed
+                    if(playerName != "")
+                        saveManager.saveScore();
+                    quit = true;
+                }
             }
             if(event.type == SDL_WINDOWEVENT) { // change window width, and height if resized
                 SDL_GetWindowSize(window.Window, &window.width, &window.height);
             }
-            if (event.type == SDL_MOUSEBUTTONDOWN) {
-                sceneManager.mouseButtonState(true);
-            } else {
-                sceneManager.mouseButtonState(false);
-            }
 
             player.input(event);
+            sceneManager.input(event);
         }
         // loop functions:
 
@@ -147,12 +161,12 @@ void createTrees(Window &window, Texture *texture){
     int treeWidth = 50;
     int treeHeight = 50;
     int id = 0;
-    while(y <= HEIGHT - treeHeight){
+    while(y <= window.height - treeHeight){
         Tree tree(x,y,treeWidth,treeHeight, id, texture, window);
         allTrees.push_back(tree);
         x += treeWidth + 5;
         id++;
-        if(x > WIDTH-treeWidth){
+        if(x > window.width-treeWidth){
             x = 5;
             y += treeHeight + 3;
         }

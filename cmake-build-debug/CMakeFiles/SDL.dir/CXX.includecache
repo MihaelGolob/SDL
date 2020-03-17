@@ -699,6 +699,18 @@ D:/Documents/SDL/Enemy/Enemy.h
 D:/Documents/SDL/Ally/Ally.h
 ../../Text/Text.h
 D:/Documents/SDL/Text/Text.h
+../../Managers/SaveManager/SaveManager.h
+D:/Documents/SDL/Managers/SaveManager/SaveManager.h
+
+D:/Documents/SDL/Managers/SaveManager/SaveManager.h
+fstream
+-
+string
+-
+vector
+-
+../../global.h
+D:/Documents/SDL/global.h
 
 D:/Documents/SDL/Managers/SceneManager/SceneManager.cpp
 SceneManager.h
@@ -709,6 +721,8 @@ SDL2/SDL.h
 -
 map
 -
+sstream
+-
 ../../Window.h
 D:/Documents/SDL/Window.h
 ../../Text/Text.h
@@ -717,6 +731,8 @@ D:/Documents/SDL/Text/Text.h
 D:/Documents/SDL/Player/Player.h
 ../../UI/Button.h
 D:/Documents/SDL/UI/Button.h
+../../global.h
+D:/Documents/SDL/global.h
 
 D:/Documents/SDL/Managers/SoundManager/SoundManager.h
 iostream
@@ -857,8 +873,10 @@ Window.h
 D:/Documents/SDL/Window.h
 Player/Player.h
 D:/Documents/SDL/Player/Player.h
-Managers/SceneManager/SceneManager.h
-D:/Documents/SDL/Managers/SceneManager/SceneManager.h
 UI/Button.h
 D:/Documents/SDL/UI/Button.h
+Managers/SceneManager/SceneManager.h
+D:/Documents/SDL/Managers/SceneManager/SceneManager.h
+Managers/SaveManager/SaveManager.h
+D:/Documents/SDL/Managers/SaveManager/SaveManager.h
 

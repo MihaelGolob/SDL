@@ -13,9 +13,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9642b25e-5778-4634-bd66-328a5c095221" name="Default Changelist" comment="c">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/MICHAEL_DOVE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Managers/SaveManager/SaveManager.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Managers/SaveManager/SaveManager.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/button.psd" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/button.psd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/buttonPress.psd" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/buttonPress.psd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/howToPlay.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/howToPlay.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/howToPlay.psd" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/howToPlay.psd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Enemy/Enemy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Enemy/Enemy.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Managers/LevelManager/LevelManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Managers/LevelManager/LevelManager.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Managers/LevelManager/LevelManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/Managers/LevelManager/LevelManager.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Managers/SceneManager/SceneManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Managers/SceneManager/SceneManager.cpp" afterDir="false" />
@@ -23,28 +29,23 @@
       <change beforePath="$PROJECT_DIR$/Managers/SoundManager/SoundManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Managers/SoundManager/SoundManager.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Managers/SoundManager/SoundManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/Managers/SoundManager/SoundManager.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Player/Player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Player/Player.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Player/Player.h" beforeDir="false" afterPath="$PROJECT_DIR$/Player/Player.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sprite.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Sprite.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sprite.h" beforeDir="false" afterPath="$PROJECT_DIR$/Sprite.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tree/Tree.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Tree/Tree.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/Button.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/UI/Button.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/Button.h" beforeDir="false" afterPath="$PROJECT_DIR$/UI/Button.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Window.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Window.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Ally/Ally.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Ally/Ally.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/CXX.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/DependInfo.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Enemy/Enemy.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Enemy/Enemy.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/LevelManager.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Managers/LevelManager/LevelManager.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Managers/LevelManager/LevelManager.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Managers/SceneManager/SceneManager.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Managers/SceneManager/SceneManager.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Managers/SoundManager/SoundManager.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Managers/SoundManager/SoundManager.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Player/Player.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Player/Player.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Sprite.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Sprite.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Tree/Tree.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Tree/Tree.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Window.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Window.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/UI/Button.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/UI/Button.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/build.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/cmake_clean.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/depend.internal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/linklibs.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/linklibs.rsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/main.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/objects.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/objects1.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/objects1.rsp" afterDir="false" />
@@ -57,7 +58,6 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/SDL.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/SDL.dir/DependInfo.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/SDL.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/SDL.dir/build.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/SDL.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/SDL.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/SDL.dir/linklibs.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/SDL.dir/linklibs.rsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/SDL.dir/objects1.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/SDL.dir/objects1.rsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/SDL.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/SDL.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/progress.marks" afterDir="false" />
@@ -86,6 +86,7 @@
   <component name="ProjectId" id="1UtgxXdkN9EmZt3Ih5pk41G9SqV" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -239,7 +240,15 @@
       <workItem from="1583663405177" duration="3000" />
       <workItem from="1583773158883" duration="2803000" />
       <workItem from="1583778933130" duration="6000" />
-      <workItem from="1583862752367" duration="2789000" />
+      <workItem from="1583862752367" duration="3595000" />
+      <workItem from="1584030897145" duration="1104000" />
+      <workItem from="1584090571143" duration="8493000" />
+      <workItem from="1584110644136" duration="4032000" />
+      <workItem from="1584202757184" duration="1917000" />
+      <workItem from="1584294780193" duration="1094000" />
+      <workItem from="1584296593149" duration="414000" />
+      <workItem from="1584389313968" duration="216000" />
+      <workItem from="1584440493435" duration="12000" />
     </task>
     <servers />
   </component>

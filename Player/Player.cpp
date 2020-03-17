@@ -33,7 +33,7 @@ void Player::input(SDL_Event event) {
             case SDLK_SPACE:
                 space = true;
                 break;
-            case SDLK_f:
+            case SDLK_RETURN:
                 enter = true;
                 break;
         }
@@ -55,7 +55,7 @@ void Player::input(SDL_Event event) {
             case SDLK_SPACE:
                 space = false;
                 break;
-            case SDLK_f:
+            case SDLK_RETURN:
                 enter = false;
                 break;
         }
@@ -146,8 +146,9 @@ void Player::loopMethods() {
 
 void Player::extinguishFire(){
     for(auto &t : allTrees){
-        if(treeCollision(t))
+        if(!t.isDead() && treeCollision(t)){
             t.extinguishFire();
+        }
     }
 }
 
@@ -157,6 +158,8 @@ void Player::attackEnemy() {
             if(!e.kill()){
                 playerDead = true;
                 levelManager->failLevel("Enemies killed the player!");
+            } else {
+                Score += 20;
             }
         }
     }

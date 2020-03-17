@@ -51,15 +51,15 @@ void LevelManager::checkLevel() {
 
 void LevelManager::failLevel(string msg) {
     clearanceText.changeText(msg);
+    level = 1;
     timer = SDL_GetTicks();
     waiting = true;
+    saveManager.saveScore();
 }
 
 void LevelManager::newLevel() {
-    cout << "level clear" << endl;
     level++;
     // display level complete text
-    levelText.changeText("Level: " + to_string(level));
     clearanceText.changeText("LEVEL COMPLETE!");
 
     // start timer for new level
@@ -93,6 +93,7 @@ int LevelManager::calcAllyCount() {
 }
 
 void LevelManager::clearLevel() {
+    levelText.changeText("Level: " + to_string(level));
     enemies.clear();
     allies.clear();
     playerDead = false;

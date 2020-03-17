@@ -13,7 +13,10 @@ class Enemy;
 class Tree;
 class Ally;
 class Text;
+class SaveManager;
+
 extern SoundManager soundManager;
+extern SaveManager saveManager;
 
 extern vector<Tree> allTrees;
 
@@ -22,6 +25,8 @@ extern vector<Enemy> enemies;
 extern vector<Ally> allies;
 extern int level;
 extern int numDeadTrees;
+extern int Score;
+extern string playerName;
 
 extern double deltaTime;
 
@@ -30,7 +35,7 @@ extern Text clearanceText;
 
 extern bool playerDead;
 
-enum Scene{menu,game,pause, howTo};
+enum Scene{menu, game, pause, howTo, dataInput, highscores};
 enum Allign{left, right, center, none};
 
 #endif //SDL_GLOBAL_H

@@ -13,6 +13,7 @@
 #include "../../Enemy/Enemy.h"
 #include "../../Ally/Ally.h"
 #include "../../Text/Text.h"
+#include "../../Managers/SaveManager/SaveManager.h"
 
 
 class LevelManager {

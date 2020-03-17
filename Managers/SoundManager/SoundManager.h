@@ -23,6 +23,7 @@ public:
     void playMusic(int loops);
     void playSound(string name, int loops);
     void pause(int index);
+    void mute(bool mute);
 
 private:
     Mix_Music *music;

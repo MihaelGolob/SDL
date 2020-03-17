@@ -43,6 +43,7 @@ void Tree::setOnFire() {
 void Tree::extinguishFire() {
     if(onFire && !dead){
         onFire = false;
+        Score += 5;
         //loadTexture("tree");
     }
 }
@@ -109,6 +110,7 @@ void Tree::checkFire(){
     if(curr - timeOnFire >= timeToBurn){
         //loadTexture("treeDead");
         dead = true;
+        Score -= 5;
         numDeadTrees++;
     }
 }
