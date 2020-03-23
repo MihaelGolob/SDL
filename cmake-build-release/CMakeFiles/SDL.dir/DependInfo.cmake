@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "D:/Documents/SDL/Ally/Ally.cpp" "D:/Documents/SDL/cmake-build-release/CMakeFiles/SDL.dir/Ally/Ally.cpp.obj"
   "D:/Documents/SDL/Enemy/Enemy.cpp" "D:/Documents/SDL/cmake-build-release/CMakeFiles/SDL.dir/Enemy/Enemy.cpp.obj"
   "D:/Documents/SDL/Managers/LevelManager/LevelManager.cpp" "D:/Documents/SDL/cmake-build-release/CMakeFiles/SDL.dir/Managers/LevelManager/LevelManager.cpp.obj"
+  "D:/Documents/SDL/Managers/ReplayManager/ReplayManager.cpp" "D:/Documents/SDL/cmake-build-release/CMakeFiles/SDL.dir/Managers/ReplayManager/ReplayManager.cpp.obj"
   "D:/Documents/SDL/Managers/SaveManager/SaveManager.cpp" "D:/Documents/SDL/cmake-build-release/CMakeFiles/SDL.dir/Managers/SaveManager/SaveManager.cpp.obj"
   "D:/Documents/SDL/Managers/SceneManager/SceneManager.cpp" "D:/Documents/SDL/cmake-build-release/CMakeFiles/SDL.dir/Managers/SceneManager/SceneManager.cpp.obj"
   "D:/Documents/SDL/Managers/SoundManager/SoundManager.cpp" "D:/Documents/SDL/cmake-build-release/CMakeFiles/SDL.dir/Managers/SoundManager/SoundManager.cpp.obj"

@@ -2,8 +2,7 @@
 // Created by MICHAEL_DOVE on 29. 12. 2019.
 //
 
-#ifndef SDL_GLOBAL_H
-#define SDL_GLOBAL_H
+#pragma once
 
 #include <vector>
 
@@ -14,15 +13,16 @@ class Tree;
 class Ally;
 class Text;
 class SaveManager;
+class ReplayManager;
 
 extern SoundManager soundManager;
 extern SaveManager saveManager;
+extern ReplayManager replayManager;
 
 extern vector<Tree> allTrees;
-
 extern vector<Enemy> enemies;
-
 extern vector<Ally> allies;
+
 extern int level;
 extern int numDeadTrees;
 extern int Score;
@@ -34,8 +34,8 @@ extern Text levelText;
 extern Text clearanceText;
 
 extern bool playerDead;
+extern bool gameStarted;
+extern bool pause;
 
-enum Scene{menu, game, pause, howTo, dataInput, highscores};
+enum Scene{menu, game, howTo, dataInput, highScores, replay};
 enum Allign{left, right, center, none};
-
-#endif //SDL_GLOBAL_H

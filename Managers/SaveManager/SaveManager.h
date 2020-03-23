@@ -14,7 +14,6 @@ class SaveManager {
 public:
     SaveManager();
     void init(const string &filePath);
-
     void saveScore();
     vector< pair<string,int> > bestScores(int numScores);
 private:

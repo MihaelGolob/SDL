@@ -11,6 +11,7 @@
 #include "../../Window.h"
 #include "../../Text/Text.h"
 #include "../../Player/Player.h"
+#include "../ReplayManager/ReplayManager.h"
 #include "../../UI/Button.h"
 #include "../../global.h"
 
@@ -21,6 +22,7 @@ public:
 
     void loop();
     void changeScene(Scene);
+    Scene getCurrScene();
     void input(SDL_Event e);
 private:
     void createButtons();
@@ -31,6 +33,7 @@ private:
     static void howToButton();
     static void backButton();
     static void highscores();
+    static void replayButton();
 
     void typeName(char c);
     char getChar(SDL_Event e);
@@ -44,6 +47,11 @@ private:
     void drawBackground();
     void drawObjects();
     void drawText();
+
+    // replay
+    void movePlayer();
+    static unsigned long moveTimer;
+
 
     static Scene currScene;
 

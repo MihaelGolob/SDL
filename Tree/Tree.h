@@ -23,8 +23,13 @@ public:
     Tree(int x, int y, int width, int height, int ID, Texture *texture, Window window);
     void setOnFire();
     void extinguishFire();
+    void plant();
     void draw();
     void reset();
+
+    void onPause();
+    void updatePauseTimer();
+
     // getters
     int getX();
     int getY();
@@ -48,9 +53,11 @@ private:
     bool dead;
     unsigned int timeOnFire;
     bool onFire;
+    int fireDifference;
 
     unsigned int spreadTime;
     int spreadingFreq;
+    int spreadDifference;
 
     int textureIndex;
     unsigned int textureTime;

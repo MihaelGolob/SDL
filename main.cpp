@@ -12,6 +12,7 @@
 #include "UI/Button.h"
 #include "Managers/SceneManager/SceneManager.h"
 #include "Managers/SaveManager/SaveManager.h"
+#include "Managers/ReplayManager/ReplayManager.h"
 
 using namespace std;
 
@@ -37,8 +38,11 @@ Text clearanceText;
 LevelManager levelManager;
 SoundManager soundManager;
 SaveManager saveManager;
+ReplayManager replayManager;
 
 bool playerDead;
+bool gameStarted = false;
+bool pause = false;
 
 enum Scene;
 
@@ -91,7 +95,7 @@ int main(int argc, char *argv[]) {
 
     // create Scene Manager
     SceneManager sceneManager(window, background, &player, &treePercentage);
-    // sceneManager.changeScene(Scene::highscores);
+    // sceneManager.changeScene(Scene::highScores);
 
     // initialize save manager
     saveManager.init("data.save");
@@ -99,8 +103,12 @@ int main(int argc, char *argv[]) {
     // play music
     soundManager.addMusic("../Assets/sounds/Celestial.wav");
     soundManager.addSound("../Assets/sounds/punch.wav", "punch");
+    soundManager.addSound("../Assets/sounds/pause.wav", "pause");
     soundManager.playMusic(-1);
-    soundManager.mute(false);
+    soundManager.mute(true);
+
+    // replay manager
+    replayManager.setPath("replay.bin");
 
     unsigned long oldTime = SDL_GetTicks();
 
@@ -117,11 +125,24 @@ int main(int argc, char *argv[]) {
                     saveManager.saveScore();
                 quit = true;
             } else if (event.type == SDL_KEYDOWN) {
-                if(event.key.keysym.sym == SDLK_ESCAPE) {
+                if (event.key.keysym.sym == SDLK_ESCAPE) {
                     // save and exit if escape key is pressed
                     if(playerName != "")
                         saveManager.saveScore();
                     quit = true;
+                } else if (event.key.keysym.sym == SDLK_p) {
+                    if (sceneManager.getCurrScene() == Scene::game) {
+                        soundManager.playSound("pause", 0);
+                        if (pause) {
+                            pause = false;
+                            clearanceText.changeText(" ");
+                        } else {
+                            pause = true;
+                            clearanceText.changeText("Game paused");
+                            for(auto &t : allTrees)
+                                t.onPause();
+                        }
+                    }
                 }
             }
             if(event.type == SDL_WINDOWEVENT) { // change window width, and height if resized
@@ -132,8 +153,8 @@ int main(int argc, char *argv[]) {
             sceneManager.input(event);
         }
         // loop functions:
-
-        SDL_RenderClear(window.Renderer); // clear surface
+        if (!pause)
+            SDL_RenderClear(window.Renderer); // clear surface
         levelManager.checkLevel(); // check if the level is cleared
 
         // draw all objects

@@ -11,6 +11,7 @@ Player::Player(int x, int y, float scale, float speed, Texture *texture, Window 
     right = false;
     space = false;
     enter = false;
+    l = false; // l tipka je bila misljena za ponovno sajenje dreves
 
     this->levelManager = levelManager;
 }
@@ -36,6 +37,9 @@ void Player::input(SDL_Event event) {
             case SDLK_RETURN:
                 enter = true;
                 break;
+            case SDLK_l:
+                l = true;
+                break;
         }
     }
     if(event.type == SDL_KEYUP){
@@ -58,6 +62,9 @@ void Player::input(SDL_Event event) {
             case SDLK_RETURN:
                 enter = false;
                 break;
+            case SDLK_l:
+                l = false;
+                break;
         }
     }
 
@@ -66,6 +73,9 @@ void Player::input(SDL_Event event) {
     }
     if (enter) {
         attackEnemy();
+    }
+    if (l) {
+        plantTree();
     }
 }
 
@@ -88,6 +98,11 @@ void Player::movement() {
     }
 
     windowCollision();
+}
+
+void Player::move(int x, int y) {
+    this->x = x;
+    this->y = y;
 }
 
 // PRIVATE METHODS:
@@ -144,9 +159,19 @@ void Player::loopMethods() {
     dead = playerDead;
 }
 
+void Player::plantTree() {
+    for (auto &t : allTrees) {
+        bool collision = treeCollision(t);
+        if (collision && t.isDead()) {
+            t.plant();
+        }
+    }
+}
+
 void Player::extinguishFire(){
     for(auto &t : allTrees){
-        if(!t.isDead() && treeCollision(t)){
+        bool collision = treeCollision(t);
+        if (collision &&!t.isDead()){
             t.extinguishFire();
         }
     }

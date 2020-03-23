@@ -14,7 +14,6 @@ Tree::Tree(int x, int y, int width, int height, int ID, Texture *texture, Window
     this->window = window;
 
     spreadingFreq = rand()%3000 + 1500;
-
     timeToBurn = rand()%3000 + 7000;
     dead = false;
     onFire = false;
@@ -40,6 +39,12 @@ void Tree::setOnFire() {
     }
 }
 
+void Tree::plant() {
+    reset();
+    Score += 5;
+    numDeadTrees--;
+}
+
 void Tree::extinguishFire() {
     if(onFire && !dead){
         onFire = false;
@@ -51,6 +56,16 @@ void Tree::extinguishFire() {
 void Tree::reset() {
     dead = false;
     onFire = false;
+}
+
+void Tree::onPause() {
+    fireDifference = SDL_GetTicks() - timeOnFire;
+    spreadDifference = SDL_GetTicks() - spreadTime;
+}
+
+void Tree::updatePauseTimer() {
+    timeOnFire = SDL_GetTicks() - fireDifference;
+    spreadTime = SDL_GetTicks() - spreadDifference;
 }
 
 // getters

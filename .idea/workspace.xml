@@ -13,31 +13,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9642b25e-5778-4634-bd66-328a5c095221" name="Default Changelist" comment="c">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/MICHAEL_DOVE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Managers/SaveManager/SaveManager.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Managers/SaveManager/SaveManager.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Managers/ReplayManager/ReplayManager.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Managers/ReplayManager/ReplayManager.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UI/button.psd" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/button.psd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UI/buttonPress.psd" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/buttonPress.psd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/howToPlay.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/howToPlay.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/howToPlay.psd" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/howToPlay.psd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Managers/LevelManager/LevelManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Managers/LevelManager/LevelManager.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Managers/LevelManager/LevelManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/Managers/LevelManager/LevelManager.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Managers/SaveManager/SaveManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/Managers/SaveManager/SaveManager.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Managers/SceneManager/SceneManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Managers/SceneManager/SceneManager.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Managers/SceneManager/SceneManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/Managers/SceneManager/SceneManager.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Managers/SoundManager/SoundManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Managers/SoundManager/SoundManager.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Managers/SoundManager/SoundManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/Managers/SoundManager/SoundManager.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Player/Player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Player/Player.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/Player.h" beforeDir="false" afterPath="$PROJECT_DIR$/Player/Player.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tree/Tree.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Tree/Tree.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tree/Tree.h" beforeDir="false" afterPath="$PROJECT_DIR$/Tree/Tree.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Ally/Ally.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Ally/Ally.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/CXX.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/DependInfo.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Enemy/Enemy.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Enemy/Enemy.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Managers/LevelManager/LevelManager.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Managers/LevelManager/LevelManager.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Managers/SaveManager/SaveManager.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Managers/SaveManager/SaveManager.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Managers/SceneManager/SceneManager.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Managers/SceneManager/SceneManager.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Managers/SoundManager/SoundManager.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Managers/SoundManager/SoundManager.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Player/Player.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Player/Player.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Sprite.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Sprite.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Tree/Tree.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDL.dir/Tree/Tree.cpp.obj" afterDir="false" />
@@ -54,6 +51,7 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/SDL.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/SDL.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/SDL.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/SDL.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/data.save" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/data.save" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/Makefile2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/SDL.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/SDL.dir/DependInfo.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/SDL.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/SDL.dir/build.make" afterDir="false" />
@@ -96,6 +94,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Documents\SDL\Managers\ReplayManager" />
       <recent name="D:\Documents\SDL\Managers\LevelManager" />
       <recent name="D:\Documents\SDL\Managers" />
       <recent name="D:\Documents\SDL" />
@@ -249,6 +248,15 @@
       <workItem from="1584296593149" duration="414000" />
       <workItem from="1584389313968" duration="216000" />
       <workItem from="1584440493435" duration="12000" />
+      <workItem from="1584462994751" duration="2641000" />
+      <workItem from="1584477229132" duration="1979000" />
+      <workItem from="1584545433763" duration="141000" />
+      <workItem from="1584562520597" duration="1023000" />
+      <workItem from="1584564051930" duration="715000" />
+      <workItem from="1584564801432" duration="3027000" />
+      <workItem from="1584629427534" duration="8000" />
+      <workItem from="1584807282771" duration="1647000" />
+      <workItem from="1584989964443" duration="5142000" />
     </task>
     <servers />
   </component>

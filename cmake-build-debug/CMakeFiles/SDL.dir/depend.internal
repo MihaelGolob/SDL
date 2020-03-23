@@ -177,6 +177,57 @@ CMakeFiles/SDL.dir/Managers/LevelManager/LevelManager.cpp.obj
  D:/Documents/SDL/Tree/Tree.h
  D:/Documents/SDL/Window.h
  D:/Documents/SDL/global.h
+CMakeFiles/SDL.dir/Managers/ReplayManager/ReplayManager.cpp.obj
+ ../SDL2/include/SDL2/SDL.h
+ ../SDL2/include/SDL2/SDL_assert.h
+ ../SDL2/include/SDL2/SDL_atomic.h
+ ../SDL2/include/SDL2/SDL_audio.h
+ ../SDL2/include/SDL2/SDL_blendmode.h
+ ../SDL2/include/SDL2/SDL_clipboard.h
+ ../SDL2/include/SDL2/SDL_config.h
+ ../SDL2/include/SDL2/SDL_cpuinfo.h
+ ../SDL2/include/SDL2/SDL_endian.h
+ ../SDL2/include/SDL2/SDL_error.h
+ ../SDL2/include/SDL2/SDL_events.h
+ ../SDL2/include/SDL2/SDL_filesystem.h
+ ../SDL2/include/SDL2/SDL_gamecontroller.h
+ ../SDL2/include/SDL2/SDL_gesture.h
+ ../SDL2/include/SDL2/SDL_haptic.h
+ ../SDL2/include/SDL2/SDL_hints.h
+ ../SDL2/include/SDL2/SDL_joystick.h
+ ../SDL2/include/SDL2/SDL_keyboard.h
+ ../SDL2/include/SDL2/SDL_keycode.h
+ ../SDL2/include/SDL2/SDL_loadso.h
+ ../SDL2/include/SDL2/SDL_log.h
+ ../SDL2/include/SDL2/SDL_main.h
+ ../SDL2/include/SDL2/SDL_messagebox.h
+ ../SDL2/include/SDL2/SDL_mixer.h
+ ../SDL2/include/SDL2/SDL_mouse.h
+ ../SDL2/include/SDL2/SDL_mutex.h
+ ../SDL2/include/SDL2/SDL_pixels.h
+ ../SDL2/include/SDL2/SDL_platform.h
+ ../SDL2/include/SDL2/SDL_power.h
+ ../SDL2/include/SDL2/SDL_quit.h
+ ../SDL2/include/SDL2/SDL_rect.h
+ ../SDL2/include/SDL2/SDL_render.h
+ ../SDL2/include/SDL2/SDL_rwops.h
+ ../SDL2/include/SDL2/SDL_scancode.h
+ ../SDL2/include/SDL2/SDL_sensor.h
+ ../SDL2/include/SDL2/SDL_shape.h
+ ../SDL2/include/SDL2/SDL_stdinc.h
+ ../SDL2/include/SDL2/SDL_surface.h
+ ../SDL2/include/SDL2/SDL_system.h
+ ../SDL2/include/SDL2/SDL_thread.h
+ ../SDL2/include/SDL2/SDL_timer.h
+ ../SDL2/include/SDL2/SDL_touch.h
+ ../SDL2/include/SDL2/SDL_version.h
+ ../SDL2/include/SDL2/SDL_video.h
+ ../SDL2/include/SDL2/begin_code.h
+ ../SDL2/include/SDL2/close_code.h
+ D:/Documents/SDL/Managers/ReplayManager/ReplayManager.cpp
+ D:/Documents/SDL/Managers/ReplayManager/ReplayManager.h
+ D:/Documents/SDL/Managers/SoundManager/SoundManager.h
+ D:/Documents/SDL/global.h
 CMakeFiles/SDL.dir/Managers/SaveManager/SaveManager.cpp.obj
  ../SDL2/include/SDL2/SDL.h
  ../SDL2/include/SDL2/SDL_assert.h
@@ -280,6 +331,7 @@ CMakeFiles/SDL.dir/Managers/SceneManager/SceneManager.cpp.obj
  D:/Documents/SDL/Ally/Ally.h
  D:/Documents/SDL/Enemy/Enemy.h
  D:/Documents/SDL/Managers/LevelManager/LevelManager.h
+ D:/Documents/SDL/Managers/ReplayManager/ReplayManager.h
  D:/Documents/SDL/Managers/SaveManager/SaveManager.h
  D:/Documents/SDL/Managers/SceneManager/SceneManager.cpp
  D:/Documents/SDL/Managers/SceneManager/SceneManager.h
@@ -771,6 +823,7 @@ CMakeFiles/SDL.dir/main.cpp.obj
  D:/Documents/SDL/Ally/Ally.h
  D:/Documents/SDL/Enemy/Enemy.h
  D:/Documents/SDL/Managers/LevelManager/LevelManager.h
+ D:/Documents/SDL/Managers/ReplayManager/ReplayManager.h
  D:/Documents/SDL/Managers/SaveManager/SaveManager.h
  D:/Documents/SDL/Managers/SceneManager/SceneManager.h
  D:/Documents/SDL/Managers/SoundManager/SoundManager.h

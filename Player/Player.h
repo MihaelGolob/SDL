@@ -20,7 +20,7 @@ public:
     Player(int x, int y, float scale, float speed, Texture *texture, Window &window, LevelManager *levelManager);
     void movement() override;
     void input(SDL_Event event);
-    void makeAlive();
+    void move(int x, int y);
 private:
     void changeTexture() override;
     void collision() override;
@@ -28,11 +28,12 @@ private:
 
     void extinguishFire();
     void attackEnemy();
+    void plantTree();
     bool treeCollision(Tree);
     bool enemyCollision(Enemy);
     void windowCollision();
 
     // input variables:
-    bool up, down, left, right, space, enter;
+    bool up, down, left, right, space, enter, l;
     LevelManager *levelManager;
 };

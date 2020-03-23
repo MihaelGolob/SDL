@@ -25,61 +25,95 @@ SceneManager::SceneManager(Window &window, SDL_Texture *backgroundTexture, Playe
 
 void SceneManager::loop() {
     map<string,Button>::iterator it;
+    if (!pause) {
+        switch (currScene) {
+            case Scene::menu:
+                drawUIBackground();
+                // draw buttons
+                for (it = buttons.begin(); it != buttons.end(); it++) {
+                    if(it->first[0] == 'u' && it->first[1] == 'i')
+                        it->second.draw();
+                }
+                break;
 
-    if (currScene == Scene::menu) {
-        drawUIBackground();
-        // draw buttons
-        for (it = buttons.begin(); it != buttons.end(); it++) {
-            if(it->first[0] == 'u' && it->first[1] == 'i')
-                it->second.draw();
-        }
-    } else if (currScene == Scene::game) {
-        // game play
-        drawBackground();
-        drawObjects();
-        player->draw();
-        drawText();
+            case Scene::game:
+                // game play
+                drawBackground();
+                drawObjects();
+                player->draw();
+                drawText();
 
-        // draw back button
-        for (it = buttons.begin(); it != buttons.end(); it++) {
-            if(it->first == "toMenu2")
-                it->second.draw();
-        }
-    } else if (currScene == Scene::howTo) {
-        drawHowTo();
-        // draw button
-        for (it = buttons.begin(); it != buttons.end(); it++) {
-            if(it->first == "toMenu1")
-                it->second.draw();
-        }
-    } else if (currScene == Scene::dataInput) {
-        // TODO input data
-        drawInput();
-        nameText->draw();
-        // draw button
-        for (it = buttons.begin(); it != buttons.end(); it++) {
-            if(it->first == "continue")
-                it->second.draw();
-        }
-    } else if (currScene == Scene::highscores) {
-        drawHighscoreBackground();
+                // save players coordinates
+                replayManager.recordMovement(player->getX(), player->getY());
+                if(!gameStarted)
+                    replayManager.clearFile();
 
-        if(highscore.empty()) {
-            parseHighScoreString();
+                // draw back button
+                for (it = buttons.begin(); it != buttons.end(); it++) {
+                    if(it->first == "toMenu2")
+                        it->second.draw();
+                }
+                gameStarted = true;
+                break;
+
+            case Scene::howTo:
+                drawHowTo();
+                // draw button
+                for (it = buttons.begin(); it != buttons.end(); it++) {
+                    if(it->first == "toMenu1")
+                        it->second.draw();
+                }
+                break;
+
+            case Scene::dataInput:
+                drawInput();
+                nameText->draw();
+                // draw button
+                for (it = buttons.begin(); it != buttons.end(); it++) {
+                    if(it->first == "continue")
+                        it->second.draw();
+                }
+                break;
+
+            case Scene::highScores:
+                drawHighscoreBackground();
+
+                if(highscore.empty()) {
+                    parseHighScoreString();
+                }
+                for (auto t : highscoreText)
+                    t.draw();
+                for (it = buttons.begin(); it != buttons.end(); it++) {
+                    if(it->first == "toMenu1")
+                        it->second.draw();
+                }
+                break;
+
+            case Scene::replay:
+                movePlayer();
+                player->draw();
+                for (it = buttons.begin(); it != buttons.end(); it++) {
+                    if(it->first == "toMenu2")
+                        it->second.draw();
+                }
+                break;
         }
-        for (auto t : highscoreText)
-            t.draw();
-        for (it = buttons.begin(); it != buttons.end(); it++) {
-            if(it->first == "toMenu1")
-                it->second.draw();
+    } else {
+        for (auto &t : allTrees) {
+            t.updatePauseTimer();
         }
     }
 }
 
 Scene SceneManager::currScene = Scene::menu;
+unsigned long SceneManager::moveTimer = 0;
 
 void SceneManager::changeScene(Scene s) {
     currScene = s;
+}
+
+Scene SceneManager::getCurrScene() {
+    return currScene;
 }
 
 void SceneManager::input(SDL_Event e) {
@@ -112,12 +146,14 @@ void SceneManager::typeName(char c) {
 
 // buttons
 void SceneManager::createButtons() {
-    Button ui1(Allign::center, 50, "../Assets/UI/Start.png", "../Assets/UI/StartPress.png", newGame, window);
-    Button ui2(Allign::center, 200, "../Assets/UI/howButton.png", "../Assets/UI/howButtonPress.png", howToButton, window);
-    Button ui3(Allign::center, 350, "../Assets/UI/highscores.png", "../Assets/UI/highscoresPress.png", highscores, window);
+    Button ui1(Allign::center, 20, "../Assets/UI/Start.png", "../Assets/UI/StartPress.png", newGame, window);
+    Button ui2(Allign::center, 140, "../Assets/UI/howButton.png", "../Assets/UI/howButtonPress.png", howToButton, window);
+    Button ui3(Allign::center, 260, "../Assets/UI/highScores.png", "../Assets/UI/highscoresPress.png", highscores, window);
+    Button ui4(Allign::center, 380, "../Assets/UI/replay.png", "../Assets/UI/replayPress.png", replayButton, window);
     buttons.insert(make_pair("ui1", ui1));
     buttons.insert(make_pair("ui2", ui2));
     buttons.insert(make_pair("ui3", ui3));
+    buttons.insert(make_pair("ui4", ui4));
 
     Button toMenu1(Allign::center, window.height-100, "../Assets/UI/back.png", "../Assets/UI/backPress.png", backButton, window);
     buttons.insert(make_pair("toMenu1", toMenu1));
@@ -148,7 +184,12 @@ void SceneManager::backButton() {
 }
 
 void SceneManager::highscores() {
-    currScene = Scene::highscores;
+    currScene = Scene::highScores;
+}
+
+void SceneManager::replayButton() {
+    currScene = Scene::replay;
+    moveTimer = SDL_GetTicks();
 }
 
 // highscore
@@ -273,6 +314,19 @@ void SceneManager::drawText() {
     scoreText->draw();
 }
 
+// replay
+void SceneManager::movePlayer() {
+    unsigned long curr = SDL_GetTicks();
+    int delay = 500;
+    if (curr - moveTimer >= delay) {
+        pair<int,int> coord = replayManager.getCoords();
+        player->move(coord.first, coord.second);
+
+        moveTimer = SDL_GetTicks();
+    }
+}
+
+// other
 char SceneManager::getChar(SDL_Event e) {
     switch (e.key.keysym.sym) {
         case SDLK_a:

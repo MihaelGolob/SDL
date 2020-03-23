@@ -100,6 +100,12 @@
 		<Unit filename="D:/Documents/SDL/Managers/LevelManager/LevelManager.h">
 			<Option target="SDL"/>
 		</Unit>
+		<Unit filename="D:/Documents/SDL/Managers/ReplayManager/ReplayManager.cpp">
+			<Option target="SDL"/>
+		</Unit>
+		<Unit filename="D:/Documents/SDL/Managers/ReplayManager/ReplayManager.h">
+			<Option target="SDL"/>
+		</Unit>
 		<Unit filename="D:/Documents/SDL/Managers/SaveManager/SaveManager.cpp">
 			<Option target="SDL"/>
 		</Unit>

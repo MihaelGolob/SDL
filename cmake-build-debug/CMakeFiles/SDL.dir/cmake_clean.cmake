@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/SDL.dir/Ally/Ally.cpp.obj"
   "CMakeFiles/SDL.dir/Enemy/Enemy.cpp.obj"
   "CMakeFiles/SDL.dir/Managers/LevelManager/LevelManager.cpp.obj"
+  "CMakeFiles/SDL.dir/Managers/ReplayManager/ReplayManager.cpp.obj"
   "CMakeFiles/SDL.dir/Managers/SaveManager/SaveManager.cpp.obj"
   "CMakeFiles/SDL.dir/Managers/SceneManager/SceneManager.cpp.obj"
   "CMakeFiles/SDL.dir/Managers/SoundManager/SoundManager.cpp.obj"

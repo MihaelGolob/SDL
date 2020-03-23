@@ -203,6 +203,33 @@ Managers/LevelManager/LevelManager.cpp.s:
 	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Managers/LevelManager/LevelManager.cpp.s
 .PHONY : Managers/LevelManager/LevelManager.cpp.s
 
+Managers/ReplayManager/ReplayManager.obj: Managers/ReplayManager/ReplayManager.cpp.obj
+
+.PHONY : Managers/ReplayManager/ReplayManager.obj
+
+# target to build an object file
+Managers/ReplayManager/ReplayManager.cpp.obj:
+	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Managers/ReplayManager/ReplayManager.cpp.obj
+.PHONY : Managers/ReplayManager/ReplayManager.cpp.obj
+
+Managers/ReplayManager/ReplayManager.i: Managers/ReplayManager/ReplayManager.cpp.i
+
+.PHONY : Managers/ReplayManager/ReplayManager.i
+
+# target to preprocess a source file
+Managers/ReplayManager/ReplayManager.cpp.i:
+	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Managers/ReplayManager/ReplayManager.cpp.i
+.PHONY : Managers/ReplayManager/ReplayManager.cpp.i
+
+Managers/ReplayManager/ReplayManager.s: Managers/ReplayManager/ReplayManager.cpp.s
+
+.PHONY : Managers/ReplayManager/ReplayManager.s
+
+# target to generate assembly for a file
+Managers/ReplayManager/ReplayManager.cpp.s:
+	$(MAKE) -f CMakeFiles\SDL.dir\build.make CMakeFiles/SDL.dir/Managers/ReplayManager/ReplayManager.cpp.s
+.PHONY : Managers/ReplayManager/ReplayManager.cpp.s
+
 Managers/SaveManager/SaveManager.obj: Managers/SaveManager/SaveManager.cpp.obj
 
 .PHONY : Managers/SaveManager/SaveManager.obj
@@ -518,6 +545,9 @@ help:
 	@echo ... Managers/LevelManager/LevelManager.obj
 	@echo ... Managers/LevelManager/LevelManager.i
 	@echo ... Managers/LevelManager/LevelManager.s
+	@echo ... Managers/ReplayManager/ReplayManager.obj
+	@echo ... Managers/ReplayManager/ReplayManager.i
+	@echo ... Managers/ReplayManager/ReplayManager.s
 	@echo ... Managers/SaveManager/SaveManager.obj
 	@echo ... Managers/SaveManager/SaveManager.i
 	@echo ... Managers/SaveManager/SaveManager.s

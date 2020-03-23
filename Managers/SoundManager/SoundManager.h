@@ -2,8 +2,7 @@
 // Created by MICHAEL_DOVE on 27. 02. 2020.
 //
 
-#ifndef SDL_SOUNDMANAGER_H
-#define SDL_SOUNDMANAGER_H
+#pragma once
 
 #include <iostream>
 #include <string>
@@ -29,6 +28,3 @@ private:
     Mix_Music *music;
     vector< pair<string, Mix_Chunk *> > sounds;
 };
-
-
-#endif //SDL_SOUNDMANAGER_H

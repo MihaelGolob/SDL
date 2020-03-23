@@ -702,6 +702,18 @@ D:/Documents/SDL/Text/Text.h
 ../../Managers/SaveManager/SaveManager.h
 D:/Documents/SDL/Managers/SaveManager/SaveManager.h
 
+D:/Documents/SDL/Managers/ReplayManager/ReplayManager.h
+iostream
+-
+fstream
+-
+string
+-
+SDL2/SDL.h
+-
+../../global.h
+D:/Documents/SDL/global.h
+
 D:/Documents/SDL/Managers/SaveManager/SaveManager.h
 fstream
 -
@@ -711,10 +723,6 @@ vector
 -
 ../../global.h
 D:/Documents/SDL/global.h
-
-D:/Documents/SDL/Managers/SceneManager/SceneManager.cpp
-SceneManager.h
-D:/Documents/SDL/Managers/SceneManager/SceneManager.h
 
 D:/Documents/SDL/Managers/SceneManager/SceneManager.h
 SDL2/SDL.h
@@ -729,6 +737,8 @@ D:/Documents/SDL/Window.h
 D:/Documents/SDL/Text/Text.h
 ../../Player/Player.h
 D:/Documents/SDL/Player/Player.h
+../ReplayManager/ReplayManager.h
+D:/Documents/SDL/Managers/ReplayManager/ReplayManager.h
 ../../UI/Button.h
 D:/Documents/SDL/UI/Button.h
 ../../global.h
@@ -879,4 +889,6 @@ Managers/SceneManager/SceneManager.h
 D:/Documents/SDL/Managers/SceneManager/SceneManager.h
 Managers/SaveManager/SaveManager.h
 D:/Documents/SDL/Managers/SaveManager/SaveManager.h
+Managers/ReplayManager/ReplayManager.h
+D:/Documents/SDL/Managers/ReplayManager/ReplayManager.h
 
